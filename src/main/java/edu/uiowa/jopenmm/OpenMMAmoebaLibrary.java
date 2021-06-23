@@ -29,28 +29,6 @@ public class OpenMMAmoebaLibrary implements Library {
     Native.register(OpenMMAmoebaLibrary.class, OpenMMAmoebaLibrary.JNA_NATIVE_LIB);
   }
   /** enum values */
-  public static interface OpenMM_AmoebaVdwForce_NonbondedMethod {
-    public static final int OpenMM_AmoebaVdwForce_NoCutoff = 0;
-    public static final int OpenMM_AmoebaVdwForce_CutoffPeriodic = 1;
-  };
-  /** enum values */
-  public static interface OpenMM_AmoebaVdwForce_PotentialFunction {
-    public static final int OpenMM_AmoebaVdwForce_Buffered147 = 0;
-    public static final int OpenMM_AmoebaVdwForce_LennardJones = 1;
-  };
-  /** enum values */
-  public static interface OpenMM_AmoebaVdwForce_AlchemicalMethod {
-    public static final int OpenMM_AmoebaVdwForce_None = 0;
-    public static final int OpenMM_AmoebaVdwForce_Decouple = 1;
-    public static final int OpenMM_AmoebaVdwForce_Annihilate = 2;
-  };
-  /** enum values */
-  public static interface OpenMM_AmoebaGKCavitationForce_NonbondedMethod {
-    public static final int OpenMM_AmoebaGKCavitationForce_NoCutoff = 0;
-    public static final int OpenMM_AmoebaGKCavitationForce_CutoffNonPeriodic = 1;
-    public static final int OpenMM_AmoebaGKCavitationForce_CutoffPeriodic = 2;
-  };
-  /** enum values */
   public static interface OpenMM_HippoNonbondedForce_NonbondedMethod {
     public static final int OpenMM_HippoNonbondedForce_NoCutoff = 0;
     public static final int OpenMM_HippoNonbondedForce_PME = 1;
@@ -63,6 +41,12 @@ public class OpenMMAmoebaLibrary implements Library {
     public static final int OpenMM_HippoNonbondedForce_ThreeFold = 3;
     public static final int OpenMM_HippoNonbondedForce_ZOnly = 4;
     public static final int OpenMM_HippoNonbondedForce_NoAxisType = 5;
+  };
+  /** enum values */
+  public static interface OpenMM_AmoebaGKCavitationForce_NonbondedMethod {
+    public static final int OpenMM_AmoebaGKCavitationForce_NoCutoff = 0;
+    public static final int OpenMM_AmoebaGKCavitationForce_CutoffNonPeriodic = 1;
+    public static final int OpenMM_AmoebaGKCavitationForce_CutoffPeriodic = 2;
   };
   /** enum values */
   public static interface OpenMM_AmoebaMultipoleForce_NonbondedMethod {
@@ -97,6 +81,22 @@ public class OpenMMAmoebaLibrary implements Library {
     public static final int OpenMM_AmoebaMultipoleForce_PolarizationCovalent14 = 7;
     public static final int OpenMM_AmoebaMultipoleForce_CovalentEnd = 8;
   };
+  /** enum values */
+  public static interface OpenMM_AmoebaVdwForce_NonbondedMethod {
+    public static final int OpenMM_AmoebaVdwForce_NoCutoff = 0;
+    public static final int OpenMM_AmoebaVdwForce_CutoffPeriodic = 1;
+  };
+  /** enum values */
+  public static interface OpenMM_AmoebaVdwForce_PotentialFunction {
+    public static final int OpenMM_AmoebaVdwForce_Buffered147 = 0;
+    public static final int OpenMM_AmoebaVdwForce_LennardJones = 1;
+  };
+  /** enum values */
+  public static interface OpenMM_AmoebaVdwForce_AlchemicalMethod {
+    public static final int OpenMM_AmoebaVdwForce_None = 0;
+    public static final int OpenMM_AmoebaVdwForce_Decouple = 1;
+    public static final int OpenMM_AmoebaVdwForce_Annihilate = 2;
+  };
   /** Global Constants */
   public static final double OpenMM_NmPerAngstrom = 0.1;
 
@@ -126,988 +126,50 @@ public class OpenMMAmoebaLibrary implements Library {
    */
   public static native void OpenMM_3D_DoubleArray_destroy(PointerByReference array);
   /**
-   * AmoebaOutOfPlaneBendForce<br>
+   * AmoebaTorsionTorsionForce<br>
    * Original signature : <code>
-   * OpenMM_AmoebaOutOfPlaneBendForce* OpenMM_AmoebaOutOfPlaneBendForce_create()</code>
+   * OpenMM_AmoebaTorsionTorsionForce* OpenMM_AmoebaTorsionTorsionForce_create()</code>
    */
-  public static native PointerByReference OpenMM_AmoebaOutOfPlaneBendForce_create();
+  public static native PointerByReference OpenMM_AmoebaTorsionTorsionForce_create();
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_destroy(OpenMM_AmoebaOutOfPlaneBendForce*)</code>
+   * void OpenMM_AmoebaTorsionTorsionForce_destroy(OpenMM_AmoebaTorsionTorsionForce*)</code>
    */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_destroy(PointerByReference target);
+  public static native void OpenMM_AmoebaTorsionTorsionForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsions(const OpenMM_AmoebaTorsionTorsionForce*)
    * </code>
    */
-  public static native int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(
+  public static native int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsions(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
+   * int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsionGrids(const OpenMM_AmoebaTorsionTorsionForce*)
    * </code>
    */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(
+  public static native int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsionGrids(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
+   * int OpenMM_AmoebaTorsionTorsionForce_addTorsionTorsion(OpenMM_AmoebaTorsionTorsionForce*, int, int, int, int, int, int, int)
    * </code>
    */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(
-      PointerByReference target, double penticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(
-      PointerByReference target, double sexticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(OpenMM_AmoebaOutOfPlaneBendForce*, int, int, int, int, double)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce*, int, int*, int*, int*, int*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      DoubleBuffer k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce*, int, int*, int*, int*, int*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      DoubleByReference k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(OpenMM_AmoebaOutOfPlaneBendForce*, int, int, int, int, int, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(OpenMM_AmoebaOutOfPlaneBendForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaOutOfPlaneBendForce*, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /** Original signature : <code>OpenMM_AmoebaVdwForce* OpenMM_AmoebaVdwForce_create()</code> */
-  public static native PointerByReference OpenMM_AmoebaVdwForce_create();
-  /**
-   * Original signature : <code>void OpenMM_AmoebaVdwForce_destroy(OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_destroy(PointerByReference target);
-  /** Original signature : <code>char* OpenMM_AmoebaVdwForce_Lambda()</code> */
-  public static native Pointer OpenMM_AmoebaVdwForce_Lambda();
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_getNumParticles(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getNumParticles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_getNumParticleTypes(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getNumParticleTypes(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_getNumTypePairs(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getNumTypePairs(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setParticleParameters(OpenMM_AmoebaVdwForce*, int, int, double, double, double, OpenMM_Boolean, int)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setParticleParameters(
-      PointerByReference target,
-      int particleIndex,
-      int parentIndex,
-      double sigma,
-      double epsilon,
-      double reductionFactor,
-      int isAlchemical,
-      int typeIndex);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getParticleParameters(const OpenMM_AmoebaVdwForce*, int, int*, double*, double*, double*, OpenMM_Boolean*, int*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getParticleParameters(
-      PointerByReference target,
-      int particleIndex,
-      IntBuffer parentIndex,
-      DoubleBuffer sigma,
-      DoubleBuffer epsilon,
-      DoubleBuffer reductionFactor,
-      IntBuffer isAlchemical,
-      IntBuffer typeIndex);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getParticleParameters(const OpenMM_AmoebaVdwForce*, int, int*, double*, double*, double*, OpenMM_Boolean*, int*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getParticleParameters(
-      PointerByReference target,
-      int particleIndex,
-      IntByReference parentIndex,
-      DoubleByReference sigma,
-      DoubleByReference epsilon,
-      DoubleByReference reductionFactor,
-      IntByReference isAlchemical,
-      IntByReference typeIndex);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_addParticle(OpenMM_AmoebaVdwForce*, int, double, double, double, OpenMM_Boolean)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_addParticle(
-      PointerByReference target,
-      int parentIndex,
-      double sigma,
-      double epsilon,
-      double reductionFactor,
-      int isAlchemical);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_addParticle_1(OpenMM_AmoebaVdwForce*, int, int, double, OpenMM_Boolean)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_addParticle_1(
-      PointerByReference target,
-      int parentIndex,
-      int typeIndex,
-      double reductionFactor,
-      int isAlchemical);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_addParticleType(OpenMM_AmoebaVdwForce*, double, double)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_addParticleType(
-      PointerByReference target, double sigma, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getParticleTypeParameters(const OpenMM_AmoebaVdwForce*, int, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getParticleTypeParameters(
-      PointerByReference target, int typeIndex, DoubleBuffer sigma, DoubleBuffer epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getParticleTypeParameters(const OpenMM_AmoebaVdwForce*, int, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getParticleTypeParameters(
-      PointerByReference target, int typeIndex, DoubleByReference sigma, DoubleByReference epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setParticleTypeParameters(OpenMM_AmoebaVdwForce*, int, double, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setParticleTypeParameters(
-      PointerByReference target, int typeIndex, double sigma, double epsilon);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_addTypePair(OpenMM_AmoebaVdwForce*, int, int, double, double)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_addTypePair(
-      PointerByReference target, int type1, int type2, double sigma, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getTypePairParameters(const OpenMM_AmoebaVdwForce*, int, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getTypePairParameters(
-      PointerByReference target,
-      int pairIndex,
-      IntBuffer type1,
-      IntBuffer type2,
-      DoubleBuffer sigma,
-      DoubleBuffer epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getTypePairParameters(const OpenMM_AmoebaVdwForce*, int, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getTypePairParameters(
-      PointerByReference target,
-      int pairIndex,
-      IntByReference type1,
-      IntByReference type2,
-      DoubleByReference sigma,
-      DoubleByReference epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setTypePairParameters(OpenMM_AmoebaVdwForce*, int, int, int, double, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setTypePairParameters(
-      PointerByReference target, int pairIndex, int type1, int type2, double sigma, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(
-      PointerByReference target, String sigmaCombiningRule);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(
-      PointerByReference target, Pointer sigmaCombiningRule);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_AmoebaVdwForce_getSigmaCombiningRule(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native Pointer OpenMM_AmoebaVdwForce_getSigmaCombiningRule(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(
-      PointerByReference target, String epsilonCombiningRule);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(
-      PointerByReference target, Pointer epsilonCombiningRule);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_AmoebaVdwForce_getEpsilonCombiningRule(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native Pointer OpenMM_AmoebaVdwForce_getEpsilonCombiningRule(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseDispersionCorrection(const OpenMM_AmoebaVdwForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getUseDispersionCorrection(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setUseDispersionCorrection(OpenMM_AmoebaVdwForce*, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setUseDispersionCorrection(
-      PointerByReference target, int useCorrection);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseParticleTypes(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getUseParticleTypes(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setParticleExclusions(OpenMM_AmoebaVdwForce*, int, const OpenMM_IntArray*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setParticleExclusions(
-      PointerByReference target, int particleIndex, PointerByReference exclusions);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_getParticleExclusions(const OpenMM_AmoebaVdwForce*, int, OpenMM_IntArray*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_getParticleExclusions(
-      PointerByReference target, int particleIndex, PointerByReference exclusions);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaVdwForce_getCutoffDistance(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native double OpenMM_AmoebaVdwForce_getCutoffDistance(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setCutoffDistance(OpenMM_AmoebaVdwForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setCutoffDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>void OpenMM_AmoebaVdwForce_setCutoff(OpenMM_AmoebaVdwForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setCutoff(
-      PointerByReference target, double cutoff);
-  /**
-   * Original signature : <code>double OpenMM_AmoebaVdwForce_getCutoff(const OpenMM_AmoebaVdwForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaVdwForce_getCutoff(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaVdwForce_NonbondedMethod OpenMM_AmoebaVdwForce_getNonbondedMethod(const OpenMM_AmoebaVdwForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getNonbondedMethod(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setNonbondedMethod(OpenMM_AmoebaVdwForce*, OpenMM_AmoebaVdwForce_NonbondedMethod)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setNonbondedMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaVdwForce_PotentialFunction OpenMM_AmoebaVdwForce_getPotentialFunction(const OpenMM_AmoebaVdwForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getPotentialFunction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setPotentialFunction(OpenMM_AmoebaVdwForce*, OpenMM_AmoebaVdwForce_PotentialFunction)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setPotentialFunction(
-      PointerByReference target, int potential);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setSoftcorePower(OpenMM_AmoebaVdwForce*, int)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setSoftcorePower(
-      PointerByReference target, int n);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaVdwForce_getSoftcorePower(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getSoftcorePower(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setSoftcoreAlpha(OpenMM_AmoebaVdwForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setSoftcoreAlpha(
-      PointerByReference target, double alpha);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaVdwForce_getSoftcoreAlpha(const OpenMM_AmoebaVdwForce*)</code>
-   */
-  public static native double OpenMM_AmoebaVdwForce_getSoftcoreAlpha(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaVdwForce_AlchemicalMethod OpenMM_AmoebaVdwForce_getAlchemicalMethod(const OpenMM_AmoebaVdwForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_getAlchemicalMethod(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_setAlchemicalMethod(OpenMM_AmoebaVdwForce*, OpenMM_AmoebaVdwForce_AlchemicalMethod)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_setAlchemicalMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaVdwForce_updateParametersInContext(OpenMM_AmoebaVdwForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaVdwForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaVdwForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaVdwForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaVdwForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaBondForce<br>
-   * Original signature : <code>OpenMM_AmoebaBondForce* OpenMM_AmoebaBondForce_create()</code>
-   */
-  public static native PointerByReference OpenMM_AmoebaBondForce_create();
-  /**
-   * Original signature : <code>void OpenMM_AmoebaBondForce_destroy(OpenMM_AmoebaBondForce*)</code>
-   */
-  public static native void OpenMM_AmoebaBondForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaBondForce_getNumBonds(const OpenMM_AmoebaBondForce*)</code>
-   */
-  public static native int OpenMM_AmoebaBondForce_getNumBonds(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(OpenMM_AmoebaBondForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(const OpenMM_AmoebaBondForce*)</code>
-   */
-  public static native double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(OpenMM_AmoebaBondForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(const OpenMM_AmoebaBondForce*)</code>
-   */
-  public static native double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaBondForce_addBond(OpenMM_AmoebaBondForce*, int, int, double, double)</code>
-   */
-  public static native int OpenMM_AmoebaBondForce_addBond(
-      PointerByReference target, int particle1, int particle2, double length, double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce*, int, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaBondForce_getBondParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      DoubleBuffer length,
-      DoubleBuffer quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce*, int, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaBondForce_getBondParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      DoubleByReference length,
-      DoubleByReference quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setBondParameters(OpenMM_AmoebaBondForce*, int, int, int, double, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaBondForce_setBondParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_updateParametersInContext(OpenMM_AmoebaBondForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaBondForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaBondForce*, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaBondForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaAngleForce<br>
-   * Original signature : <code>OpenMM_AmoebaAngleForce* OpenMM_AmoebaAngleForce_create()</code>
-   */
-  public static native PointerByReference OpenMM_AmoebaAngleForce_create();
-  /**
-   * Original signature : <code>void OpenMM_AmoebaAngleForce_destroy(OpenMM_AmoebaAngleForce*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaAngleForce_getNumAngles(const OpenMM_AmoebaAngleForce*)</code>
-   */
-  public static native int OpenMM_AmoebaAngleForce_getNumAngles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(OpenMM_AmoebaAngleForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(const OpenMM_AmoebaAngleForce*)</code>
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(OpenMM_AmoebaAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(OpenMM_AmoebaAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(
-      PointerByReference target, double penticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(OpenMM_AmoebaAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(
-      PointerByReference target, double sexticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaAngleForce_addAngle(OpenMM_AmoebaAngleForce*, int, int, int, double, double)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaAngleForce_addAngle(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce*, int, int*, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      DoubleBuffer length,
-      DoubleBuffer quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce*, int, int*, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      DoubleByReference length,
-      DoubleByReference quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAngleParameters(OpenMM_AmoebaAngleForce*, int, int, int, int, double, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAngleParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_updateParametersInContext(OpenMM_AmoebaAngleForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaAngleForce*, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaWcaDispersionForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaWcaDispersionForce* OpenMM_AmoebaWcaDispersionForce_create()</code>
-   */
-  public static native PointerByReference OpenMM_AmoebaWcaDispersionForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_destroy(OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaWcaDispersionForce_getNumParticles(const OpenMM_AmoebaWcaDispersionForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaWcaDispersionForce_getNumParticles(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(OpenMM_AmoebaWcaDispersionForce*, int, double, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(
-      PointerByReference target, int particleIndex, double radius, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
-      PointerByReference target, int particleIndex, DoubleBuffer radius, DoubleBuffer epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
-      PointerByReference target,
-      int particleIndex,
-      DoubleByReference radius,
-      DoubleByReference epsilon);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaWcaDispersionForce_addParticle(OpenMM_AmoebaWcaDispersionForce*, double, double)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaWcaDispersionForce_addParticle(
-      PointerByReference target, double radius, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(OpenMM_AmoebaWcaDispersionForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getEpso(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getEpso(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getEpsh(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getEpsh(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getRmino(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getRmino(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getRminh(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getRminh(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getAwater(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getAwater(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getShctd(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getShctd(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getDispoff(const OpenMM_AmoebaWcaDispersionForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getDispoff(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getSlevy(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getSlevy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setEpso(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setEpso(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setEpsh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setEpsh(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setRmino(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setRmino(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setRminh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setRminh(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setAwater(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setAwater(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setShctd(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setShctd(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setDispoff(OpenMM_AmoebaWcaDispersionForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setDispoff(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setSlevy(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setSlevy(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaWcaDispersionForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaGKCavitationForce* OpenMM_AmoebaGKCavitationForce_create()</code>
-   */
-  public static native PointerByReference OpenMM_AmoebaGKCavitationForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_destroy(OpenMM_AmoebaGKCavitationForce*)</code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGKCavitationForce_addParticle(OpenMM_AmoebaGKCavitationForce*, double, double, OpenMM_Boolean)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaGKCavitationForce_addParticle(
-      PointerByReference target, double radius, double gamma, int ishydrogen);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_setParticleParameters(OpenMM_AmoebaGKCavitationForce*, int, double, double, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_setParticleParameters(
-      PointerByReference target, int index, double radius, double gamma, int ishydrogen);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, OpenMM_Boolean*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleBuffer radius,
-      DoubleBuffer gamma,
-      IntBuffer ishydrogen);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, OpenMM_Boolean*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleByReference radius,
-      DoubleByReference gamma,
-      IntByReference ishydrogen);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGKCavitationForce_getNumParticles(const OpenMM_AmoebaGKCavitationForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaGKCavitationForce_getNumParticles(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaGKCavitationForce_NonbondedMethod OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(const OpenMM_AmoebaGKCavitationForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(OpenMM_AmoebaGKCavitationForce*, OpenMM_AmoebaGKCavitationForce_NonbondedMethod)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(const OpenMM_AmoebaGKCavitationForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(OpenMM_AmoebaGKCavitationForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(OpenMM_AmoebaGKCavitationForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * AmoebaPiTorsionForce<br>
-   * Original signature : <code>OpenMM_AmoebaPiTorsionForce* OpenMM_AmoebaPiTorsionForce_create()
-   * </code>
-   */
-  public static native PointerByReference OpenMM_AmoebaPiTorsionForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaPiTorsionForce_destroy(OpenMM_AmoebaPiTorsionForce*)</code>
-   */
-  public static native void OpenMM_AmoebaPiTorsionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaPiTorsionForce_getNumPiTorsions(const OpenMM_AmoebaPiTorsionForce*)</code>
-   */
-  public static native int OpenMM_AmoebaPiTorsionForce_getNumPiTorsions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaPiTorsionForce_addPiTorsion(OpenMM_AmoebaPiTorsionForce*, int, int, int, int, int, int, double)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaPiTorsionForce_addPiTorsion(
+  public static native int OpenMM_AmoebaTorsionTorsionForce_addTorsionTorsion(
       PointerByReference target,
       int particle1,
       int particle2,
       int particle3,
       int particle4,
       int particle5,
-      int particle6,
-      double k);
+      int chiralCheckAtomIndex,
+      int gridIndex);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaPiTorsionForce_getPiTorsionParameters(const OpenMM_AmoebaPiTorsionForce*, int, int*, int*, int*, int*, int*, int*, double*)
+   * void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(const OpenMM_AmoebaTorsionTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*)
    * </code>
    */
-  public static native void OpenMM_AmoebaPiTorsionForce_getPiTorsionParameters(
+  public static native void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(
       PointerByReference target,
       int index,
       IntBuffer particle1,
@@ -1115,14 +177,14 @@ public class OpenMMAmoebaLibrary implements Library {
       IntBuffer particle3,
       IntBuffer particle4,
       IntBuffer particle5,
-      IntBuffer particle6,
-      DoubleBuffer k);
+      IntBuffer chiralCheckAtomIndex,
+      IntBuffer gridIndex);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaPiTorsionForce_getPiTorsionParameters(const OpenMM_AmoebaPiTorsionForce*, int, int*, int*, int*, int*, int*, int*, double*)
+   * void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(const OpenMM_AmoebaTorsionTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*)
    * </code>
    */
-  public static native void OpenMM_AmoebaPiTorsionForce_getPiTorsionParameters(
+  public static native void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(
       PointerByReference target,
       int index,
       IntByReference particle1,
@@ -1130,14 +192,14 @@ public class OpenMMAmoebaLibrary implements Library {
       IntByReference particle3,
       IntByReference particle4,
       IntByReference particle5,
-      IntByReference particle6,
-      DoubleByReference k);
+      IntByReference chiralCheckAtomIndex,
+      IntByReference gridIndex);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaPiTorsionForce_setPiTorsionParameters(OpenMM_AmoebaPiTorsionForce*, int, int, int, int, int, int, int, double)
+   * void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionParameters(OpenMM_AmoebaTorsionTorsionForce*, int, int, int, int, int, int, int, int)
    * </code>
    */
-  public static native void OpenMM_AmoebaPiTorsionForce_setPiTorsionParameters(
+  public static native void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionParameters(
       PointerByReference target,
       int index,
       int particle1,
@@ -1145,28 +207,35 @@ public class OpenMMAmoebaLibrary implements Library {
       int particle3,
       int particle4,
       int particle5,
-      int particle6,
-      double k);
+      int chiralCheckAtomIndex,
+      int gridIndex);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaPiTorsionForce_updateParametersInContext(OpenMM_AmoebaPiTorsionForce*, OpenMM_Context*)
+   * OpenMM_3D_DoubleArray* OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionGrid(const OpenMM_AmoebaTorsionTorsionForce*, int)
    * </code>
    */
-  public static native void OpenMM_AmoebaPiTorsionForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
+  public static native PointerByReference OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionGrid(
+      PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaPiTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaPiTorsionForce*, OpenMM_Boolean)
+   * void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionGrid(OpenMM_AmoebaTorsionTorsionForce*, int, const OpenMM_3D_DoubleArray*)
    * </code>
    */
-  public static native void OpenMM_AmoebaPiTorsionForce_setUsesPeriodicBoundaryConditions(
+  public static native void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionGrid(
+      PointerByReference target, int index, PointerByReference grid);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaTorsionTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaTorsionTorsionForce*, OpenMM_Boolean)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaTorsionTorsionForce_setUsesPeriodicBoundaryConditions(
       PointerByReference target, int periodic);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaPiTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaPiTorsionForce*)
+   * OpenMM_Boolean OpenMM_AmoebaTorsionTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaTorsionTorsionForce*)
    * </code>
    */
-  public static native int OpenMM_AmoebaPiTorsionForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_AmoebaTorsionTorsionForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
    * Original signature : <code>OpenMM_HippoNonbondedForce* OpenMM_HippoNonbondedForce_create()
@@ -1541,107 +610,93 @@ public class OpenMMAmoebaLibrary implements Library {
   public static native int OpenMM_HippoNonbondedForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * AmoebaStretchBendForce<br>
    * Original signature : <code>
-   * OpenMM_AmoebaStretchBendForce* OpenMM_AmoebaStretchBendForce_create()</code>
+   * OpenMM_AmoebaGKCavitationForce* OpenMM_AmoebaGKCavitationForce_create()</code>
    */
-  public static native PointerByReference OpenMM_AmoebaStretchBendForce_create();
+  public static native PointerByReference OpenMM_AmoebaGKCavitationForce_create();
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_destroy(OpenMM_AmoebaStretchBendForce*)</code>
+   * void OpenMM_AmoebaGKCavitationForce_destroy(OpenMM_AmoebaGKCavitationForce*)</code>
    */
-  public static native void OpenMM_AmoebaStretchBendForce_destroy(PointerByReference target);
+  public static native void OpenMM_AmoebaGKCavitationForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaStretchBendForce_getNumStretchBends(const OpenMM_AmoebaStretchBendForce*)
+   * int OpenMM_AmoebaGKCavitationForce_addParticle(OpenMM_AmoebaGKCavitationForce*, double, double, OpenMM_Boolean)
    * </code>
    */
-  public static native int OpenMM_AmoebaStretchBendForce_getNumStretchBends(
+  public static native int OpenMM_AmoebaGKCavitationForce_addParticle(
+      PointerByReference target, double radius, double gamma, int ishydrogen);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_setParticleParameters(OpenMM_AmoebaGKCavitationForce*, int, double, double, OpenMM_Boolean)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_setParticleParameters(
+      PointerByReference target, int index, double radius, double gamma, int ishydrogen);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, OpenMM_Boolean*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleBuffer radius,
+      DoubleBuffer gamma,
+      IntBuffer ishydrogen);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, OpenMM_Boolean*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleByReference radius,
+      DoubleByReference gamma,
+      IntByReference ishydrogen);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGKCavitationForce_getNumParticles(const OpenMM_AmoebaGKCavitationForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaGKCavitationForce_getNumParticles(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaStretchBendForce_addStretchBend(OpenMM_AmoebaStretchBendForce*, int, int, int, double, double, double, double, double)
+   * OpenMM_AmoebaGKCavitationForce_NonbondedMethod OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(const OpenMM_AmoebaGKCavitationForce*)
    * </code>
    */
-  public static native int OpenMM_AmoebaStretchBendForce_addStretchBend(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      double lengthAB,
-      double lengthCB,
-      double angle,
-      double k1,
-      double k2);
+  public static native int OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce*, int, int*, int*, int*, double*, double*, double*, double*, double*)
+   * void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(OpenMM_AmoebaGKCavitationForce*, OpenMM_AmoebaGKCavitationForce_NonbondedMethod)
    * </code>
    */
-  public static native void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      DoubleBuffer lengthAB,
-      DoubleBuffer lengthCB,
-      DoubleBuffer angle,
-      DoubleBuffer k1,
-      DoubleBuffer k2);
+  public static native void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(
+      PointerByReference target, int method);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce*, int, int*, int*, int*, double*, double*, double*, double*, double*)
+   * double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(const OpenMM_AmoebaGKCavitationForce*)
    * </code>
    */
-  public static native void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      DoubleByReference lengthAB,
-      DoubleByReference lengthCB,
-      DoubleByReference angle,
-      DoubleByReference k1,
-      DoubleByReference k2);
+  public static native double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(OpenMM_AmoebaStretchBendForce*, int, int, int, int, double, double, double, double, double)
+   * void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(OpenMM_AmoebaGKCavitationForce*, double)
    * </code>
    */
-  public static native void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      double lengthAB,
-      double lengthCB,
-      double angle,
-      double k1,
-      double k2);
+  public static native void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(
+      PointerByReference target, double distance);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_updateParametersInContext(OpenMM_AmoebaStretchBendForce*, OpenMM_Context*)
+   * void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(OpenMM_AmoebaGKCavitationForce*, OpenMM_Context*)
    * </code>
    */
-  public static native void OpenMM_AmoebaStretchBendForce_updateParametersInContext(
+  public static native void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaStretchBendForce*, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchBendForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
   /**
    * AmoebaGeneralizedKirkwoodForce<br>
    * Original signature : <code>
@@ -1781,154 +836,6 @@ public class OpenMMAmoebaLibrary implements Library {
    * </code>
    */
   public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaInPlaneAngleForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaInPlaneAngleForce* OpenMM_AmoebaInPlaneAngleForce_create()</code>
-   */
-  public static native PointerByReference OpenMM_AmoebaInPlaneAngleForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_destroy(OpenMM_AmoebaInPlaneAngleForce*)</code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaInPlaneAngleForce_getNumAngles(const OpenMM_AmoebaInPlaneAngleForce*)</code>
-   */
-  public static native int OpenMM_AmoebaInPlaneAngleForce_getNumAngles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleCubic(OpenMM_AmoebaInPlaneAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleCubic(const OpenMM_AmoebaInPlaneAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleCubic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleQuartic(OpenMM_AmoebaInPlaneAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleQuartic(const OpenMM_AmoebaInPlaneAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAnglePentic(OpenMM_AmoebaInPlaneAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAnglePentic(
-      PointerByReference target, double penticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAnglePentic(const OpenMM_AmoebaInPlaneAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAnglePentic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleSextic(OpenMM_AmoebaInPlaneAngleForce*, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleSextic(
-      PointerByReference target, double sexticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleSextic(const OpenMM_AmoebaInPlaneAngleForce*)
-   * </code>
-   */
-  public static native double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleSextic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaInPlaneAngleForce_addAngle(OpenMM_AmoebaInPlaneAngleForce*, int, int, int, int, double, double)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaInPlaneAngleForce_addAngle(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_getAngleParameters(const OpenMM_AmoebaInPlaneAngleForce*, int, int*, int*, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      DoubleBuffer length,
-      DoubleBuffer quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_getAngleParameters(const OpenMM_AmoebaInPlaneAngleForce*, int, int*, int*, int*, int*, double*, double*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      DoubleByReference length,
-      DoubleByReference quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_setAngleParameters(OpenMM_AmoebaInPlaneAngleForce*, int, int, int, int, int, double, double)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_setAngleParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_updateParametersInContext(OpenMM_AmoebaInPlaneAngleForce*, OpenMM_Context*)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaInPlaneAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaInPlaneAngleForce*, OpenMM_Boolean)
-   * </code>
-   */
-  public static native void OpenMM_AmoebaInPlaneAngleForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaInPlaneAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaInPlaneAngleForce*)
-   * </code>
-   */
-  public static native int OpenMM_AmoebaInPlaneAngleForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
    * Original signature : <code>OpenMM_AmoebaMultipoleForce* OpenMM_AmoebaMultipoleForce_create()
@@ -2267,117 +1174,476 @@ public class OpenMMAmoebaLibrary implements Library {
    */
   public static native int OpenMM_AmoebaMultipoleForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
+  /** Original signature : <code>OpenMM_AmoebaVdwForce* OpenMM_AmoebaVdwForce_create()</code> */
+  public static native PointerByReference OpenMM_AmoebaVdwForce_create();
   /**
-   * AmoebaTorsionTorsionForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaTorsionTorsionForce* OpenMM_AmoebaTorsionTorsionForce_create()</code>
+   * Original signature : <code>void OpenMM_AmoebaVdwForce_destroy(OpenMM_AmoebaVdwForce*)</code>
    */
-  public static native PointerByReference OpenMM_AmoebaTorsionTorsionForce_create();
+  public static native void OpenMM_AmoebaVdwForce_destroy(PointerByReference target);
+  /** Original signature : <code>char* OpenMM_AmoebaVdwForce_Lambda()</code> */
+  public static native Pointer OpenMM_AmoebaVdwForce_Lambda();
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaTorsionTorsionForce_destroy(OpenMM_AmoebaTorsionTorsionForce*)</code>
+   * int OpenMM_AmoebaVdwForce_getNumParticles(const OpenMM_AmoebaVdwForce*)</code>
    */
-  public static native void OpenMM_AmoebaTorsionTorsionForce_destroy(PointerByReference target);
+  public static native int OpenMM_AmoebaVdwForce_getNumParticles(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsions(const OpenMM_AmoebaTorsionTorsionForce*)
+   * int OpenMM_AmoebaVdwForce_getNumParticleTypes(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getNumParticleTypes(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaVdwForce_getNumTypePairs(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getNumTypePairs(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setParticleParameters(OpenMM_AmoebaVdwForce*, int, int, double, double, double, OpenMM_Boolean, int)
    * </code>
    */
-  public static native int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsions(
+  public static native void OpenMM_AmoebaVdwForce_setParticleParameters(
+      PointerByReference target,
+      int particleIndex,
+      int parentIndex,
+      double sigma,
+      double epsilon,
+      double reductionFactor,
+      int isAlchemical,
+      int typeIndex);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getParticleParameters(const OpenMM_AmoebaVdwForce*, int, int*, double*, double*, double*, OpenMM_Boolean*, int*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getParticleParameters(
+      PointerByReference target,
+      int particleIndex,
+      IntBuffer parentIndex,
+      DoubleBuffer sigma,
+      DoubleBuffer epsilon,
+      DoubleBuffer reductionFactor,
+      IntBuffer isAlchemical,
+      IntBuffer typeIndex);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getParticleParameters(const OpenMM_AmoebaVdwForce*, int, int*, double*, double*, double*, OpenMM_Boolean*, int*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getParticleParameters(
+      PointerByReference target,
+      int particleIndex,
+      IntByReference parentIndex,
+      DoubleByReference sigma,
+      DoubleByReference epsilon,
+      DoubleByReference reductionFactor,
+      IntByReference isAlchemical,
+      IntByReference typeIndex);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaVdwForce_addParticle(OpenMM_AmoebaVdwForce*, int, double, double, double, OpenMM_Boolean)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_addParticle(
+      PointerByReference target,
+      int parentIndex,
+      double sigma,
+      double epsilon,
+      double reductionFactor,
+      int isAlchemical);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaVdwForce_addParticle_1(OpenMM_AmoebaVdwForce*, int, int, double, OpenMM_Boolean)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_addParticle_1(
+      PointerByReference target,
+      int parentIndex,
+      int typeIndex,
+      double reductionFactor,
+      int isAlchemical);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaVdwForce_addParticleType(OpenMM_AmoebaVdwForce*, double, double)</code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_addParticleType(
+      PointerByReference target, double sigma, double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getParticleTypeParameters(const OpenMM_AmoebaVdwForce*, int, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getParticleTypeParameters(
+      PointerByReference target, int typeIndex, DoubleBuffer sigma, DoubleBuffer epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getParticleTypeParameters(const OpenMM_AmoebaVdwForce*, int, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getParticleTypeParameters(
+      PointerByReference target, int typeIndex, DoubleByReference sigma, DoubleByReference epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setParticleTypeParameters(OpenMM_AmoebaVdwForce*, int, double, double)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setParticleTypeParameters(
+      PointerByReference target, int typeIndex, double sigma, double epsilon);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaVdwForce_addTypePair(OpenMM_AmoebaVdwForce*, int, int, double, double)</code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_addTypePair(
+      PointerByReference target, int type1, int type2, double sigma, double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getTypePairParameters(const OpenMM_AmoebaVdwForce*, int, int*, int*, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getTypePairParameters(
+      PointerByReference target,
+      int pairIndex,
+      IntBuffer type1,
+      IntBuffer type2,
+      DoubleBuffer sigma,
+      DoubleBuffer epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getTypePairParameters(const OpenMM_AmoebaVdwForce*, int, int*, int*, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getTypePairParameters(
+      PointerByReference target,
+      int pairIndex,
+      IntByReference type1,
+      IntByReference type2,
+      DoubleByReference sigma,
+      DoubleByReference epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setTypePairParameters(OpenMM_AmoebaVdwForce*, int, int, int, double, double)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setTypePairParameters(
+      PointerByReference target, int pairIndex, int type1, int type2, double sigma, double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(
+      PointerByReference target, String sigmaCombiningRule);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setSigmaCombiningRule(
+      PointerByReference target, Pointer sigmaCombiningRule);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_AmoebaVdwForce_getSigmaCombiningRule(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native Pointer OpenMM_AmoebaVdwForce_getSigmaCombiningRule(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsionGrids(const OpenMM_AmoebaTorsionTorsionForce*)
-   * </code>
+   * void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
    */
-  public static native int OpenMM_AmoebaTorsionTorsionForce_getNumTorsionTorsionGrids(
+  public static native void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(
+      PointerByReference target, String epsilonCombiningRule);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(OpenMM_AmoebaVdwForce*, const char*)</code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(
+      PointerByReference target, Pointer epsilonCombiningRule);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_AmoebaVdwForce_getEpsilonCombiningRule(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native Pointer OpenMM_AmoebaVdwForce_getEpsilonCombiningRule(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaTorsionTorsionForce_addTorsionTorsion(OpenMM_AmoebaTorsionTorsionForce*, int, int, int, int, int, int, int)
+   * OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseDispersionCorrection(const OpenMM_AmoebaVdwForce*)
    * </code>
    */
-  public static native int OpenMM_AmoebaTorsionTorsionForce_addTorsionTorsion(
+  public static native int OpenMM_AmoebaVdwForce_getUseDispersionCorrection(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setUseDispersionCorrection(OpenMM_AmoebaVdwForce*, OpenMM_Boolean)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setUseDispersionCorrection(
+      PointerByReference target, int useCorrection);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseParticleTypes(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getUseParticleTypes(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setParticleExclusions(OpenMM_AmoebaVdwForce*, int, const OpenMM_IntArray*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setParticleExclusions(
+      PointerByReference target, int particleIndex, PointerByReference exclusions);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_getParticleExclusions(const OpenMM_AmoebaVdwForce*, int, OpenMM_IntArray*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_getParticleExclusions(
+      PointerByReference target, int particleIndex, PointerByReference exclusions);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaVdwForce_getCutoffDistance(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native double OpenMM_AmoebaVdwForce_getCutoffDistance(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setCutoffDistance(OpenMM_AmoebaVdwForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setCutoffDistance(
+      PointerByReference target, double distance);
+  /**
+   * Original signature : <code>void OpenMM_AmoebaVdwForce_setCutoff(OpenMM_AmoebaVdwForce*, double)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setCutoff(
+      PointerByReference target, double cutoff);
+  /**
+   * Original signature : <code>double OpenMM_AmoebaVdwForce_getCutoff(const OpenMM_AmoebaVdwForce*)
+   * </code>
+   */
+  public static native double OpenMM_AmoebaVdwForce_getCutoff(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_AmoebaVdwForce_NonbondedMethod OpenMM_AmoebaVdwForce_getNonbondedMethod(const OpenMM_AmoebaVdwForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getNonbondedMethod(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setNonbondedMethod(OpenMM_AmoebaVdwForce*, OpenMM_AmoebaVdwForce_NonbondedMethod)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setNonbondedMethod(
+      PointerByReference target, int method);
+  /**
+   * Original signature : <code>
+   * OpenMM_AmoebaVdwForce_PotentialFunction OpenMM_AmoebaVdwForce_getPotentialFunction(const OpenMM_AmoebaVdwForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getPotentialFunction(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setPotentialFunction(OpenMM_AmoebaVdwForce*, OpenMM_AmoebaVdwForce_PotentialFunction)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setPotentialFunction(
+      PointerByReference target, int potential);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setSoftcorePower(OpenMM_AmoebaVdwForce*, int)</code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setSoftcorePower(
+      PointerByReference target, int n);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaVdwForce_getSoftcorePower(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getSoftcorePower(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setSoftcoreAlpha(OpenMM_AmoebaVdwForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setSoftcoreAlpha(
+      PointerByReference target, double alpha);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaVdwForce_getSoftcoreAlpha(const OpenMM_AmoebaVdwForce*)</code>
+   */
+  public static native double OpenMM_AmoebaVdwForce_getSoftcoreAlpha(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_AmoebaVdwForce_AlchemicalMethod OpenMM_AmoebaVdwForce_getAlchemicalMethod(const OpenMM_AmoebaVdwForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_getAlchemicalMethod(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_setAlchemicalMethod(OpenMM_AmoebaVdwForce*, OpenMM_AmoebaVdwForce_AlchemicalMethod)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_setAlchemicalMethod(
+      PointerByReference target, int method);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaVdwForce_updateParametersInContext(OpenMM_AmoebaVdwForce*, OpenMM_Context*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaVdwForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaVdwForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaVdwForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaVdwForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaWcaDispersionForce<br>
+   * Original signature : <code>
+   * OpenMM_AmoebaWcaDispersionForce* OpenMM_AmoebaWcaDispersionForce_create()</code>
+   */
+  public static native PointerByReference OpenMM_AmoebaWcaDispersionForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_destroy(OpenMM_AmoebaWcaDispersionForce*)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaWcaDispersionForce_getNumParticles(const OpenMM_AmoebaWcaDispersionForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaWcaDispersionForce_getNumParticles(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(OpenMM_AmoebaWcaDispersionForce*, int, double, double)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(
+      PointerByReference target, int particleIndex, double radius, double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
+      PointerByReference target, int particleIndex, DoubleBuffer radius, DoubleBuffer epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
       PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      int particle5,
-      int chiralCheckAtomIndex,
-      int gridIndex);
+      int particleIndex,
+      DoubleByReference radius,
+      DoubleByReference epsilon);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(const OpenMM_AmoebaTorsionTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*)
+   * int OpenMM_AmoebaWcaDispersionForce_addParticle(OpenMM_AmoebaWcaDispersionForce*, double, double)
    * </code>
    */
-  public static native void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      IntBuffer particle5,
-      IntBuffer chiralCheckAtomIndex,
-      IntBuffer gridIndex);
+  public static native int OpenMM_AmoebaWcaDispersionForce_addParticle(
+      PointerByReference target, double radius, double epsilon);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(const OpenMM_AmoebaTorsionTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*)
+   * void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(OpenMM_AmoebaWcaDispersionForce*, OpenMM_Context*)
    * </code>
    */
-  public static native void OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      IntByReference particle5,
-      IntByReference chiralCheckAtomIndex,
-      IntByReference gridIndex);
+  public static native void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionParameters(OpenMM_AmoebaTorsionTorsionForce*, int, int, int, int, int, int, int, int)
-   * </code>
+   * double OpenMM_AmoebaWcaDispersionForce_getEpso(const OpenMM_AmoebaWcaDispersionForce*)</code>
    */
-  public static native void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      int particle5,
-      int chiralCheckAtomIndex,
-      int gridIndex);
+  public static native double OpenMM_AmoebaWcaDispersionForce_getEpso(PointerByReference target);
   /**
    * Original signature : <code>
-   * OpenMM_3D_DoubleArray* OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionGrid(const OpenMM_AmoebaTorsionTorsionForce*, int)
-   * </code>
+   * double OpenMM_AmoebaWcaDispersionForce_getEpsh(const OpenMM_AmoebaWcaDispersionForce*)</code>
    */
-  public static native PointerByReference OpenMM_AmoebaTorsionTorsionForce_getTorsionTorsionGrid(
-      PointerByReference target, int index);
+  public static native double OpenMM_AmoebaWcaDispersionForce_getEpsh(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionGrid(OpenMM_AmoebaTorsionTorsionForce*, int, const OpenMM_3D_DoubleArray*)
-   * </code>
+   * double OpenMM_AmoebaWcaDispersionForce_getRmino(const OpenMM_AmoebaWcaDispersionForce*)</code>
    */
-  public static native void OpenMM_AmoebaTorsionTorsionForce_setTorsionTorsionGrid(
-      PointerByReference target, int index, PointerByReference grid);
+  public static native double OpenMM_AmoebaWcaDispersionForce_getRmino(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaTorsionTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaTorsionTorsionForce*, OpenMM_Boolean)
-   * </code>
+   * double OpenMM_AmoebaWcaDispersionForce_getRminh(const OpenMM_AmoebaWcaDispersionForce*)</code>
    */
-  public static native void OpenMM_AmoebaTorsionTorsionForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
+  public static native double OpenMM_AmoebaWcaDispersionForce_getRminh(PointerByReference target);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaTorsionTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaTorsionTorsionForce*)
+   * double OpenMM_AmoebaWcaDispersionForce_getAwater(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getAwater(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getShctd(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getShctd(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getDispoff(const OpenMM_AmoebaWcaDispersionForce*)
    * </code>
    */
-  public static native int OpenMM_AmoebaTorsionTorsionForce_usesPeriodicBoundaryConditions(
+  public static native double OpenMM_AmoebaWcaDispersionForce_getDispoff(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getSlevy(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getSlevy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setEpso(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setEpso(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setEpsh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setEpsh(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setRmino(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setRmino(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setRminh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setRminh(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setAwater(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setAwater(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setShctd(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setShctd(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setDispoff(OpenMM_AmoebaWcaDispersionForce*, double)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setDispoff(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setSlevy(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setSlevy(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaWcaDispersionForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
 
   public static class OpenMM_3D_DoubleArray extends PointerType {
@@ -2400,16 +1666,6 @@ public class OpenMMAmoebaLibrary implements Library {
     }
   };
 
-  public static class OpenMM_AmoebaInPlaneAngleForce extends PointerType {
-    public OpenMM_AmoebaInPlaneAngleForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaInPlaneAngleForce() {
-      super();
-    }
-  };
-
   public static class OpenMM_HippoNonbondedForce extends PointerType {
     public OpenMM_HippoNonbondedForce(Pointer address) {
       super(address);
@@ -2420,32 +1676,12 @@ public class OpenMMAmoebaLibrary implements Library {
     }
   };
 
-  public static class OpenMM_AmoebaAngleForce extends PointerType {
-    public OpenMM_AmoebaAngleForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaAngleForce() {
-      super();
-    }
-  };
-
   public static class OpenMM_AmoebaGKCavitationForce extends PointerType {
     public OpenMM_AmoebaGKCavitationForce(Pointer address) {
       super(address);
     }
 
     public OpenMM_AmoebaGKCavitationForce() {
-      super();
-    }
-  };
-
-  public static class OpenMM_AmoebaPiTorsionForce extends PointerType {
-    public OpenMM_AmoebaPiTorsionForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaPiTorsionForce() {
       super();
     }
   };
@@ -2490,16 +1726,6 @@ public class OpenMMAmoebaLibrary implements Library {
     }
   };
 
-  public static class OpenMM_AmoebaOutOfPlaneBendForce extends PointerType {
-    public OpenMM_AmoebaOutOfPlaneBendForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaOutOfPlaneBendForce() {
-      super();
-    }
-  };
-
   public static class OpenMM_IntArray extends PointerType {
     public OpenMM_IntArray(Pointer address) {
       super(address);
@@ -2530,16 +1756,6 @@ public class OpenMMAmoebaLibrary implements Library {
     }
   };
 
-  public static class OpenMM_AmoebaBondForce extends PointerType {
-    public OpenMM_AmoebaBondForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaBondForce() {
-      super();
-    }
-  };
-
   public static class OpenMM_AmoebaTorsionTorsionForce extends PointerType {
     public OpenMM_AmoebaTorsionTorsionForce(Pointer address) {
       super(address);
@@ -2556,16 +1772,6 @@ public class OpenMMAmoebaLibrary implements Library {
     }
 
     public OpenMM_AmoebaVdwForce() {
-      super();
-    }
-  };
-
-  public static class OpenMM_AmoebaStretchBendForce extends PointerType {
-    public OpenMM_AmoebaStretchBendForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaStretchBendForce() {
       super();
     }
   };
