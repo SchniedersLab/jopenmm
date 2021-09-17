@@ -726,6 +726,18 @@ public class OpenMMAmoebaLibrary implements Library {
       PointerByReference target, double charge, double radius, double scalingFactor);
   /**
    * Original signature : <code>
+   * int OpenMM_AmoebaGeneralizedKirkwoodForce_addParticle_1(OpenMM_AmoebaGeneralizedKirkwoodForce*, double, double, double, double, double)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_addParticle_1(
+      PointerByReference target,
+      double charge,
+      double radius,
+      double scalingFactor,
+      double descreenRadius,
+      double neckFactor);
+  /**
+   * Original signature : <code>
    * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*)
    * </code>
    */
@@ -748,11 +760,50 @@ public class OpenMMAmoebaLibrary implements Library {
       DoubleByReference scalingFactor);
   /**
    * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters_1(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters_1(
+      PointerByReference target,
+      int index,
+      DoubleBuffer charge,
+      DoubleBuffer radius,
+      DoubleBuffer scalingFactor,
+      DoubleBuffer descreenRadius,
+      DoubleBuffer neckFactor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters_1(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*, double*, double*)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters_1(
+      PointerByReference target,
+      int index,
+      DoubleByReference charge,
+      DoubleByReference radius,
+      DoubleByReference scalingFactor,
+      DoubleByReference descreenRadius,
+      DoubleByReference neckFactor);
+  /**
+   * Original signature : <code>
    * void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters(OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double, double, double)
    * </code>
    */
   public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters(
       PointerByReference target, int index, double charge, double radius, double scalingFactor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters_1(OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double, double, double, double, double)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters_1(
+      PointerByReference target,
+      int index,
+      double charge,
+      double radius,
+      double scalingFactor,
+      double descreenRadius,
+      double neckFactor);
   /**
    * Original signature : <code>
    * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSolventDielectric(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
@@ -781,6 +832,20 @@ public class OpenMMAmoebaLibrary implements Library {
    */
   public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSoluteDielectric(
       PointerByReference target, double dielectric);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGeneralizedKirkwoodForce_getTanhRescaling(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   */
+  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_getTanhRescaling(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setTanhRescaling(OpenMM_AmoebaGeneralizedKirkwoodForce*, int)
+   * </code>
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setTanhRescaling(
+      PointerByReference target, int tanhRescale);
   /**
    * Original signature : <code>
    * int OpenMM_AmoebaGeneralizedKirkwoodForce_getIncludeCavityTerm(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
