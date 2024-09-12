@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/iahome/m/mj/mjschnie/software/jdk1.8.0_421/bin/java -jar jnaerator-0.12-shaded.jar config.jnaerator
+/Dedicated/schnieders/programs/jdk1.8.0_271/bin/java -jar jnaerator-0.12-shaded.jar config.jnaerator
 
 jar -xvf openmm.jar
 
