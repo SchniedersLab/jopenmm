@@ -21,64 +21,66 @@ static const double OpenMM_VdwRadiusPerSigma =  .56123102415468649070;
 
 /* Type Declarations */
 
-typedef struct OpenMM_VirtualSite_struct OpenMM_VirtualSite;
 typedef struct OpenMM_Force_struct OpenMM_Force;
-typedef struct OpenMM_CustomTorsionForce_struct OpenMM_CustomTorsionForce;
-typedef struct OpenMM_CMMotionRemover_struct OpenMM_CMMotionRemover;
-typedef struct OpenMM_CustomExternalForce_struct OpenMM_CustomExternalForce;
-typedef struct OpenMM_OutOfPlaneSite_struct OpenMM_OutOfPlaneSite;
+typedef struct OpenMM_CustomAngleForce_struct OpenMM_CustomAngleForce;
 typedef struct OpenMM_Integrator_struct OpenMM_Integrator;
 typedef struct OpenMM_VariableVerletIntegrator_struct OpenMM_VariableVerletIntegrator;
-typedef struct OpenMM_ATMForce_struct OpenMM_ATMForce;
-typedef struct OpenMM_NonbondedForce_struct OpenMM_NonbondedForce;
-typedef struct OpenMM_AndersenThermostat_struct OpenMM_AndersenThermostat;
-typedef struct OpenMM_LangevinMiddleIntegrator_struct OpenMM_LangevinMiddleIntegrator;
-typedef struct OpenMM_LangevinIntegrator_struct OpenMM_LangevinIntegrator;
-typedef struct OpenMM_MonteCarloAnisotropicBarostat_struct OpenMM_MonteCarloAnisotropicBarostat;
-typedef struct OpenMM_GBSAOBCForce_struct OpenMM_GBSAOBCForce;
-typedef struct OpenMM_VerletIntegrator_struct OpenMM_VerletIntegrator;
-typedef struct OpenMM_LocalEnergyMinimizer_struct OpenMM_LocalEnergyMinimizer;
+typedef struct OpenMM_MinimizationReporter_struct OpenMM_MinimizationReporter;
+typedef struct OpenMM_HarmonicBondForce_struct OpenMM_HarmonicBondForce;
+typedef struct OpenMM_VirtualSite_struct OpenMM_VirtualSite;
+typedef struct OpenMM_LocalCoordinatesSite_struct OpenMM_LocalCoordinatesSite;
 typedef struct OpenMM_TabulatedFunction_struct OpenMM_TabulatedFunction;
-typedef struct OpenMM_Continuous1DFunction_struct OpenMM_Continuous1DFunction;
+typedef struct OpenMM_Discrete2DFunction_struct OpenMM_Discrete2DFunction;
+typedef struct OpenMM_NoseHooverChain_struct OpenMM_NoseHooverChain;
+typedef struct OpenMM_Discrete3DFunction_struct OpenMM_Discrete3DFunction;
+typedef struct OpenMM_Discrete1DFunction_struct OpenMM_Discrete1DFunction;
+typedef struct OpenMM_Context_struct OpenMM_Context;
+typedef struct OpenMM_LangevinMiddleIntegrator_struct OpenMM_LangevinMiddleIntegrator;
+typedef struct OpenMM_RMSDForce_struct OpenMM_RMSDForce;
 typedef struct OpenMM_CustomCompoundBondForce_struct OpenMM_CustomCompoundBondForce;
-typedef struct OpenMM_MonteCarloFlexibleBarostat_struct OpenMM_MonteCarloFlexibleBarostat;
-typedef struct OpenMM_HarmonicAngleForce_struct OpenMM_HarmonicAngleForce;
-typedef struct OpenMM_Continuous2DFunction_struct OpenMM_Continuous2DFunction;
-typedef struct OpenMM_CMAPTorsionForce_struct OpenMM_CMAPTorsionForce;
-typedef struct OpenMM_MonteCarloMembraneBarostat_struct OpenMM_MonteCarloMembraneBarostat;
 typedef struct OpenMM_CustomCVForce_struct OpenMM_CustomCVForce;
-typedef struct OpenMM_RBTorsionForce_struct OpenMM_RBTorsionForce;
-typedef struct OpenMM_Continuous3DFunction_struct OpenMM_Continuous3DFunction;
-typedef struct OpenMM_PeriodicTorsionForce_struct OpenMM_PeriodicTorsionForce;
+typedef struct OpenMM_BrownianIntegrator_struct OpenMM_BrownianIntegrator;
+typedef struct OpenMM_MonteCarloFlexibleBarostat_struct OpenMM_MonteCarloFlexibleBarostat;
+typedef struct OpenMM_CompoundIntegrator_struct OpenMM_CompoundIntegrator;
+typedef struct OpenMM_MonteCarloAnisotropicBarostat_struct OpenMM_MonteCarloAnisotropicBarostat;
+typedef struct OpenMM_CustomHbondForce_struct OpenMM_CustomHbondForce;
+typedef struct OpenMM_CustomNonbondedForce_struct OpenMM_CustomNonbondedForce;
+typedef struct OpenMM_System_struct OpenMM_System;
+typedef struct OpenMM_MonteCarloMembraneBarostat_struct OpenMM_MonteCarloMembraneBarostat;
+typedef struct OpenMM_CustomIntegrator_struct OpenMM_CustomIntegrator;
+typedef struct OpenMM_CustomExternalForce_struct OpenMM_CustomExternalForce;
+typedef struct OpenMM_ThreeParticleAverageSite_struct OpenMM_ThreeParticleAverageSite;
+typedef struct OpenMM_NoseHooverIntegrator_struct OpenMM_NoseHooverIntegrator;
+typedef struct OpenMM_VerletIntegrator_struct OpenMM_VerletIntegrator;
+typedef struct OpenMM_HarmonicAngleForce_struct OpenMM_HarmonicAngleForce;
+typedef struct OpenMM_CustomManyParticleForce_struct OpenMM_CustomManyParticleForce;
+typedef struct OpenMM_Continuous1DFunction_struct OpenMM_Continuous1DFunction;
+typedef struct OpenMM_GayBerneForce_struct OpenMM_GayBerneForce;
+typedef struct OpenMM_NonbondedForce_struct OpenMM_NonbondedForce;
 typedef struct OpenMM_MonteCarloBarostat_struct OpenMM_MonteCarloBarostat;
 typedef struct OpenMM_CustomBondForce_struct OpenMM_CustomBondForce;
-typedef struct OpenMM_NoseHooverIntegrator_struct OpenMM_NoseHooverIntegrator;
+typedef struct OpenMM_OutOfPlaneSite_struct OpenMM_OutOfPlaneSite;
+typedef struct OpenMM_Continuous2DFunction_struct OpenMM_Continuous2DFunction;
+typedef struct OpenMM_ATMForce_struct OpenMM_ATMForce;
 typedef struct OpenMM_OpenMMException_struct OpenMM_OpenMMException;
-typedef struct OpenMM_Platform_struct OpenMM_Platform;
-typedef struct OpenMM_HarmonicBondForce_struct OpenMM_HarmonicBondForce;
-typedef struct OpenMM_CustomNonbondedForce_struct OpenMM_CustomNonbondedForce;
-typedef struct OpenMM_ThreeParticleAverageSite_struct OpenMM_ThreeParticleAverageSite;
-typedef struct OpenMM_BrownianIntegrator_struct OpenMM_BrownianIntegrator;
-typedef struct OpenMM_CustomManyParticleForce_struct OpenMM_CustomManyParticleForce;
-typedef struct OpenMM_Context_struct OpenMM_Context;
-typedef struct OpenMM_CompoundIntegrator_struct OpenMM_CompoundIntegrator;
-typedef struct OpenMM_CustomAngleForce_struct OpenMM_CustomAngleForce;
-typedef struct OpenMM_GayBerneForce_struct OpenMM_GayBerneForce;
-typedef struct OpenMM_CustomIntegrator_struct OpenMM_CustomIntegrator;
-typedef struct OpenMM_LocalCoordinatesSite_struct OpenMM_LocalCoordinatesSite;
-typedef struct OpenMM_RMSDForce_struct OpenMM_RMSDForce;
-typedef struct OpenMM_TwoParticleAverageSite_struct OpenMM_TwoParticleAverageSite;
-typedef struct OpenMM_CustomCentroidBondForce_struct OpenMM_CustomCentroidBondForce;
-typedef struct OpenMM_CustomHbondForce_struct OpenMM_CustomHbondForce;
-typedef struct OpenMM_Discrete3DFunction_struct OpenMM_Discrete3DFunction;
-typedef struct OpenMM_NoseHooverChain_struct OpenMM_NoseHooverChain;
-typedef struct OpenMM_System_struct OpenMM_System;
-typedef struct OpenMM_Discrete2DFunction_struct OpenMM_Discrete2DFunction;
+typedef struct OpenMM_PeriodicTorsionForce_struct OpenMM_PeriodicTorsionForce;
+typedef struct OpenMM_Continuous3DFunction_struct OpenMM_Continuous3DFunction;
+typedef struct OpenMM_CustomVolumeForce_struct OpenMM_CustomVolumeForce;
 typedef struct OpenMM_VariableLangevinIntegrator_struct OpenMM_VariableLangevinIntegrator;
-typedef struct OpenMM_State_struct OpenMM_State;
+typedef struct OpenMM_CustomTorsionForce_struct OpenMM_CustomTorsionForce;
+typedef struct OpenMM_Platform_struct OpenMM_Platform;
+typedef struct OpenMM_TwoParticleAverageSite_struct OpenMM_TwoParticleAverageSite;
+typedef struct OpenMM_LocalEnergyMinimizer_struct OpenMM_LocalEnergyMinimizer;
+typedef struct OpenMM_CustomCentroidBondForce_struct OpenMM_CustomCentroidBondForce;
+typedef struct OpenMM_CMMotionRemover_struct OpenMM_CMMotionRemover;
+typedef struct OpenMM_CMAPTorsionForce_struct OpenMM_CMAPTorsionForce;
+typedef struct OpenMM_DPDIntegrator_struct OpenMM_DPDIntegrator;
+typedef struct OpenMM_LangevinIntegrator_struct OpenMM_LangevinIntegrator;
+typedef struct OpenMM_AndersenThermostat_struct OpenMM_AndersenThermostat;
+typedef struct OpenMM_RBTorsionForce_struct OpenMM_RBTorsionForce;
 typedef struct OpenMM_CustomGBForce_struct OpenMM_CustomGBForce;
-typedef struct OpenMM_MinimizationReporter_struct OpenMM_MinimizationReporter;
-typedef struct OpenMM_Discrete1DFunction_struct OpenMM_Discrete1DFunction;
+typedef struct OpenMM_GBSAOBCForce_struct OpenMM_GBSAOBCForce;
+typedef struct OpenMM_State_struct OpenMM_State;
 
 typedef struct OpenMM_Vec3Array_struct OpenMM_Vec3Array;
 typedef struct OpenMM_StringArray_struct OpenMM_StringArray;
@@ -171,11 +173,6 @@ extern OPENMM_EXPORT OpenMM_System* OpenMM_XmlSerializer_deserializeSystem(const
 extern OPENMM_EXPORT OpenMM_State* OpenMM_XmlSerializer_deserializeState(const char* xml);
 extern OPENMM_EXPORT OpenMM_Integrator* OpenMM_XmlSerializer_deserializeIntegrator(const char* xml);
 
-/* VirtualSite */
-extern OPENMM_EXPORT void OpenMM_VirtualSite_destroy(OpenMM_VirtualSite* target);
-extern OPENMM_EXPORT int OpenMM_VirtualSite_getNumParticles(const OpenMM_VirtualSite* target);
-extern OPENMM_EXPORT int OpenMM_VirtualSite_getParticle(const OpenMM_VirtualSite* target, int particle);
-
 /* Force */
 extern OPENMM_EXPORT void OpenMM_Force_destroy(OpenMM_Force* target);
 extern OPENMM_EXPORT int OpenMM_Force_getForceGroup(const OpenMM_Force* target);
@@ -184,67 +181,31 @@ extern OPENMM_EXPORT const char* OpenMM_Force_getName(const OpenMM_Force* target
 extern OPENMM_EXPORT void OpenMM_Force_setName(OpenMM_Force* target, const char* name);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_Force_usesPeriodicBoundaryConditions(const OpenMM_Force* target);
 
-/* CustomTorsionForce */
-extern OPENMM_EXPORT OpenMM_CustomTorsionForce* OpenMM_CustomTorsionForce_create(const char* energy);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_destroy(OpenMM_CustomTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumTorsions(const OpenMM_CustomTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumPerTorsionParameters(const OpenMM_CustomTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumGlobalParameters(const OpenMM_CustomTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumEnergyParameterDerivatives(const OpenMM_CustomTorsionForce* target);
-extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getEnergyFunction(const OpenMM_CustomTorsionForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setEnergyFunction(OpenMM_CustomTorsionForce* target, const char* energy);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_addPerTorsionParameter(OpenMM_CustomTorsionForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getPerTorsionParameterName(const OpenMM_CustomTorsionForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setPerTorsionParameterName(OpenMM_CustomTorsionForce* target, int index, const char* name);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_addGlobalParameter(OpenMM_CustomTorsionForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getGlobalParameterName(const OpenMM_CustomTorsionForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setGlobalParameterName(OpenMM_CustomTorsionForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_CustomTorsionForce_getGlobalParameterDefaultValue(const OpenMM_CustomTorsionForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setGlobalParameterDefaultValue(OpenMM_CustomTorsionForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(OpenMM_CustomTorsionForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getEnergyParameterDerivativeName(const OpenMM_CustomTorsionForce* target, int index);
-extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_addTorsion(OpenMM_CustomTorsionForce* target, int particle1, int particle2, int particle3, int particle4, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_getTorsionParameters(const OpenMM_CustomTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setTorsionParameters(OpenMM_CustomTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_updateParametersInContext(OpenMM_CustomTorsionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomTorsionForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CustomTorsionForce* target);
-
-/* CMMotionRemover */
-extern OPENMM_EXPORT OpenMM_CMMotionRemover* OpenMM_CMMotionRemover_create(int frequency);
-extern OPENMM_EXPORT void OpenMM_CMMotionRemover_destroy(OpenMM_CMMotionRemover* target);
-extern OPENMM_EXPORT int OpenMM_CMMotionRemover_getFrequency(const OpenMM_CMMotionRemover* target);
-extern OPENMM_EXPORT void OpenMM_CMMotionRemover_setFrequency(OpenMM_CMMotionRemover* target, int freq);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CMMotionRemover_usesPeriodicBoundaryConditions(const OpenMM_CMMotionRemover* target);
-
-/* CustomExternalForce */
-extern OPENMM_EXPORT OpenMM_CustomExternalForce* OpenMM_CustomExternalForce_create(const char* energy);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_destroy(OpenMM_CustomExternalForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomExternalForce_getNumParticles(const OpenMM_CustomExternalForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomExternalForce_getNumPerParticleParameters(const OpenMM_CustomExternalForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomExternalForce_getNumGlobalParameters(const OpenMM_CustomExternalForce* target);
-extern OPENMM_EXPORT const char* OpenMM_CustomExternalForce_getEnergyFunction(const OpenMM_CustomExternalForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setEnergyFunction(OpenMM_CustomExternalForce* target, const char* energy);
-extern OPENMM_EXPORT int OpenMM_CustomExternalForce_addPerParticleParameter(OpenMM_CustomExternalForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomExternalForce_getPerParticleParameterName(const OpenMM_CustomExternalForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setPerParticleParameterName(OpenMM_CustomExternalForce* target, int index, const char* name);
-extern OPENMM_EXPORT int OpenMM_CustomExternalForce_addGlobalParameter(OpenMM_CustomExternalForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomExternalForce_getGlobalParameterName(const OpenMM_CustomExternalForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setGlobalParameterName(OpenMM_CustomExternalForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_CustomExternalForce_getGlobalParameterDefaultValue(const OpenMM_CustomExternalForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setGlobalParameterDefaultValue(OpenMM_CustomExternalForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT int OpenMM_CustomExternalForce_addParticle(OpenMM_CustomExternalForce* target, int particle, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_getParticleParameters(const OpenMM_CustomExternalForce* target, int index, int* particle, OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setParticleParameters(OpenMM_CustomExternalForce* target, int index, int particle, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomExternalForce_updateParametersInContext(OpenMM_CustomExternalForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomExternalForce_usesPeriodicBoundaryConditions(const OpenMM_CustomExternalForce* target);
-
-/* OutOfPlaneSite */
-extern OPENMM_EXPORT OpenMM_OutOfPlaneSite* OpenMM_OutOfPlaneSite_create(int particle1, int particle2, int particle3, double weight12, double weight13, double weightCross);
-extern OPENMM_EXPORT void OpenMM_OutOfPlaneSite_destroy(OpenMM_OutOfPlaneSite* target);
-extern OPENMM_EXPORT double OpenMM_OutOfPlaneSite_getWeight12(const OpenMM_OutOfPlaneSite* target);
-extern OPENMM_EXPORT double OpenMM_OutOfPlaneSite_getWeight13(const OpenMM_OutOfPlaneSite* target);
-extern OPENMM_EXPORT double OpenMM_OutOfPlaneSite_getWeightCross(const OpenMM_OutOfPlaneSite* target);
+/* CustomAngleForce */
+extern OPENMM_EXPORT OpenMM_CustomAngleForce* OpenMM_CustomAngleForce_create(const char* energy);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_destroy(OpenMM_CustomAngleForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumAngles(const OpenMM_CustomAngleForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumPerAngleParameters(const OpenMM_CustomAngleForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumGlobalParameters(const OpenMM_CustomAngleForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumEnergyParameterDerivatives(const OpenMM_CustomAngleForce* target);
+extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getEnergyFunction(const OpenMM_CustomAngleForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setEnergyFunction(OpenMM_CustomAngleForce* target, const char* energy);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_addPerAngleParameter(OpenMM_CustomAngleForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getPerAngleParameterName(const OpenMM_CustomAngleForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setPerAngleParameterName(OpenMM_CustomAngleForce* target, int index, const char* name);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_addGlobalParameter(OpenMM_CustomAngleForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getGlobalParameterName(const OpenMM_CustomAngleForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setGlobalParameterName(OpenMM_CustomAngleForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_CustomAngleForce_getGlobalParameterDefaultValue(const OpenMM_CustomAngleForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setGlobalParameterDefaultValue(OpenMM_CustomAngleForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_addEnergyParameterDerivative(OpenMM_CustomAngleForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getEnergyParameterDerivativeName(const OpenMM_CustomAngleForce* target, int index);
+extern OPENMM_EXPORT int OpenMM_CustomAngleForce_addAngle(OpenMM_CustomAngleForce* target, int particle1, int particle2, int particle3, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_getAngleParameters(const OpenMM_CustomAngleForce* target, int index, int* particle1, int* particle2, int* particle3, OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setAngleParameters(OpenMM_CustomAngleForce* target, int index, int particle1, int particle2, int particle3, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_updateParametersInContext(OpenMM_CustomAngleForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomAngleForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomAngleForce_usesPeriodicBoundaryConditions(const OpenMM_CustomAngleForce* target);
 
 /* Integrator */
 extern OPENMM_EXPORT void OpenMM_Integrator_destroy(OpenMM_Integrator* target);
@@ -266,112 +227,110 @@ extern OPENMM_EXPORT void OpenMM_VariableVerletIntegrator_setMaximumStepSize(Ope
 extern OPENMM_EXPORT void OpenMM_VariableVerletIntegrator_step(OpenMM_VariableVerletIntegrator* target, int steps);
 extern OPENMM_EXPORT void OpenMM_VariableVerletIntegrator_stepTo(OpenMM_VariableVerletIntegrator* target, double time);
 
-/* ATMForce */
-extern OPENMM_EXPORT OpenMM_ATMForce* OpenMM_ATMForce_create(const char* energy);
-extern OPENMM_EXPORT OpenMM_ATMForce* OpenMM_ATMForce_create_2(double lambda1, double lambda2, double alpha, double uh, double w0, double umax, double ubcore, double acore, double direction);
-extern OPENMM_EXPORT void OpenMM_ATMForce_destroy(OpenMM_ATMForce* target);
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Lambda1();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Lambda2();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Alpha();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Uh();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_W0();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Umax();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Ubcore();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Acore();
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_Direction();
-extern OPENMM_EXPORT int OpenMM_ATMForce_getNumParticles(const OpenMM_ATMForce* target);
-extern OPENMM_EXPORT int OpenMM_ATMForce_getNumForces(const OpenMM_ATMForce* target);
-extern OPENMM_EXPORT int OpenMM_ATMForce_getNumGlobalParameters(const OpenMM_ATMForce* target);
-extern OPENMM_EXPORT int OpenMM_ATMForce_getNumEnergyParameterDerivatives(const OpenMM_ATMForce* target);
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_getEnergyFunction(const OpenMM_ATMForce* target);
-extern OPENMM_EXPORT void OpenMM_ATMForce_setEnergyFunction(OpenMM_ATMForce* target, const char* energy);
-extern OPENMM_EXPORT int OpenMM_ATMForce_addForce(OpenMM_ATMForce* target, OpenMM_Force* force);
-extern OPENMM_EXPORT OpenMM_Force* OpenMM_ATMForce_getForce(const OpenMM_ATMForce* target, int index);
-extern OPENMM_EXPORT int OpenMM_ATMForce_addParticle(OpenMM_ATMForce* target, const OpenMM_Vec3* displacement1, const OpenMM_Vec3* displacement0);
-extern OPENMM_EXPORT void OpenMM_ATMForce_getParticleParameters(const OpenMM_ATMForce* target, int index, OpenMM_Vec3* displacement1, OpenMM_Vec3* displacement0);
-extern OPENMM_EXPORT void OpenMM_ATMForce_setParticleParameters(OpenMM_ATMForce* target, int index, const OpenMM_Vec3* displacement1, const OpenMM_Vec3* displacement0);
-extern OPENMM_EXPORT int OpenMM_ATMForce_addGlobalParameter(OpenMM_ATMForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_getGlobalParameterName(const OpenMM_ATMForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_ATMForce_setGlobalParameterName(OpenMM_ATMForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_ATMForce_getGlobalParameterDefaultValue(const OpenMM_ATMForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_ATMForce_setGlobalParameterDefaultValue(OpenMM_ATMForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT void OpenMM_ATMForce_addEnergyParameterDerivative(OpenMM_ATMForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_ATMForce_getEnergyParameterDerivativeName(const OpenMM_ATMForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_ATMForce_updateParametersInContext(OpenMM_ATMForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_ATMForce_usesPeriodicBoundaryConditions(const OpenMM_ATMForce* target);
-extern OPENMM_EXPORT void OpenMM_ATMForce_getPerturbationEnergy(OpenMM_ATMForce* target, OpenMM_Context* context, double* u1, double* u0, double* energy);
+/* MinimizationReporter */
+extern OPENMM_EXPORT OpenMM_MinimizationReporter* OpenMM_MinimizationReporter_create();
+extern OPENMM_EXPORT void OpenMM_MinimizationReporter_destroy(OpenMM_MinimizationReporter* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MinimizationReporter_report(OpenMM_MinimizationReporter* target, int iteration, const OpenMM_DoubleArray* x, const OpenMM_DoubleArray* grad, OpenMM_ParameterArray* args);
 
-/* NonbondedForce */
-typedef enum {
-  OpenMM_NonbondedForce_NoCutoff = 0, OpenMM_NonbondedForce_CutoffNonPeriodic = 1, OpenMM_NonbondedForce_CutoffPeriodic = 2, OpenMM_NonbondedForce_Ewald = 3, OpenMM_NonbondedForce_PME = 4, OpenMM_NonbondedForce_LJPME = 5
-} OpenMM_NonbondedForce_NonbondedMethod;
+/* HarmonicBondForce */
+extern OPENMM_EXPORT OpenMM_HarmonicBondForce* OpenMM_HarmonicBondForce_create();
+extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_destroy(OpenMM_HarmonicBondForce* target);
+extern OPENMM_EXPORT int OpenMM_HarmonicBondForce_getNumBonds(const OpenMM_HarmonicBondForce* target);
+extern OPENMM_EXPORT int OpenMM_HarmonicBondForce_addBond(OpenMM_HarmonicBondForce* target, int particle1, int particle2, double length, double k);
+extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_getBondParameters(const OpenMM_HarmonicBondForce* target, int index, int* particle1, int* particle2, double* length, double* k);
+extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_setBondParameters(OpenMM_HarmonicBondForce* target, int index, int particle1, int particle2, double length, double k);
+extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_updateParametersInContext(OpenMM_HarmonicBondForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicBondForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_HarmonicBondForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicBondForce* target);
 
-extern OPENMM_EXPORT OpenMM_NonbondedForce* OpenMM_NonbondedForce_create();
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_destroy(OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumParticles(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumExceptions(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumGlobalParameters(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumParticleParameterOffsets(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumExceptionParameterOffsets(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT OpenMM_NonbondedForce_NonbondedMethod OpenMM_NonbondedForce_getNonbondedMethod(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setNonbondedMethod(OpenMM_NonbondedForce* target, OpenMM_NonbondedForce_NonbondedMethod method);
-extern OPENMM_EXPORT double OpenMM_NonbondedForce_getCutoffDistance(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setCutoffDistance(OpenMM_NonbondedForce* target, double distance);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getUseSwitchingFunction(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setUseSwitchingFunction(OpenMM_NonbondedForce* target, OpenMM_Boolean use);
-extern OPENMM_EXPORT double OpenMM_NonbondedForce_getSwitchingDistance(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setSwitchingDistance(OpenMM_NonbondedForce* target, double distance);
-extern OPENMM_EXPORT double OpenMM_NonbondedForce_getReactionFieldDielectric(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setReactionFieldDielectric(OpenMM_NonbondedForce* target, double dielectric);
-extern OPENMM_EXPORT double OpenMM_NonbondedForce_getEwaldErrorTolerance(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setEwaldErrorTolerance(OpenMM_NonbondedForce* target, double tol);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getPMEParameters(const OpenMM_NonbondedForce* target, double* alpha, int* nx, int* ny, int* nz);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getLJPMEParameters(const OpenMM_NonbondedForce* target, double* alpha, int* nx, int* ny, int* nz);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setPMEParameters(OpenMM_NonbondedForce* target, double alpha, int nx, int ny, int nz);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setLJPMEParameters(OpenMM_NonbondedForce* target, double alpha, int nx, int ny, int nz);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getPMEParametersInContext(const OpenMM_NonbondedForce* target, const OpenMM_Context* context, double* alpha, int* nx, int* ny, int* nz);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getLJPMEParametersInContext(const OpenMM_NonbondedForce* target, const OpenMM_Context* context, double* alpha, int* nx, int* ny, int* nz);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_addParticle(OpenMM_NonbondedForce* target, double charge, double sigma, double epsilon);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getParticleParameters(const OpenMM_NonbondedForce* target, int index, double* charge, double* sigma, double* epsilon);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setParticleParameters(OpenMM_NonbondedForce* target, int index, double charge, double sigma, double epsilon);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_addException(OpenMM_NonbondedForce* target, int particle1, int particle2, double chargeProd, double sigma, double epsilon, OpenMM_Boolean replace);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getExceptionParameters(const OpenMM_NonbondedForce* target, int index, int* particle1, int* particle2, double* chargeProd, double* sigma, double* epsilon);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setExceptionParameters(OpenMM_NonbondedForce* target, int index, int particle1, int particle2, double chargeProd, double sigma, double epsilon);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_createExceptionsFromBonds(OpenMM_NonbondedForce* target, const OpenMM_BondArray* bonds, double coulomb14Scale, double lj14Scale);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_addGlobalParameter(OpenMM_NonbondedForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_NonbondedForce_getGlobalParameterName(const OpenMM_NonbondedForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setGlobalParameterName(OpenMM_NonbondedForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_NonbondedForce_getGlobalParameterDefaultValue(const OpenMM_NonbondedForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setGlobalParameterDefaultValue(OpenMM_NonbondedForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_addParticleParameterOffset(OpenMM_NonbondedForce* target, const char* parameter, int particleIndex, double chargeScale, double sigmaScale, double epsilonScale);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getParticleParameterOffset(const OpenMM_NonbondedForce* target, int index, char** parameter, int* particleIndex, double* chargeScale, double* sigmaScale, double* epsilonScale);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setParticleParameterOffset(OpenMM_NonbondedForce* target, int index, const char* parameter, int particleIndex, double chargeScale, double sigmaScale, double epsilonScale);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_addExceptionParameterOffset(OpenMM_NonbondedForce* target, const char* parameter, int exceptionIndex, double chargeProdScale, double sigmaScale, double epsilonScale);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_getExceptionParameterOffset(const OpenMM_NonbondedForce* target, int index, char** parameter, int* exceptionIndex, double* chargeProdScale, double* sigmaScale, double* epsilonScale);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setExceptionParameterOffset(OpenMM_NonbondedForce* target, int index, const char* parameter, int exceptionIndex, double chargeProdScale, double sigmaScale, double epsilonScale);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getUseDispersionCorrection(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setUseDispersionCorrection(OpenMM_NonbondedForce* target, OpenMM_Boolean useCorrection);
-extern OPENMM_EXPORT int OpenMM_NonbondedForce_getReciprocalSpaceForceGroup(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setReciprocalSpaceForceGroup(OpenMM_NonbondedForce* target, int group);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getIncludeDirectSpace(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setIncludeDirectSpace(OpenMM_NonbondedForce* target, OpenMM_Boolean include);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_updateParametersInContext(OpenMM_NonbondedForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getExceptionsUsePeriodicBoundaryConditions(const OpenMM_NonbondedForce* target);
-extern OPENMM_EXPORT void OpenMM_NonbondedForce_setExceptionsUsePeriodicBoundaryConditions(OpenMM_NonbondedForce* target, OpenMM_Boolean periodic);
+/* VirtualSite */
+extern OPENMM_EXPORT void OpenMM_VirtualSite_destroy(OpenMM_VirtualSite* target);
+extern OPENMM_EXPORT int OpenMM_VirtualSite_getNumParticles(const OpenMM_VirtualSite* target);
+extern OPENMM_EXPORT int OpenMM_VirtualSite_getParticle(const OpenMM_VirtualSite* target, int particle);
 
-/* AndersenThermostat */
-extern OPENMM_EXPORT OpenMM_AndersenThermostat* OpenMM_AndersenThermostat_create(double defaultTemperature, double defaultCollisionFrequency);
-extern OPENMM_EXPORT void OpenMM_AndersenThermostat_destroy(OpenMM_AndersenThermostat* target);
-extern OPENMM_EXPORT const char* OpenMM_AndersenThermostat_Temperature();
-extern OPENMM_EXPORT const char* OpenMM_AndersenThermostat_CollisionFrequency();
-extern OPENMM_EXPORT double OpenMM_AndersenThermostat_getDefaultTemperature(const OpenMM_AndersenThermostat* target);
-extern OPENMM_EXPORT void OpenMM_AndersenThermostat_setDefaultTemperature(OpenMM_AndersenThermostat* target, double temperature);
-extern OPENMM_EXPORT double OpenMM_AndersenThermostat_getDefaultCollisionFrequency(const OpenMM_AndersenThermostat* target);
-extern OPENMM_EXPORT void OpenMM_AndersenThermostat_setDefaultCollisionFrequency(OpenMM_AndersenThermostat* target, double frequency);
-extern OPENMM_EXPORT int OpenMM_AndersenThermostat_getRandomNumberSeed(const OpenMM_AndersenThermostat* target);
-extern OPENMM_EXPORT void OpenMM_AndersenThermostat_setRandomNumberSeed(OpenMM_AndersenThermostat* target, int seed);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_AndersenThermostat_usesPeriodicBoundaryConditions(const OpenMM_AndersenThermostat* target);
+/* LocalCoordinatesSite */
+extern OPENMM_EXPORT OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create(const OpenMM_IntArray* particles, const OpenMM_DoubleArray* originWeights, const OpenMM_DoubleArray* xWeights, const OpenMM_DoubleArray* yWeights, const OpenMM_Vec3* localPosition);
+extern OPENMM_EXPORT OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create_2(int particle1, int particle2, int particle3, const OpenMM_Vec3* originWeights, const OpenMM_Vec3* xWeights, const OpenMM_Vec3* yWeights, const OpenMM_Vec3* localPosition);
+extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_destroy(OpenMM_LocalCoordinatesSite* target);
+extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_getOriginWeights(const OpenMM_LocalCoordinatesSite* target, OpenMM_DoubleArray* weights);
+extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_getXWeights(const OpenMM_LocalCoordinatesSite* target, OpenMM_DoubleArray* weights);
+extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_getYWeights(const OpenMM_LocalCoordinatesSite* target, OpenMM_DoubleArray* weights);
+extern OPENMM_EXPORT const OpenMM_Vec3* OpenMM_LocalCoordinatesSite_getLocalPosition(const OpenMM_LocalCoordinatesSite* target);
+
+/* TabulatedFunction */
+extern OPENMM_EXPORT void OpenMM_TabulatedFunction_destroy(OpenMM_TabulatedFunction* target);
+extern OPENMM_EXPORT OpenMM_TabulatedFunction* OpenMM_TabulatedFunction_Copy(const OpenMM_TabulatedFunction* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_TabulatedFunction_getPeriodic(const OpenMM_TabulatedFunction* target);
+extern OPENMM_EXPORT int OpenMM_TabulatedFunction_getUpdateCount(const OpenMM_TabulatedFunction* target);
+
+/* Discrete2DFunction */
+extern OPENMM_EXPORT OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_create(int xsize, int ysize, const OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT void OpenMM_Discrete2DFunction_destroy(OpenMM_Discrete2DFunction* target);
+extern OPENMM_EXPORT void OpenMM_Discrete2DFunction_getFunctionParameters(const OpenMM_Discrete2DFunction* target, int* xsize, int* ysize, OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT void OpenMM_Discrete2DFunction_setFunctionParameters(OpenMM_Discrete2DFunction* target, int xsize, int ysize, const OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_Copy(const OpenMM_Discrete2DFunction* target);
+
+/* NoseHooverChain */
+extern OPENMM_EXPORT OpenMM_NoseHooverChain* OpenMM_NoseHooverChain_create(double temperature, double relativeTemperature, double collisionFrequency, double relativeCollisionFrequency, int numDOFs, int chainLength, int numMTS, int numYoshidaSuzuki, int chainID, const OpenMM_IntArray* thermostatedAtoms, const OpenMM_BondArray* thermostatedPairs);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_destroy(OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getTemperature(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setTemperature(OpenMM_NoseHooverChain* target, double temperature);
+extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getRelativeTemperature(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setRelativeTemperature(OpenMM_NoseHooverChain* target, double temperature);
+extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getCollisionFrequency(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setCollisionFrequency(OpenMM_NoseHooverChain* target, double frequency);
+extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getRelativeCollisionFrequency(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setRelativeCollisionFrequency(OpenMM_NoseHooverChain* target, double frequency);
+extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getNumDegreesOfFreedom(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setNumDegreesOfFreedom(OpenMM_NoseHooverChain* target, int numDOF);
+extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getChainLength(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getNumMultiTimeSteps(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getNumYoshidaSuzukiTimeSteps(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getChainID(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT const OpenMM_IntArray* OpenMM_NoseHooverChain_getThermostatedAtoms(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setThermostatedAtoms(OpenMM_NoseHooverChain* target, const OpenMM_IntArray* atomIDs);
+extern OPENMM_EXPORT const OpenMM_BondArray* OpenMM_NoseHooverChain_getThermostatedPairs(const OpenMM_NoseHooverChain* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setThermostatedPairs(OpenMM_NoseHooverChain* target, const OpenMM_BondArray* pairIDs);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NoseHooverChain_usesPeriodicBoundaryConditions(const OpenMM_NoseHooverChain* target);
+
+/* Discrete3DFunction */
+extern OPENMM_EXPORT OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_create(int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT void OpenMM_Discrete3DFunction_destroy(OpenMM_Discrete3DFunction* target);
+extern OPENMM_EXPORT void OpenMM_Discrete3DFunction_getFunctionParameters(const OpenMM_Discrete3DFunction* target, int* xsize, int* ysize, int* zsize, OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT void OpenMM_Discrete3DFunction_setFunctionParameters(OpenMM_Discrete3DFunction* target, int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_Copy(const OpenMM_Discrete3DFunction* target);
+
+/* Discrete1DFunction */
+extern OPENMM_EXPORT OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_create(const OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT void OpenMM_Discrete1DFunction_destroy(OpenMM_Discrete1DFunction* target);
+extern OPENMM_EXPORT void OpenMM_Discrete1DFunction_getFunctionParameters(const OpenMM_Discrete1DFunction* target, OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT void OpenMM_Discrete1DFunction_setFunctionParameters(OpenMM_Discrete1DFunction* target, const OpenMM_DoubleArray* values);
+extern OPENMM_EXPORT OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_Copy(const OpenMM_Discrete1DFunction* target);
+
+/* Context */
+extern OPENMM_EXPORT OpenMM_Context* OpenMM_Context_create(const OpenMM_System* system, OpenMM_Integrator* integrator);
+extern OPENMM_EXPORT OpenMM_Context* OpenMM_Context_create_2(const OpenMM_System* system, OpenMM_Integrator* integrator, OpenMM_Platform* platform);
+extern OPENMM_EXPORT OpenMM_Context* OpenMM_Context_create_3(const OpenMM_System* system, OpenMM_Integrator* integrator, OpenMM_Platform* platform, const OpenMM_PropertyArray* properties);
+extern OPENMM_EXPORT void OpenMM_Context_destroy(OpenMM_Context* target);
+extern OPENMM_EXPORT const OpenMM_System* OpenMM_Context_getSystem(const OpenMM_Context* target);
+extern OPENMM_EXPORT OpenMM_Integrator* OpenMM_Context_getIntegrator(OpenMM_Context* target);
+extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Context_getPlatform(OpenMM_Context* target);
+extern OPENMM_EXPORT void OpenMM_Context_setState(OpenMM_Context* target, const OpenMM_State* state);
+extern OPENMM_EXPORT double OpenMM_Context_getTime(const OpenMM_Context* target);
+extern OPENMM_EXPORT void OpenMM_Context_setTime(OpenMM_Context* target, double time);
+extern OPENMM_EXPORT long long OpenMM_Context_getStepCount(const OpenMM_Context* target);
+extern OPENMM_EXPORT void OpenMM_Context_setStepCount(OpenMM_Context* target, long long count);
+extern OPENMM_EXPORT void OpenMM_Context_setPositions(OpenMM_Context* target, const OpenMM_Vec3Array* positions);
+extern OPENMM_EXPORT void OpenMM_Context_setVelocities(OpenMM_Context* target, const OpenMM_Vec3Array* velocities);
+extern OPENMM_EXPORT void OpenMM_Context_setVelocitiesToTemperature(OpenMM_Context* target, double temperature, int randomSeed);
+extern OPENMM_EXPORT const OpenMM_ParameterArray* OpenMM_Context_getParameters(const OpenMM_Context* target);
+extern OPENMM_EXPORT double OpenMM_Context_getParameter(const OpenMM_Context* target, const char* name);
+extern OPENMM_EXPORT void OpenMM_Context_setParameter(OpenMM_Context* target, const char* name, double value);
+extern OPENMM_EXPORT void OpenMM_Context_setPeriodicBoxVectors(OpenMM_Context* target, const OpenMM_Vec3* a, const OpenMM_Vec3* b, const OpenMM_Vec3* c);
+extern OPENMM_EXPORT void OpenMM_Context_applyConstraints(OpenMM_Context* target, double tol);
+extern OPENMM_EXPORT void OpenMM_Context_applyVelocityConstraints(OpenMM_Context* target, double tol);
+extern OPENMM_EXPORT void OpenMM_Context_computeVirtualSites(OpenMM_Context* target);
+extern OPENMM_EXPORT void OpenMM_Context_reinitialize(OpenMM_Context* target, OpenMM_Boolean preserveState);
 
 /* LangevinMiddleIntegrator */
 extern OPENMM_EXPORT OpenMM_LangevinMiddleIntegrator* OpenMM_LangevinMiddleIntegrator_create(double temperature, double frictionCoeff, double stepSize);
@@ -384,75 +343,15 @@ extern OPENMM_EXPORT int OpenMM_LangevinMiddleIntegrator_getRandomNumberSeed(con
 extern OPENMM_EXPORT void OpenMM_LangevinMiddleIntegrator_setRandomNumberSeed(OpenMM_LangevinMiddleIntegrator* target, int seed);
 extern OPENMM_EXPORT void OpenMM_LangevinMiddleIntegrator_step(OpenMM_LangevinMiddleIntegrator* target, int steps);
 
-/* LangevinIntegrator */
-extern OPENMM_EXPORT OpenMM_LangevinIntegrator* OpenMM_LangevinIntegrator_create(double temperature, double frictionCoeff, double stepSize);
-extern OPENMM_EXPORT void OpenMM_LangevinIntegrator_destroy(OpenMM_LangevinIntegrator* target);
-
-/* MonteCarloAnisotropicBarostat */
-extern OPENMM_EXPORT OpenMM_MonteCarloAnisotropicBarostat* OpenMM_MonteCarloAnisotropicBarostat_create(const OpenMM_Vec3* defaultPressure, double defaultTemperature, OpenMM_Boolean scaleX, OpenMM_Boolean scaleY, OpenMM_Boolean scaleZ, int frequency);
-extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_destroy(OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_PressureX();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_PressureY();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_PressureZ();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_Temperature();
-extern OPENMM_EXPORT const OpenMM_Vec3* OpenMM_MonteCarloAnisotropicBarostat_getDefaultPressure(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setDefaultPressure(OpenMM_MonteCarloAnisotropicBarostat* target, const OpenMM_Vec3* pressure);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleX(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleY(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleZ(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT int OpenMM_MonteCarloAnisotropicBarostat_getFrequency(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setFrequency(OpenMM_MonteCarloAnisotropicBarostat* target, int freq);
-extern OPENMM_EXPORT double OpenMM_MonteCarloAnisotropicBarostat_getDefaultTemperature(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setDefaultTemperature(OpenMM_MonteCarloAnisotropicBarostat* target, double temp);
-extern OPENMM_EXPORT int OpenMM_MonteCarloAnisotropicBarostat_getRandomNumberSeed(const OpenMM_MonteCarloAnisotropicBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setRandomNumberSeed(OpenMM_MonteCarloAnisotropicBarostat* target, int seed);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloAnisotropicBarostat* target);
-
-/* GBSAOBCForce */
-typedef enum {
-  OpenMM_GBSAOBCForce_NoCutoff = 0, OpenMM_GBSAOBCForce_CutoffNonPeriodic = 1, OpenMM_GBSAOBCForce_CutoffPeriodic = 2
-} OpenMM_GBSAOBCForce_NonbondedMethod;
-
-extern OPENMM_EXPORT OpenMM_GBSAOBCForce* OpenMM_GBSAOBCForce_create();
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_destroy(OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT int OpenMM_GBSAOBCForce_getNumParticles(const OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT int OpenMM_GBSAOBCForce_addParticle(OpenMM_GBSAOBCForce* target, double charge, double radius, double scalingFactor);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_getParticleParameters(const OpenMM_GBSAOBCForce* target, int index, double* charge, double* radius, double* scalingFactor);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setParticleParameters(OpenMM_GBSAOBCForce* target, int index, double charge, double radius, double scalingFactor);
-extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getSolventDielectric(const OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setSolventDielectric(OpenMM_GBSAOBCForce* target, double dielectric);
-extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getSoluteDielectric(const OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setSoluteDielectric(OpenMM_GBSAOBCForce* target, double dielectric);
-extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getSurfaceAreaEnergy(const OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setSurfaceAreaEnergy(OpenMM_GBSAOBCForce* target, double energy);
-extern OPENMM_EXPORT OpenMM_GBSAOBCForce_NonbondedMethod OpenMM_GBSAOBCForce_getNonbondedMethod(const OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setNonbondedMethod(OpenMM_GBSAOBCForce* target, OpenMM_GBSAOBCForce_NonbondedMethod method);
-extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getCutoffDistance(const OpenMM_GBSAOBCForce* target);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setCutoffDistance(OpenMM_GBSAOBCForce* target, double distance);
-extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_updateParametersInContext(OpenMM_GBSAOBCForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_GBSAOBCForce_usesPeriodicBoundaryConditions(const OpenMM_GBSAOBCForce* target);
-
-/* VerletIntegrator */
-extern OPENMM_EXPORT OpenMM_VerletIntegrator* OpenMM_VerletIntegrator_create(double stepSize);
-extern OPENMM_EXPORT void OpenMM_VerletIntegrator_destroy(OpenMM_VerletIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_VerletIntegrator_step(OpenMM_VerletIntegrator* target, int steps);
-
-/* LocalEnergyMinimizer */
-extern OPENMM_EXPORT void OpenMM_LocalEnergyMinimizer_destroy(OpenMM_LocalEnergyMinimizer* target);
-extern OPENMM_EXPORT void OpenMM_LocalEnergyMinimizer_minimize(OpenMM_Context* context, double tolerance, int maxIterations, OpenMM_MinimizationReporter* reporter);
-
-/* TabulatedFunction */
-extern OPENMM_EXPORT void OpenMM_TabulatedFunction_destroy(OpenMM_TabulatedFunction* target);
-extern OPENMM_EXPORT OpenMM_TabulatedFunction* OpenMM_TabulatedFunction_Copy(const OpenMM_TabulatedFunction* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_TabulatedFunction_getPeriodic(const OpenMM_TabulatedFunction* target);
-extern OPENMM_EXPORT int OpenMM_TabulatedFunction_getUpdateCount(const OpenMM_TabulatedFunction* target);
-
-/* Continuous1DFunction */
-extern OPENMM_EXPORT OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_create(const OpenMM_DoubleArray* values, double min, double max, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT void OpenMM_Continuous1DFunction_destroy(OpenMM_Continuous1DFunction* target);
-extern OPENMM_EXPORT void OpenMM_Continuous1DFunction_getFunctionParameters(const OpenMM_Continuous1DFunction* target, OpenMM_DoubleArray* values, double* min, double* max);
-extern OPENMM_EXPORT void OpenMM_Continuous1DFunction_setFunctionParameters(OpenMM_Continuous1DFunction* target, const OpenMM_DoubleArray* values, double min, double max);
-extern OPENMM_EXPORT OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_Copy(const OpenMM_Continuous1DFunction* target);
+/* RMSDForce */
+extern OPENMM_EXPORT OpenMM_RMSDForce* OpenMM_RMSDForce_create(const OpenMM_Vec3Array* referencePositions, const OpenMM_IntArray* particles);
+extern OPENMM_EXPORT void OpenMM_RMSDForce_destroy(OpenMM_RMSDForce* target);
+extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_RMSDForce_getReferencePositions(const OpenMM_RMSDForce* target);
+extern OPENMM_EXPORT void OpenMM_RMSDForce_setReferencePositions(OpenMM_RMSDForce* target, const OpenMM_Vec3Array* positions);
+extern OPENMM_EXPORT const OpenMM_IntArray* OpenMM_RMSDForce_getParticles(const OpenMM_RMSDForce* target);
+extern OPENMM_EXPORT void OpenMM_RMSDForce_setParticles(OpenMM_RMSDForce* target, const OpenMM_IntArray* particles);
+extern OPENMM_EXPORT void OpenMM_RMSDForce_updateParametersInContext(OpenMM_RMSDForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_RMSDForce_usesPeriodicBoundaryConditions(const OpenMM_RMSDForce* target);
 
 /* CustomCompoundBondForce */
 extern OPENMM_EXPORT OpenMM_CustomCompoundBondForce* OpenMM_CustomCompoundBondForce_create(int numParticles, const char* energy);
@@ -489,85 +388,6 @@ extern OPENMM_EXPORT void OpenMM_CustomCompoundBondForce_updateParametersInConte
 extern OPENMM_EXPORT void OpenMM_CustomCompoundBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomCompoundBondForce* target, OpenMM_Boolean periodic);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomCompoundBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCompoundBondForce* target);
 
-/* MonteCarloFlexibleBarostat */
-extern OPENMM_EXPORT OpenMM_MonteCarloFlexibleBarostat* OpenMM_MonteCarloFlexibleBarostat_create(double defaultPressure, double defaultTemperature, int frequency, OpenMM_Boolean scaleMoleculesAsRigid);
-extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_destroy(OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloFlexibleBarostat_Pressure();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloFlexibleBarostat_Temperature();
-extern OPENMM_EXPORT double OpenMM_MonteCarloFlexibleBarostat_getDefaultPressure(const OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setDefaultPressure(OpenMM_MonteCarloFlexibleBarostat* target, double pressure);
-extern OPENMM_EXPORT int OpenMM_MonteCarloFlexibleBarostat_getFrequency(const OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setFrequency(OpenMM_MonteCarloFlexibleBarostat* target, int freq);
-extern OPENMM_EXPORT double OpenMM_MonteCarloFlexibleBarostat_getDefaultTemperature(const OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setDefaultTemperature(OpenMM_MonteCarloFlexibleBarostat* target, double temp);
-extern OPENMM_EXPORT int OpenMM_MonteCarloFlexibleBarostat_getRandomNumberSeed(const OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setRandomNumberSeed(OpenMM_MonteCarloFlexibleBarostat* target, int seed);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloFlexibleBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloFlexibleBarostat_getScaleMoleculesAsRigid(const OpenMM_MonteCarloFlexibleBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setScaleMoleculesAsRigid(OpenMM_MonteCarloFlexibleBarostat* target, OpenMM_Boolean rigid);
-
-/* HarmonicAngleForce */
-extern OPENMM_EXPORT OpenMM_HarmonicAngleForce* OpenMM_HarmonicAngleForce_create();
-extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_destroy(OpenMM_HarmonicAngleForce* target);
-extern OPENMM_EXPORT int OpenMM_HarmonicAngleForce_getNumAngles(const OpenMM_HarmonicAngleForce* target);
-extern OPENMM_EXPORT int OpenMM_HarmonicAngleForce_addAngle(OpenMM_HarmonicAngleForce* target, int particle1, int particle2, int particle3, double angle, double k);
-extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_getAngleParameters(const OpenMM_HarmonicAngleForce* target, int index, int* particle1, int* particle2, int* particle3, double* angle, double* k);
-extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_setAngleParameters(OpenMM_HarmonicAngleForce* target, int index, int particle1, int particle2, int particle3, double angle, double k);
-extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_updateParametersInContext(OpenMM_HarmonicAngleForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicAngleForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_HarmonicAngleForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicAngleForce* target);
-
-/* Continuous2DFunction */
-extern OPENMM_EXPORT OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_create(int xsize, int ysize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT void OpenMM_Continuous2DFunction_destroy(OpenMM_Continuous2DFunction* target);
-extern OPENMM_EXPORT void OpenMM_Continuous2DFunction_getFunctionParameters(const OpenMM_Continuous2DFunction* target, int* xsize, int* ysize, OpenMM_DoubleArray* values, double* xmin, double* xmax, double* ymin, double* ymax);
-extern OPENMM_EXPORT void OpenMM_Continuous2DFunction_setFunctionParameters(OpenMM_Continuous2DFunction* target, int xsize, int ysize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax);
-extern OPENMM_EXPORT OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_Copy(const OpenMM_Continuous2DFunction* target);
-
-/* CMAPTorsionForce */
-extern OPENMM_EXPORT OpenMM_CMAPTorsionForce* OpenMM_CMAPTorsionForce_create();
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_destroy(OpenMM_CMAPTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_getNumMaps(const OpenMM_CMAPTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_getNumTorsions(const OpenMM_CMAPTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_addMap(OpenMM_CMAPTorsionForce* target, int size, const OpenMM_DoubleArray* energy);
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_getMapParameters(const OpenMM_CMAPTorsionForce* target, int index, int* size, OpenMM_DoubleArray* energy);
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_setMapParameters(OpenMM_CMAPTorsionForce* target, int index, int size, const OpenMM_DoubleArray* energy);
-extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_addTorsion(OpenMM_CMAPTorsionForce* target, int map, int a1, int a2, int a3, int a4, int b1, int b2, int b3, int b4);
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_getTorsionParameters(const OpenMM_CMAPTorsionForce* target, int index, int* map, int* a1, int* a2, int* a3, int* a4, int* b1, int* b2, int* b3, int* b4);
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_setTorsionParameters(OpenMM_CMAPTorsionForce* target, int index, int map, int a1, int a2, int a3, int a4, int b1, int b2, int b3, int b4);
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_updateParametersInContext(OpenMM_CMAPTorsionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CMAPTorsionForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CMAPTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CMAPTorsionForce* target);
-
-/* MonteCarloMembraneBarostat */
-typedef enum {
-  OpenMM_MonteCarloMembraneBarostat_XYIsotropic = 0, OpenMM_MonteCarloMembraneBarostat_XYAnisotropic = 1
-} OpenMM_MonteCarloMembraneBarostat_XYMode;
-typedef enum {
-  OpenMM_MonteCarloMembraneBarostat_ZFree = 0, OpenMM_MonteCarloMembraneBarostat_ZFixed = 1, OpenMM_MonteCarloMembraneBarostat_ConstantVolume = 2
-} OpenMM_MonteCarloMembraneBarostat_ZMode;
-
-extern OPENMM_EXPORT OpenMM_MonteCarloMembraneBarostat* OpenMM_MonteCarloMembraneBarostat_create(double defaultPressure, double defaultSurfaceTension, double defaultTemperature, OpenMM_MonteCarloMembraneBarostat_XYMode xymode, OpenMM_MonteCarloMembraneBarostat_ZMode zmode, int frequency);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_destroy(OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloMembraneBarostat_Pressure();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloMembraneBarostat_SurfaceTension();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloMembraneBarostat_Temperature();
-extern OPENMM_EXPORT double OpenMM_MonteCarloMembraneBarostat_getDefaultPressure(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setDefaultPressure(OpenMM_MonteCarloMembraneBarostat* target, double pressure);
-extern OPENMM_EXPORT double OpenMM_MonteCarloMembraneBarostat_getDefaultSurfaceTension(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setDefaultSurfaceTension(OpenMM_MonteCarloMembraneBarostat* target, double surfaceTension);
-extern OPENMM_EXPORT int OpenMM_MonteCarloMembraneBarostat_getFrequency(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setFrequency(OpenMM_MonteCarloMembraneBarostat* target, int freq);
-extern OPENMM_EXPORT double OpenMM_MonteCarloMembraneBarostat_getDefaultTemperature(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setDefaultTemperature(OpenMM_MonteCarloMembraneBarostat* target, double temp);
-extern OPENMM_EXPORT OpenMM_MonteCarloMembraneBarostat_XYMode OpenMM_MonteCarloMembraneBarostat_getXYMode(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setXYMode(OpenMM_MonteCarloMembraneBarostat* target, OpenMM_MonteCarloMembraneBarostat_XYMode mode);
-extern OPENMM_EXPORT OpenMM_MonteCarloMembraneBarostat_ZMode OpenMM_MonteCarloMembraneBarostat_getZMode(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setZMode(OpenMM_MonteCarloMembraneBarostat* target, OpenMM_MonteCarloMembraneBarostat_ZMode mode);
-extern OPENMM_EXPORT int OpenMM_MonteCarloMembraneBarostat_getRandomNumberSeed(const OpenMM_MonteCarloMembraneBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setRandomNumberSeed(OpenMM_MonteCarloMembraneBarostat* target, int seed);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloMembraneBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloMembraneBarostat* target);
-
 /* CustomCVForce */
 extern OPENMM_EXPORT OpenMM_CustomCVForce* OpenMM_CustomCVForce_create(const char* energy);
 extern OPENMM_EXPORT void OpenMM_CustomCVForce_destroy(OpenMM_CustomCVForce* target);
@@ -595,134 +415,120 @@ extern OPENMM_EXPORT OpenMM_Context* OpenMM_CustomCVForce_getInnerContext(OpenMM
 extern OPENMM_EXPORT void OpenMM_CustomCVForce_updateParametersInContext(OpenMM_CustomCVForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomCVForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCVForce* target);
 
-/* RBTorsionForce */
-extern OPENMM_EXPORT OpenMM_RBTorsionForce* OpenMM_RBTorsionForce_create();
-extern OPENMM_EXPORT void OpenMM_RBTorsionForce_destroy(OpenMM_RBTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_RBTorsionForce_getNumTorsions(const OpenMM_RBTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_RBTorsionForce_addTorsion(OpenMM_RBTorsionForce* target, int particle1, int particle2, int particle3, int particle4, double c0, double c1, double c2, double c3, double c4, double c5);
-extern OPENMM_EXPORT void OpenMM_RBTorsionForce_getTorsionParameters(const OpenMM_RBTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* c0, double* c1, double* c2, double* c3, double* c4, double* c5);
-extern OPENMM_EXPORT void OpenMM_RBTorsionForce_setTorsionParameters(OpenMM_RBTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, double c0, double c1, double c2, double c3, double c4, double c5);
-extern OPENMM_EXPORT void OpenMM_RBTorsionForce_updateParametersInContext(OpenMM_RBTorsionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_RBTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_RBTorsionForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_RBTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_RBTorsionForce* target);
+/* BrownianIntegrator */
+extern OPENMM_EXPORT OpenMM_BrownianIntegrator* OpenMM_BrownianIntegrator_create(double temperature, double frictionCoeff, double stepSize);
+extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_destroy(OpenMM_BrownianIntegrator* target);
+extern OPENMM_EXPORT double OpenMM_BrownianIntegrator_getTemperature(const OpenMM_BrownianIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_setTemperature(OpenMM_BrownianIntegrator* target, double temp);
+extern OPENMM_EXPORT double OpenMM_BrownianIntegrator_getFriction(const OpenMM_BrownianIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_setFriction(OpenMM_BrownianIntegrator* target, double coeff);
+extern OPENMM_EXPORT int OpenMM_BrownianIntegrator_getRandomNumberSeed(const OpenMM_BrownianIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_setRandomNumberSeed(OpenMM_BrownianIntegrator* target, int seed);
+extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_step(OpenMM_BrownianIntegrator* target, int steps);
 
-/* Continuous3DFunction */
-extern OPENMM_EXPORT OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_create(int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT void OpenMM_Continuous3DFunction_destroy(OpenMM_Continuous3DFunction* target);
-extern OPENMM_EXPORT void OpenMM_Continuous3DFunction_getFunctionParameters(const OpenMM_Continuous3DFunction* target, int* xsize, int* ysize, int* zsize, OpenMM_DoubleArray* values, double* xmin, double* xmax, double* ymin, double* ymax, double* zmin, double* zmax);
-extern OPENMM_EXPORT void OpenMM_Continuous3DFunction_setFunctionParameters(OpenMM_Continuous3DFunction* target, int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax);
-extern OPENMM_EXPORT OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_Copy(const OpenMM_Continuous3DFunction* target);
+/* MonteCarloFlexibleBarostat */
+extern OPENMM_EXPORT OpenMM_MonteCarloFlexibleBarostat* OpenMM_MonteCarloFlexibleBarostat_create(double defaultPressure, double defaultTemperature, int frequency, OpenMM_Boolean scaleMoleculesAsRigid);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_destroy(OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloFlexibleBarostat_Pressure();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloFlexibleBarostat_Temperature();
+extern OPENMM_EXPORT double OpenMM_MonteCarloFlexibleBarostat_getDefaultPressure(const OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setDefaultPressure(OpenMM_MonteCarloFlexibleBarostat* target, double pressure);
+extern OPENMM_EXPORT int OpenMM_MonteCarloFlexibleBarostat_getFrequency(const OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setFrequency(OpenMM_MonteCarloFlexibleBarostat* target, int freq);
+extern OPENMM_EXPORT double OpenMM_MonteCarloFlexibleBarostat_getDefaultTemperature(const OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setDefaultTemperature(OpenMM_MonteCarloFlexibleBarostat* target, double temp);
+extern OPENMM_EXPORT int OpenMM_MonteCarloFlexibleBarostat_getRandomNumberSeed(const OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setRandomNumberSeed(OpenMM_MonteCarloFlexibleBarostat* target, int seed);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloFlexibleBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloFlexibleBarostat_getScaleMoleculesAsRigid(const OpenMM_MonteCarloFlexibleBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_setScaleMoleculesAsRigid(OpenMM_MonteCarloFlexibleBarostat* target, OpenMM_Boolean rigid);
+extern OPENMM_EXPORT void OpenMM_MonteCarloFlexibleBarostat_computeCurrentPressure(const OpenMM_MonteCarloFlexibleBarostat* target, OpenMM_Context* context, OpenMM_DoubleArray* pressure);
 
-/* PeriodicTorsionForce */
-extern OPENMM_EXPORT OpenMM_PeriodicTorsionForce* OpenMM_PeriodicTorsionForce_create();
-extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_destroy(OpenMM_PeriodicTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_PeriodicTorsionForce_getNumTorsions(const OpenMM_PeriodicTorsionForce* target);
-extern OPENMM_EXPORT int OpenMM_PeriodicTorsionForce_addTorsion(OpenMM_PeriodicTorsionForce* target, int particle1, int particle2, int particle3, int particle4, int periodicity, double phase, double k);
-extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_getTorsionParameters(const OpenMM_PeriodicTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, int* periodicity, double* phase, double* k);
-extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_setTorsionParameters(OpenMM_PeriodicTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, int periodicity, double phase, double k);
-extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_updateParametersInContext(OpenMM_PeriodicTorsionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_PeriodicTorsionForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_PeriodicTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_PeriodicTorsionForce* target);
+/* CompoundIntegrator */
+extern OPENMM_EXPORT OpenMM_CompoundIntegrator* OpenMM_CompoundIntegrator_create();
+extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_destroy(OpenMM_CompoundIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_getNumIntegrators(const OpenMM_CompoundIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_addIntegrator(OpenMM_CompoundIntegrator* target, OpenMM_Integrator* integrator);
+extern OPENMM_EXPORT OpenMM_Integrator* OpenMM_CompoundIntegrator_getIntegrator(OpenMM_CompoundIntegrator* target, int index);
+extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_getCurrentIntegrator(const OpenMM_CompoundIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setCurrentIntegrator(OpenMM_CompoundIntegrator* target, int index);
+extern OPENMM_EXPORT double OpenMM_CompoundIntegrator_getStepSize(const OpenMM_CompoundIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setStepSize(OpenMM_CompoundIntegrator* target, double size);
+extern OPENMM_EXPORT double OpenMM_CompoundIntegrator_getConstraintTolerance(const OpenMM_CompoundIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setConstraintTolerance(OpenMM_CompoundIntegrator* target, double tol);
+extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_step(OpenMM_CompoundIntegrator* target, int steps);
+extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_getIntegrationForceGroups(const OpenMM_CompoundIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setIntegrationForceGroups(OpenMM_CompoundIntegrator* target, int groups);
 
-/* MonteCarloBarostat */
-extern OPENMM_EXPORT OpenMM_MonteCarloBarostat* OpenMM_MonteCarloBarostat_create(double defaultPressure, double defaultTemperature, int frequency);
-extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_destroy(OpenMM_MonteCarloBarostat* target);
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloBarostat_Pressure();
-extern OPENMM_EXPORT const char* OpenMM_MonteCarloBarostat_Temperature();
-extern OPENMM_EXPORT double OpenMM_MonteCarloBarostat_getDefaultPressure(const OpenMM_MonteCarloBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setDefaultPressure(OpenMM_MonteCarloBarostat* target, double pressure);
-extern OPENMM_EXPORT int OpenMM_MonteCarloBarostat_getFrequency(const OpenMM_MonteCarloBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setFrequency(OpenMM_MonteCarloBarostat* target, int freq);
-extern OPENMM_EXPORT double OpenMM_MonteCarloBarostat_getDefaultTemperature(const OpenMM_MonteCarloBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setDefaultTemperature(OpenMM_MonteCarloBarostat* target, double temp);
-extern OPENMM_EXPORT int OpenMM_MonteCarloBarostat_getRandomNumberSeed(const OpenMM_MonteCarloBarostat* target);
-extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setRandomNumberSeed(OpenMM_MonteCarloBarostat* target, int seed);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloBarostat* target);
+/* MonteCarloAnisotropicBarostat */
+extern OPENMM_EXPORT OpenMM_MonteCarloAnisotropicBarostat* OpenMM_MonteCarloAnisotropicBarostat_create(const OpenMM_Vec3* defaultPressure, double defaultTemperature, OpenMM_Boolean scaleX, OpenMM_Boolean scaleY, OpenMM_Boolean scaleZ, int frequency);
+extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_destroy(OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_PressureX();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_PressureY();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_PressureZ();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloAnisotropicBarostat_Temperature();
+extern OPENMM_EXPORT const OpenMM_Vec3* OpenMM_MonteCarloAnisotropicBarostat_getDefaultPressure(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setDefaultPressure(OpenMM_MonteCarloAnisotropicBarostat* target, const OpenMM_Vec3* pressure);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleX(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleY(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleZ(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT int OpenMM_MonteCarloAnisotropicBarostat_getFrequency(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setFrequency(OpenMM_MonteCarloAnisotropicBarostat* target, int freq);
+extern OPENMM_EXPORT double OpenMM_MonteCarloAnisotropicBarostat_getDefaultTemperature(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setDefaultTemperature(OpenMM_MonteCarloAnisotropicBarostat* target, double temp);
+extern OPENMM_EXPORT int OpenMM_MonteCarloAnisotropicBarostat_getRandomNumberSeed(const OpenMM_MonteCarloAnisotropicBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloAnisotropicBarostat_setRandomNumberSeed(OpenMM_MonteCarloAnisotropicBarostat* target, int seed);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloAnisotropicBarostat* target);
 
-/* CustomBondForce */
-extern OPENMM_EXPORT OpenMM_CustomBondForce* OpenMM_CustomBondForce_create(const char* energy);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_destroy(OpenMM_CustomBondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumBonds(const OpenMM_CustomBondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumPerBondParameters(const OpenMM_CustomBondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumGlobalParameters(const OpenMM_CustomBondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumEnergyParameterDerivatives(const OpenMM_CustomBondForce* target);
-extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getEnergyFunction(const OpenMM_CustomBondForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_setEnergyFunction(OpenMM_CustomBondForce* target, const char* energy);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_addPerBondParameter(OpenMM_CustomBondForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getPerBondParameterName(const OpenMM_CustomBondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_setPerBondParameterName(OpenMM_CustomBondForce* target, int index, const char* name);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_addGlobalParameter(OpenMM_CustomBondForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getGlobalParameterName(const OpenMM_CustomBondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_setGlobalParameterName(OpenMM_CustomBondForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_CustomBondForce_getGlobalParameterDefaultValue(const OpenMM_CustomBondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_setGlobalParameterDefaultValue(OpenMM_CustomBondForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_addEnergyParameterDerivative(OpenMM_CustomBondForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getEnergyParameterDerivativeName(const OpenMM_CustomBondForce* target, int index);
-extern OPENMM_EXPORT int OpenMM_CustomBondForce_addBond(OpenMM_CustomBondForce* target, int particle1, int particle2, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_getBondParameters(const OpenMM_CustomBondForce* target, int index, int* particle1, int* particle2, OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_setBondParameters(OpenMM_CustomBondForce* target, int index, int particle1, int particle2, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_updateParametersInContext(OpenMM_CustomBondForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_CustomBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomBondForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomBondForce* target);
+/* CustomHbondForce */
+typedef enum {
+  OpenMM_CustomHbondForce_NoCutoff = 0, OpenMM_CustomHbondForce_CutoffNonPeriodic = 1, OpenMM_CustomHbondForce_CutoffPeriodic = 2
+} OpenMM_CustomHbondForce_NonbondedMethod;
 
-/* NoseHooverIntegrator */
-extern OPENMM_EXPORT OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create(double stepSize);
-extern OPENMM_EXPORT OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create_2(double temperature, double collisionFrequency, double stepSize, int chainLength, int numMTS, int numYoshidaSuzuki);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_destroy(OpenMM_NoseHooverIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_step(OpenMM_NoseHooverIntegrator* target, int steps);
-extern OPENMM_EXPORT int OpenMM_NoseHooverIntegrator_addThermostat(OpenMM_NoseHooverIntegrator* target, double temperature, double collisionFrequency, int chainLength, int numMTS, int numYoshidaSuzuki);
-extern OPENMM_EXPORT int OpenMM_NoseHooverIntegrator_addSubsystemThermostat(OpenMM_NoseHooverIntegrator* target, const OpenMM_IntArray* thermostatedParticles, const OpenMM_BondArray* thermostatedPairs, double temperature, double collisionFrequency, double relativeTemperature, double relativeCollisionFrequency, int chainLength, int numMTS, int numYoshidaSuzuki);
-extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getTemperature(const OpenMM_NoseHooverIntegrator* target, int chainID);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setTemperature(OpenMM_NoseHooverIntegrator* target, double temperature, int chainID);
-extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getRelativeTemperature(const OpenMM_NoseHooverIntegrator* target, int chainID);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setRelativeTemperature(OpenMM_NoseHooverIntegrator* target, double temperature, int chainID);
-extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getCollisionFrequency(const OpenMM_NoseHooverIntegrator* target, int chainID);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setCollisionFrequency(OpenMM_NoseHooverIntegrator* target, double frequency, int chainID);
-extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getRelativeCollisionFrequency(const OpenMM_NoseHooverIntegrator* target, int chainID);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setRelativeCollisionFrequency(OpenMM_NoseHooverIntegrator* target, double frequency, int chainID);
-extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_computeHeatBathEnergy(OpenMM_NoseHooverIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_NoseHooverIntegrator_getNumThermostats(const OpenMM_NoseHooverIntegrator* target);
-extern OPENMM_EXPORT const OpenMM_NoseHooverChain* OpenMM_NoseHooverIntegrator_getThermostat(const OpenMM_NoseHooverIntegrator* target, int chainID);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NoseHooverIntegrator_hasSubsystemThermostats(const OpenMM_NoseHooverIntegrator* target);
-extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getMaximumPairDistance(const OpenMM_NoseHooverIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setMaximumPairDistance(OpenMM_NoseHooverIntegrator* target, double distance);
-
-/* OpenMMException */
-extern OPENMM_EXPORT OpenMM_OpenMMException* OpenMM_OpenMMException_create(const char* message);
-extern OPENMM_EXPORT void OpenMM_OpenMMException_destroy(OpenMM_OpenMMException* target);
-extern OPENMM_EXPORT const char* OpenMM_OpenMMException_what(const OpenMM_OpenMMException* target);
-
-/* Platform */
-extern OPENMM_EXPORT void OpenMM_Platform_destroy(OpenMM_Platform* target);
-extern OPENMM_EXPORT void OpenMM_Platform_registerPlatform(OpenMM_Platform* platform);
-extern OPENMM_EXPORT int OpenMM_Platform_getNumPlatforms();
-extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_getPlatform(int index);
-extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_getPlatform_1(const char* name);
-extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_getPlatformByName(const char* name);
-extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_findPlatform(const OpenMM_StringArray* kernelNames);
-extern OPENMM_EXPORT void OpenMM_Platform_loadPluginLibrary(const char* file);
-extern OPENMM_EXPORT const char* OpenMM_Platform_getDefaultPluginsDirectory();
-extern OPENMM_EXPORT const char* OpenMM_Platform_getOpenMMVersion();
-extern OPENMM_EXPORT const char* OpenMM_Platform_getName(const OpenMM_Platform* target);
-extern OPENMM_EXPORT double OpenMM_Platform_getSpeed(const OpenMM_Platform* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_Platform_supportsDoublePrecision(const OpenMM_Platform* target);
-extern OPENMM_EXPORT const OpenMM_StringArray* OpenMM_Platform_getPropertyNames(const OpenMM_Platform* target);
-extern OPENMM_EXPORT const char* OpenMM_Platform_getPropertyValue(const OpenMM_Platform* target, const OpenMM_Context* context, const char* property);
-extern OPENMM_EXPORT void OpenMM_Platform_setPropertyValue(const OpenMM_Platform* target, OpenMM_Context* context, const char* property, const char* value);
-extern OPENMM_EXPORT const char* OpenMM_Platform_getPropertyDefaultValue(const OpenMM_Platform* target, const char* property);
-extern OPENMM_EXPORT void OpenMM_Platform_setPropertyDefaultValue(OpenMM_Platform* target, const char* property, const char* value);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_Platform_supportsKernels(const OpenMM_Platform* target, const OpenMM_StringArray* kernelNames);
-
-/* HarmonicBondForce */
-extern OPENMM_EXPORT OpenMM_HarmonicBondForce* OpenMM_HarmonicBondForce_create();
-extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_destroy(OpenMM_HarmonicBondForce* target);
-extern OPENMM_EXPORT int OpenMM_HarmonicBondForce_getNumBonds(const OpenMM_HarmonicBondForce* target);
-extern OPENMM_EXPORT int OpenMM_HarmonicBondForce_addBond(OpenMM_HarmonicBondForce* target, int particle1, int particle2, double length, double k);
-extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_getBondParameters(const OpenMM_HarmonicBondForce* target, int index, int* particle1, int* particle2, double* length, double* k);
-extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_setBondParameters(OpenMM_HarmonicBondForce* target, int index, int particle1, int particle2, double length, double k);
-extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_updateParametersInContext(OpenMM_HarmonicBondForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_HarmonicBondForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicBondForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_HarmonicBondForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicBondForce* target);
+extern OPENMM_EXPORT OpenMM_CustomHbondForce* OpenMM_CustomHbondForce_create(const char* energy);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_destroy(OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumDonors(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumAcceptors(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumExclusions(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumPerDonorParameters(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumPerAcceptorParameters(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumGlobalParameters(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumTabulatedFunctions(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumFunctions(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getEnergyFunction(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setEnergyFunction(OpenMM_CustomHbondForce* target, const char* energy);
+extern OPENMM_EXPORT OpenMM_CustomHbondForce_NonbondedMethod OpenMM_CustomHbondForce_getNonbondedMethod(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setNonbondedMethod(OpenMM_CustomHbondForce* target, OpenMM_CustomHbondForce_NonbondedMethod method);
+extern OPENMM_EXPORT double OpenMM_CustomHbondForce_getCutoffDistance(const OpenMM_CustomHbondForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setCutoffDistance(OpenMM_CustomHbondForce* target, double distance);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addPerDonorParameter(OpenMM_CustomHbondForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getPerDonorParameterName(const OpenMM_CustomHbondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setPerDonorParameterName(OpenMM_CustomHbondForce* target, int index, const char* name);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addPerAcceptorParameter(OpenMM_CustomHbondForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getPerAcceptorParameterName(const OpenMM_CustomHbondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setPerAcceptorParameterName(OpenMM_CustomHbondForce* target, int index, const char* name);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addGlobalParameter(OpenMM_CustomHbondForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getGlobalParameterName(const OpenMM_CustomHbondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setGlobalParameterName(OpenMM_CustomHbondForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_CustomHbondForce_getGlobalParameterDefaultValue(const OpenMM_CustomHbondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setGlobalParameterDefaultValue(OpenMM_CustomHbondForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addDonor(OpenMM_CustomHbondForce* target, int d1, int d2, int d3, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getDonorParameters(const OpenMM_CustomHbondForce* target, int index, int* d1, int* d2, int* d3, OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setDonorParameters(OpenMM_CustomHbondForce* target, int index, int d1, int d2, int d3, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addAcceptor(OpenMM_CustomHbondForce* target, int a1, int a2, int a3, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getAcceptorParameters(const OpenMM_CustomHbondForce* target, int index, int* a1, int* a2, int* a3, OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setAcceptorParameters(OpenMM_CustomHbondForce* target, int index, int a1, int a2, int a3, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addExclusion(OpenMM_CustomHbondForce* target, int donor, int acceptor);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getExclusionParticles(const OpenMM_CustomHbondForce* target, int index, int* donor, int* acceptor);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setExclusionParticles(OpenMM_CustomHbondForce* target, int index, int donor, int acceptor);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addTabulatedFunction(OpenMM_CustomHbondForce* target, const char* name, OpenMM_TabulatedFunction* function);
+extern OPENMM_EXPORT OpenMM_TabulatedFunction* OpenMM_CustomHbondForce_getTabulatedFunction(OpenMM_CustomHbondForce* target, int index);
+extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getTabulatedFunctionName(const OpenMM_CustomHbondForce* target, int index);
+extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addFunction(OpenMM_CustomHbondForce* target, const char* name, const OpenMM_DoubleArray* values, double min, double max);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getFunctionParameters(const OpenMM_CustomHbondForce* target, int index, char** name, OpenMM_DoubleArray* values, double* min, double* max);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setFunctionParameters(OpenMM_CustomHbondForce* target, int index, const char* name, const OpenMM_DoubleArray* values, double min, double max);
+extern OPENMM_EXPORT void OpenMM_CustomHbondForce_updateParametersInContext(OpenMM_CustomHbondForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomHbondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomHbondForce* target);
 
 /* CustomNonbondedForce */
 typedef enum {
@@ -785,21 +591,164 @@ extern OPENMM_EXPORT void OpenMM_CustomNonbondedForce_setInteractionGroupParamet
 extern OPENMM_EXPORT void OpenMM_CustomNonbondedForce_updateParametersInContext(OpenMM_CustomNonbondedForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomNonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_CustomNonbondedForce* target);
 
+/* System */
+extern OPENMM_EXPORT OpenMM_System* OpenMM_System_create();
+extern OPENMM_EXPORT void OpenMM_System_destroy(OpenMM_System* target);
+extern OPENMM_EXPORT int OpenMM_System_getNumParticles(const OpenMM_System* target);
+extern OPENMM_EXPORT int OpenMM_System_addParticle(OpenMM_System* target, double mass);
+extern OPENMM_EXPORT double OpenMM_System_getParticleMass(const OpenMM_System* target, int index);
+extern OPENMM_EXPORT void OpenMM_System_setParticleMass(OpenMM_System* target, int index, double mass);
+extern OPENMM_EXPORT void OpenMM_System_setVirtualSite(OpenMM_System* target, int index, OpenMM_VirtualSite* virtualSite);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_System_isVirtualSite(const OpenMM_System* target, int index);
+extern OPENMM_EXPORT const OpenMM_VirtualSite* OpenMM_System_getVirtualSite(const OpenMM_System* target, int index);
+extern OPENMM_EXPORT int OpenMM_System_getNumConstraints(const OpenMM_System* target);
+extern OPENMM_EXPORT int OpenMM_System_addConstraint(OpenMM_System* target, int particle1, int particle2, double distance);
+extern OPENMM_EXPORT void OpenMM_System_getConstraintParameters(const OpenMM_System* target, int index, int* particle1, int* particle2, double* distance);
+extern OPENMM_EXPORT void OpenMM_System_setConstraintParameters(OpenMM_System* target, int index, int particle1, int particle2, double distance);
+extern OPENMM_EXPORT void OpenMM_System_removeConstraint(OpenMM_System* target, int index);
+extern OPENMM_EXPORT int OpenMM_System_addForce(OpenMM_System* target, OpenMM_Force* force);
+extern OPENMM_EXPORT int OpenMM_System_getNumForces(const OpenMM_System* target);
+extern OPENMM_EXPORT OpenMM_Force* OpenMM_System_getForce(OpenMM_System* target, int index);
+extern OPENMM_EXPORT void OpenMM_System_removeForce(OpenMM_System* target, int index);
+extern OPENMM_EXPORT void OpenMM_System_getDefaultPeriodicBoxVectors(const OpenMM_System* target, OpenMM_Vec3* a, OpenMM_Vec3* b, OpenMM_Vec3* c);
+extern OPENMM_EXPORT void OpenMM_System_setDefaultPeriodicBoxVectors(OpenMM_System* target, const OpenMM_Vec3* a, const OpenMM_Vec3* b, const OpenMM_Vec3* c);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_System_usesPeriodicBoundaryConditions(const OpenMM_System* target);
+
+/* MonteCarloMembraneBarostat */
+typedef enum {
+  OpenMM_MonteCarloMembraneBarostat_XYIsotropic = 0, OpenMM_MonteCarloMembraneBarostat_XYAnisotropic = 1
+} OpenMM_MonteCarloMembraneBarostat_XYMode;
+typedef enum {
+  OpenMM_MonteCarloMembraneBarostat_ZFree = 0, OpenMM_MonteCarloMembraneBarostat_ZFixed = 1, OpenMM_MonteCarloMembraneBarostat_ConstantVolume = 2
+} OpenMM_MonteCarloMembraneBarostat_ZMode;
+
+extern OPENMM_EXPORT OpenMM_MonteCarloMembraneBarostat* OpenMM_MonteCarloMembraneBarostat_create(double defaultPressure, double defaultSurfaceTension, double defaultTemperature, OpenMM_MonteCarloMembraneBarostat_XYMode xymode, OpenMM_MonteCarloMembraneBarostat_ZMode zmode, int frequency);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_destroy(OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloMembraneBarostat_Pressure();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloMembraneBarostat_SurfaceTension();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloMembraneBarostat_Temperature();
+extern OPENMM_EXPORT double OpenMM_MonteCarloMembraneBarostat_getDefaultPressure(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setDefaultPressure(OpenMM_MonteCarloMembraneBarostat* target, double pressure);
+extern OPENMM_EXPORT double OpenMM_MonteCarloMembraneBarostat_getDefaultSurfaceTension(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setDefaultSurfaceTension(OpenMM_MonteCarloMembraneBarostat* target, double surfaceTension);
+extern OPENMM_EXPORT int OpenMM_MonteCarloMembraneBarostat_getFrequency(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setFrequency(OpenMM_MonteCarloMembraneBarostat* target, int freq);
+extern OPENMM_EXPORT double OpenMM_MonteCarloMembraneBarostat_getDefaultTemperature(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setDefaultTemperature(OpenMM_MonteCarloMembraneBarostat* target, double temp);
+extern OPENMM_EXPORT OpenMM_MonteCarloMembraneBarostat_XYMode OpenMM_MonteCarloMembraneBarostat_getXYMode(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setXYMode(OpenMM_MonteCarloMembraneBarostat* target, OpenMM_MonteCarloMembraneBarostat_XYMode mode);
+extern OPENMM_EXPORT OpenMM_MonteCarloMembraneBarostat_ZMode OpenMM_MonteCarloMembraneBarostat_getZMode(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setZMode(OpenMM_MonteCarloMembraneBarostat* target, OpenMM_MonteCarloMembraneBarostat_ZMode mode);
+extern OPENMM_EXPORT int OpenMM_MonteCarloMembraneBarostat_getRandomNumberSeed(const OpenMM_MonteCarloMembraneBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloMembraneBarostat_setRandomNumberSeed(OpenMM_MonteCarloMembraneBarostat* target, int seed);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloMembraneBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloMembraneBarostat* target);
+
+/* CustomIntegrator */
+typedef enum {
+  OpenMM_CustomIntegrator_ComputeGlobal = 0, OpenMM_CustomIntegrator_ComputePerDof = 1, OpenMM_CustomIntegrator_ComputeSum = 2, OpenMM_CustomIntegrator_ConstrainPositions = 3, OpenMM_CustomIntegrator_ConstrainVelocities = 4, OpenMM_CustomIntegrator_UpdateContextState = 5, OpenMM_CustomIntegrator_IfBlockStart = 6, OpenMM_CustomIntegrator_WhileBlockStart = 7, OpenMM_CustomIntegrator_BlockEnd = 8
+} OpenMM_CustomIntegrator_ComputationType;
+
+extern OPENMM_EXPORT OpenMM_CustomIntegrator* OpenMM_CustomIntegrator_create(double stepSize);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_destroy(OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumGlobalVariables(const OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumPerDofVariables(const OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumComputations(const OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumTabulatedFunctions(const OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addGlobalVariable(OpenMM_CustomIntegrator* target, const char* name, double initialValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getGlobalVariableName(const OpenMM_CustomIntegrator* target, int index);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addPerDofVariable(OpenMM_CustomIntegrator* target, const char* name, double initialValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getPerDofVariableName(const OpenMM_CustomIntegrator* target, int index);
+extern OPENMM_EXPORT double OpenMM_CustomIntegrator_getGlobalVariable(const OpenMM_CustomIntegrator* target, int index);
+extern OPENMM_EXPORT double OpenMM_CustomIntegrator_getGlobalVariableByName(const OpenMM_CustomIntegrator* target, const char* name);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setGlobalVariable(OpenMM_CustomIntegrator* target, int index, double value);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setGlobalVariableByName(OpenMM_CustomIntegrator* target, const char* name, double value);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_getPerDofVariable(const OpenMM_CustomIntegrator* target, int index, OpenMM_Vec3Array* values);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_getPerDofVariableByName(const OpenMM_CustomIntegrator* target, const char* name, OpenMM_Vec3Array* values);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setPerDofVariable(OpenMM_CustomIntegrator* target, int index, const OpenMM_Vec3Array* values);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setPerDofVariableByName(OpenMM_CustomIntegrator* target, const char* name, const OpenMM_Vec3Array* values);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addComputeGlobal(OpenMM_CustomIntegrator* target, const char* variable, const char* expression);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addComputePerDof(OpenMM_CustomIntegrator* target, const char* variable, const char* expression);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addComputeSum(OpenMM_CustomIntegrator* target, const char* variable, const char* expression);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addConstrainPositions(OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addConstrainVelocities(OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addUpdateContextState(OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_beginIfBlock(OpenMM_CustomIntegrator* target, const char* condition);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_beginWhileBlock(OpenMM_CustomIntegrator* target, const char* condition);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_endBlock(OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_getComputationStep(const OpenMM_CustomIntegrator* target, int index, OpenMM_CustomIntegrator_ComputationType* type, char** variable, char** expression);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addTabulatedFunction(OpenMM_CustomIntegrator* target, const char* name, OpenMM_TabulatedFunction* function);
+extern OPENMM_EXPORT OpenMM_TabulatedFunction* OpenMM_CustomIntegrator_getTabulatedFunction(OpenMM_CustomIntegrator* target, int index);
+extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getTabulatedFunctionName(const OpenMM_CustomIntegrator* target, int index);
+extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getKineticEnergyExpression(const OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setKineticEnergyExpression(OpenMM_CustomIntegrator* target, const char* expression);
+extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getRandomNumberSeed(const OpenMM_CustomIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setRandomNumberSeed(OpenMM_CustomIntegrator* target, int seed);
+extern OPENMM_EXPORT void OpenMM_CustomIntegrator_step(OpenMM_CustomIntegrator* target, int steps);
+
+/* CustomExternalForce */
+extern OPENMM_EXPORT OpenMM_CustomExternalForce* OpenMM_CustomExternalForce_create(const char* energy);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_destroy(OpenMM_CustomExternalForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomExternalForce_getNumParticles(const OpenMM_CustomExternalForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomExternalForce_getNumPerParticleParameters(const OpenMM_CustomExternalForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomExternalForce_getNumGlobalParameters(const OpenMM_CustomExternalForce* target);
+extern OPENMM_EXPORT const char* OpenMM_CustomExternalForce_getEnergyFunction(const OpenMM_CustomExternalForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setEnergyFunction(OpenMM_CustomExternalForce* target, const char* energy);
+extern OPENMM_EXPORT int OpenMM_CustomExternalForce_addPerParticleParameter(OpenMM_CustomExternalForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomExternalForce_getPerParticleParameterName(const OpenMM_CustomExternalForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setPerParticleParameterName(OpenMM_CustomExternalForce* target, int index, const char* name);
+extern OPENMM_EXPORT int OpenMM_CustomExternalForce_addGlobalParameter(OpenMM_CustomExternalForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomExternalForce_getGlobalParameterName(const OpenMM_CustomExternalForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setGlobalParameterName(OpenMM_CustomExternalForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_CustomExternalForce_getGlobalParameterDefaultValue(const OpenMM_CustomExternalForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setGlobalParameterDefaultValue(OpenMM_CustomExternalForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT int OpenMM_CustomExternalForce_addParticle(OpenMM_CustomExternalForce* target, int particle, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_getParticleParameters(const OpenMM_CustomExternalForce* target, int index, int* particle, OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_setParticleParameters(OpenMM_CustomExternalForce* target, int index, int particle, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomExternalForce_updateParametersInContext(OpenMM_CustomExternalForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomExternalForce_usesPeriodicBoundaryConditions(const OpenMM_CustomExternalForce* target);
+
 /* ThreeParticleAverageSite */
 extern OPENMM_EXPORT OpenMM_ThreeParticleAverageSite* OpenMM_ThreeParticleAverageSite_create(int particle1, int particle2, int particle3, double weight1, double weight2, double weight3);
 extern OPENMM_EXPORT void OpenMM_ThreeParticleAverageSite_destroy(OpenMM_ThreeParticleAverageSite* target);
 extern OPENMM_EXPORT double OpenMM_ThreeParticleAverageSite_getWeight(const OpenMM_ThreeParticleAverageSite* target, int particle);
 
-/* BrownianIntegrator */
-extern OPENMM_EXPORT OpenMM_BrownianIntegrator* OpenMM_BrownianIntegrator_create(double temperature, double frictionCoeff, double stepSize);
-extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_destroy(OpenMM_BrownianIntegrator* target);
-extern OPENMM_EXPORT double OpenMM_BrownianIntegrator_getTemperature(const OpenMM_BrownianIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_setTemperature(OpenMM_BrownianIntegrator* target, double temp);
-extern OPENMM_EXPORT double OpenMM_BrownianIntegrator_getFriction(const OpenMM_BrownianIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_setFriction(OpenMM_BrownianIntegrator* target, double coeff);
-extern OPENMM_EXPORT int OpenMM_BrownianIntegrator_getRandomNumberSeed(const OpenMM_BrownianIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_setRandomNumberSeed(OpenMM_BrownianIntegrator* target, int seed);
-extern OPENMM_EXPORT void OpenMM_BrownianIntegrator_step(OpenMM_BrownianIntegrator* target, int steps);
+/* NoseHooverIntegrator */
+extern OPENMM_EXPORT OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create(double stepSize);
+extern OPENMM_EXPORT OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create_2(double temperature, double collisionFrequency, double stepSize, int chainLength, int numMTS, int numYoshidaSuzuki);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_destroy(OpenMM_NoseHooverIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_step(OpenMM_NoseHooverIntegrator* target, int steps);
+extern OPENMM_EXPORT int OpenMM_NoseHooverIntegrator_addThermostat(OpenMM_NoseHooverIntegrator* target, double temperature, double collisionFrequency, int chainLength, int numMTS, int numYoshidaSuzuki);
+extern OPENMM_EXPORT int OpenMM_NoseHooverIntegrator_addSubsystemThermostat(OpenMM_NoseHooverIntegrator* target, const OpenMM_IntArray* thermostatedParticles, const OpenMM_BondArray* thermostatedPairs, double temperature, double collisionFrequency, double relativeTemperature, double relativeCollisionFrequency, int chainLength, int numMTS, int numYoshidaSuzuki);
+extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getTemperature(const OpenMM_NoseHooverIntegrator* target, int chainID);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setTemperature(OpenMM_NoseHooverIntegrator* target, double temperature, int chainID);
+extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getRelativeTemperature(const OpenMM_NoseHooverIntegrator* target, int chainID);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setRelativeTemperature(OpenMM_NoseHooverIntegrator* target, double temperature, int chainID);
+extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getCollisionFrequency(const OpenMM_NoseHooverIntegrator* target, int chainID);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setCollisionFrequency(OpenMM_NoseHooverIntegrator* target, double frequency, int chainID);
+extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getRelativeCollisionFrequency(const OpenMM_NoseHooverIntegrator* target, int chainID);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setRelativeCollisionFrequency(OpenMM_NoseHooverIntegrator* target, double frequency, int chainID);
+extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_computeHeatBathEnergy(OpenMM_NoseHooverIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_NoseHooverIntegrator_getNumThermostats(const OpenMM_NoseHooverIntegrator* target);
+extern OPENMM_EXPORT const OpenMM_NoseHooverChain* OpenMM_NoseHooverIntegrator_getThermostat(const OpenMM_NoseHooverIntegrator* target, int chainID);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NoseHooverIntegrator_hasSubsystemThermostats(const OpenMM_NoseHooverIntegrator* target);
+extern OPENMM_EXPORT double OpenMM_NoseHooverIntegrator_getMaximumPairDistance(const OpenMM_NoseHooverIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_NoseHooverIntegrator_setMaximumPairDistance(OpenMM_NoseHooverIntegrator* target, double distance);
+
+/* VerletIntegrator */
+extern OPENMM_EXPORT OpenMM_VerletIntegrator* OpenMM_VerletIntegrator_create(double stepSize);
+extern OPENMM_EXPORT void OpenMM_VerletIntegrator_destroy(OpenMM_VerletIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_VerletIntegrator_step(OpenMM_VerletIntegrator* target, int steps);
+
+/* HarmonicAngleForce */
+extern OPENMM_EXPORT OpenMM_HarmonicAngleForce* OpenMM_HarmonicAngleForce_create();
+extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_destroy(OpenMM_HarmonicAngleForce* target);
+extern OPENMM_EXPORT int OpenMM_HarmonicAngleForce_getNumAngles(const OpenMM_HarmonicAngleForce* target);
+extern OPENMM_EXPORT int OpenMM_HarmonicAngleForce_addAngle(OpenMM_HarmonicAngleForce* target, int particle1, int particle2, int particle3, double angle, double k);
+extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_getAngleParameters(const OpenMM_HarmonicAngleForce* target, int index, int* particle1, int* particle2, int* particle3, double* angle, double* k);
+extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_setAngleParameters(OpenMM_HarmonicAngleForce* target, int index, int particle1, int particle2, int particle3, double angle, double k);
+extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_updateParametersInContext(OpenMM_HarmonicAngleForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_HarmonicAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicAngleForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_HarmonicAngleForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicAngleForce* target);
 
 /* CustomManyParticleForce */
 typedef enum {
@@ -848,70 +797,12 @@ extern OPENMM_EXPORT const char* OpenMM_CustomManyParticleForce_getTabulatedFunc
 extern OPENMM_EXPORT void OpenMM_CustomManyParticleForce_updateParametersInContext(OpenMM_CustomManyParticleForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomManyParticleForce_usesPeriodicBoundaryConditions(const OpenMM_CustomManyParticleForce* target);
 
-/* Context */
-extern OPENMM_EXPORT OpenMM_Context* OpenMM_Context_create(const OpenMM_System* system, OpenMM_Integrator* integrator);
-extern OPENMM_EXPORT OpenMM_Context* OpenMM_Context_create_2(const OpenMM_System* system, OpenMM_Integrator* integrator, OpenMM_Platform* platform);
-extern OPENMM_EXPORT OpenMM_Context* OpenMM_Context_create_3(const OpenMM_System* system, OpenMM_Integrator* integrator, OpenMM_Platform* platform, const OpenMM_PropertyArray* properties);
-extern OPENMM_EXPORT void OpenMM_Context_destroy(OpenMM_Context* target);
-extern OPENMM_EXPORT const OpenMM_System* OpenMM_Context_getSystem(const OpenMM_Context* target);
-extern OPENMM_EXPORT OpenMM_Integrator* OpenMM_Context_getIntegrator(OpenMM_Context* target);
-extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Context_getPlatform(OpenMM_Context* target);
-extern OPENMM_EXPORT void OpenMM_Context_setState(OpenMM_Context* target, const OpenMM_State* state);
-extern OPENMM_EXPORT double OpenMM_Context_getTime(const OpenMM_Context* target);
-extern OPENMM_EXPORT void OpenMM_Context_setTime(OpenMM_Context* target, double time);
-extern OPENMM_EXPORT long long OpenMM_Context_getStepCount(const OpenMM_Context* target);
-extern OPENMM_EXPORT void OpenMM_Context_setStepCount(OpenMM_Context* target, long long count);
-extern OPENMM_EXPORT void OpenMM_Context_setPositions(OpenMM_Context* target, const OpenMM_Vec3Array* positions);
-extern OPENMM_EXPORT void OpenMM_Context_setVelocities(OpenMM_Context* target, const OpenMM_Vec3Array* velocities);
-extern OPENMM_EXPORT void OpenMM_Context_setVelocitiesToTemperature(OpenMM_Context* target, double temperature, int randomSeed);
-extern OPENMM_EXPORT const OpenMM_ParameterArray* OpenMM_Context_getParameters(const OpenMM_Context* target);
-extern OPENMM_EXPORT double OpenMM_Context_getParameter(const OpenMM_Context* target, const char* name);
-extern OPENMM_EXPORT void OpenMM_Context_setParameter(OpenMM_Context* target, const char* name, double value);
-extern OPENMM_EXPORT void OpenMM_Context_setPeriodicBoxVectors(OpenMM_Context* target, const OpenMM_Vec3* a, const OpenMM_Vec3* b, const OpenMM_Vec3* c);
-extern OPENMM_EXPORT void OpenMM_Context_applyConstraints(OpenMM_Context* target, double tol);
-extern OPENMM_EXPORT void OpenMM_Context_applyVelocityConstraints(OpenMM_Context* target, double tol);
-extern OPENMM_EXPORT void OpenMM_Context_computeVirtualSites(OpenMM_Context* target);
-extern OPENMM_EXPORT void OpenMM_Context_reinitialize(OpenMM_Context* target, OpenMM_Boolean preserveState);
-
-/* CompoundIntegrator */
-extern OPENMM_EXPORT OpenMM_CompoundIntegrator* OpenMM_CompoundIntegrator_create();
-extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_destroy(OpenMM_CompoundIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_getNumIntegrators(const OpenMM_CompoundIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_addIntegrator(OpenMM_CompoundIntegrator* target, OpenMM_Integrator* integrator);
-extern OPENMM_EXPORT OpenMM_Integrator* OpenMM_CompoundIntegrator_getIntegrator(OpenMM_CompoundIntegrator* target, int index);
-extern OPENMM_EXPORT int OpenMM_CompoundIntegrator_getCurrentIntegrator(const OpenMM_CompoundIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setCurrentIntegrator(OpenMM_CompoundIntegrator* target, int index);
-extern OPENMM_EXPORT double OpenMM_CompoundIntegrator_getStepSize(const OpenMM_CompoundIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setStepSize(OpenMM_CompoundIntegrator* target, double size);
-extern OPENMM_EXPORT double OpenMM_CompoundIntegrator_getConstraintTolerance(const OpenMM_CompoundIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_setConstraintTolerance(OpenMM_CompoundIntegrator* target, double tol);
-extern OPENMM_EXPORT void OpenMM_CompoundIntegrator_step(OpenMM_CompoundIntegrator* target, int steps);
-
-/* CustomAngleForce */
-extern OPENMM_EXPORT OpenMM_CustomAngleForce* OpenMM_CustomAngleForce_create(const char* energy);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_destroy(OpenMM_CustomAngleForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumAngles(const OpenMM_CustomAngleForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumPerAngleParameters(const OpenMM_CustomAngleForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumGlobalParameters(const OpenMM_CustomAngleForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_getNumEnergyParameterDerivatives(const OpenMM_CustomAngleForce* target);
-extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getEnergyFunction(const OpenMM_CustomAngleForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setEnergyFunction(OpenMM_CustomAngleForce* target, const char* energy);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_addPerAngleParameter(OpenMM_CustomAngleForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getPerAngleParameterName(const OpenMM_CustomAngleForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setPerAngleParameterName(OpenMM_CustomAngleForce* target, int index, const char* name);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_addGlobalParameter(OpenMM_CustomAngleForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getGlobalParameterName(const OpenMM_CustomAngleForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setGlobalParameterName(OpenMM_CustomAngleForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_CustomAngleForce_getGlobalParameterDefaultValue(const OpenMM_CustomAngleForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setGlobalParameterDefaultValue(OpenMM_CustomAngleForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_addEnergyParameterDerivative(OpenMM_CustomAngleForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomAngleForce_getEnergyParameterDerivativeName(const OpenMM_CustomAngleForce* target, int index);
-extern OPENMM_EXPORT int OpenMM_CustomAngleForce_addAngle(OpenMM_CustomAngleForce* target, int particle1, int particle2, int particle3, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_getAngleParameters(const OpenMM_CustomAngleForce* target, int index, int* particle1, int* particle2, int* particle3, OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setAngleParameters(OpenMM_CustomAngleForce* target, int index, int particle1, int particle2, int particle3, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_updateParametersInContext(OpenMM_CustomAngleForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT void OpenMM_CustomAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomAngleForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomAngleForce_usesPeriodicBoundaryConditions(const OpenMM_CustomAngleForce* target);
+/* Continuous1DFunction */
+extern OPENMM_EXPORT OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_create(const OpenMM_DoubleArray* values, double min, double max, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT void OpenMM_Continuous1DFunction_destroy(OpenMM_Continuous1DFunction* target);
+extern OPENMM_EXPORT void OpenMM_Continuous1DFunction_getFunctionParameters(const OpenMM_Continuous1DFunction* target, OpenMM_DoubleArray* values, double* min, double* max);
+extern OPENMM_EXPORT void OpenMM_Continuous1DFunction_setFunctionParameters(OpenMM_Continuous1DFunction* target, const OpenMM_DoubleArray* values, double min, double max);
+extern OPENMM_EXPORT OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_Copy(const OpenMM_Continuous1DFunction* target);
 
 /* GayBerneForce */
 typedef enum {
@@ -939,71 +830,263 @@ extern OPENMM_EXPORT void OpenMM_GayBerneForce_setExceptionParameters(OpenMM_Gay
 extern OPENMM_EXPORT void OpenMM_GayBerneForce_updateParametersInContext(OpenMM_GayBerneForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_GayBerneForce_usesPeriodicBoundaryConditions(const OpenMM_GayBerneForce* target);
 
-/* CustomIntegrator */
+/* NonbondedForce */
 typedef enum {
-  OpenMM_CustomIntegrator_ComputeGlobal = 0, OpenMM_CustomIntegrator_ComputePerDof = 1, OpenMM_CustomIntegrator_ComputeSum = 2, OpenMM_CustomIntegrator_ConstrainPositions = 3, OpenMM_CustomIntegrator_ConstrainVelocities = 4, OpenMM_CustomIntegrator_UpdateContextState = 5, OpenMM_CustomIntegrator_IfBlockStart = 6, OpenMM_CustomIntegrator_WhileBlockStart = 7, OpenMM_CustomIntegrator_BlockEnd = 8
-} OpenMM_CustomIntegrator_ComputationType;
+  OpenMM_NonbondedForce_NoCutoff = 0, OpenMM_NonbondedForce_CutoffNonPeriodic = 1, OpenMM_NonbondedForce_CutoffPeriodic = 2, OpenMM_NonbondedForce_Ewald = 3, OpenMM_NonbondedForce_PME = 4, OpenMM_NonbondedForce_LJPME = 5
+} OpenMM_NonbondedForce_NonbondedMethod;
 
-extern OPENMM_EXPORT OpenMM_CustomIntegrator* OpenMM_CustomIntegrator_create(double stepSize);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_destroy(OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumGlobalVariables(const OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumPerDofVariables(const OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumComputations(const OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getNumTabulatedFunctions(const OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addGlobalVariable(OpenMM_CustomIntegrator* target, const char* name, double initialValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getGlobalVariableName(const OpenMM_CustomIntegrator* target, int index);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addPerDofVariable(OpenMM_CustomIntegrator* target, const char* name, double initialValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getPerDofVariableName(const OpenMM_CustomIntegrator* target, int index);
-extern OPENMM_EXPORT double OpenMM_CustomIntegrator_getGlobalVariable(const OpenMM_CustomIntegrator* target, int index);
-extern OPENMM_EXPORT double OpenMM_CustomIntegrator_getGlobalVariableByName(const OpenMM_CustomIntegrator* target, const char* name);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setGlobalVariable(OpenMM_CustomIntegrator* target, int index, double value);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setGlobalVariableByName(OpenMM_CustomIntegrator* target, const char* name, double value);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_getPerDofVariable(const OpenMM_CustomIntegrator* target, int index, OpenMM_Vec3Array* values);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_getPerDofVariableByName(const OpenMM_CustomIntegrator* target, const char* name, OpenMM_Vec3Array* values);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setPerDofVariable(OpenMM_CustomIntegrator* target, int index, const OpenMM_Vec3Array* values);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setPerDofVariableByName(OpenMM_CustomIntegrator* target, const char* name, const OpenMM_Vec3Array* values);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addComputeGlobal(OpenMM_CustomIntegrator* target, const char* variable, const char* expression);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addComputePerDof(OpenMM_CustomIntegrator* target, const char* variable, const char* expression);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addComputeSum(OpenMM_CustomIntegrator* target, const char* variable, const char* expression);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addConstrainPositions(OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addConstrainVelocities(OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addUpdateContextState(OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_beginIfBlock(OpenMM_CustomIntegrator* target, const char* condition);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_beginWhileBlock(OpenMM_CustomIntegrator* target, const char* condition);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_endBlock(OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_getComputationStep(const OpenMM_CustomIntegrator* target, int index, OpenMM_CustomIntegrator_ComputationType* type, char** variable, char** expression);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_addTabulatedFunction(OpenMM_CustomIntegrator* target, const char* name, OpenMM_TabulatedFunction* function);
-extern OPENMM_EXPORT OpenMM_TabulatedFunction* OpenMM_CustomIntegrator_getTabulatedFunction(OpenMM_CustomIntegrator* target, int index);
-extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getTabulatedFunctionName(const OpenMM_CustomIntegrator* target, int index);
-extern OPENMM_EXPORT const char* OpenMM_CustomIntegrator_getKineticEnergyExpression(const OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setKineticEnergyExpression(OpenMM_CustomIntegrator* target, const char* expression);
-extern OPENMM_EXPORT int OpenMM_CustomIntegrator_getRandomNumberSeed(const OpenMM_CustomIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_setRandomNumberSeed(OpenMM_CustomIntegrator* target, int seed);
-extern OPENMM_EXPORT void OpenMM_CustomIntegrator_step(OpenMM_CustomIntegrator* target, int steps);
+extern OPENMM_EXPORT OpenMM_NonbondedForce* OpenMM_NonbondedForce_create();
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_destroy(OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumParticles(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumExceptions(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumGlobalParameters(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumParticleParameterOffsets(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_getNumExceptionParameterOffsets(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT OpenMM_NonbondedForce_NonbondedMethod OpenMM_NonbondedForce_getNonbondedMethod(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setNonbondedMethod(OpenMM_NonbondedForce* target, OpenMM_NonbondedForce_NonbondedMethod method);
+extern OPENMM_EXPORT double OpenMM_NonbondedForce_getCutoffDistance(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setCutoffDistance(OpenMM_NonbondedForce* target, double distance);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getUseSwitchingFunction(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setUseSwitchingFunction(OpenMM_NonbondedForce* target, OpenMM_Boolean use);
+extern OPENMM_EXPORT double OpenMM_NonbondedForce_getSwitchingDistance(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setSwitchingDistance(OpenMM_NonbondedForce* target, double distance);
+extern OPENMM_EXPORT double OpenMM_NonbondedForce_getReactionFieldDielectric(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setReactionFieldDielectric(OpenMM_NonbondedForce* target, double dielectric);
+extern OPENMM_EXPORT double OpenMM_NonbondedForce_getEwaldErrorTolerance(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setEwaldErrorTolerance(OpenMM_NonbondedForce* target, double tol);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getPMEParameters(const OpenMM_NonbondedForce* target, double* alpha, int* nx, int* ny, int* nz);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getLJPMEParameters(const OpenMM_NonbondedForce* target, double* alpha, int* nx, int* ny, int* nz);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setPMEParameters(OpenMM_NonbondedForce* target, double alpha, int nx, int ny, int nz);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setLJPMEParameters(OpenMM_NonbondedForce* target, double alpha, int nx, int ny, int nz);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getPMEParametersInContext(const OpenMM_NonbondedForce* target, const OpenMM_Context* context, double* alpha, int* nx, int* ny, int* nz);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getLJPMEParametersInContext(const OpenMM_NonbondedForce* target, const OpenMM_Context* context, double* alpha, int* nx, int* ny, int* nz);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_addParticle(OpenMM_NonbondedForce* target, double charge, double sigma, double epsilon);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getParticleParameters(const OpenMM_NonbondedForce* target, int index, double* charge, double* sigma, double* epsilon);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setParticleParameters(OpenMM_NonbondedForce* target, int index, double charge, double sigma, double epsilon);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_addException(OpenMM_NonbondedForce* target, int particle1, int particle2, double chargeProd, double sigma, double epsilon, OpenMM_Boolean replace);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getExceptionParameters(const OpenMM_NonbondedForce* target, int index, int* particle1, int* particle2, double* chargeProd, double* sigma, double* epsilon);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setExceptionParameters(OpenMM_NonbondedForce* target, int index, int particle1, int particle2, double chargeProd, double sigma, double epsilon);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_createExceptionsFromBonds(OpenMM_NonbondedForce* target, const OpenMM_BondArray* bonds, double coulomb14Scale, double lj14Scale);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_addGlobalParameter(OpenMM_NonbondedForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_NonbondedForce_getGlobalParameterName(const OpenMM_NonbondedForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setGlobalParameterName(OpenMM_NonbondedForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_NonbondedForce_getGlobalParameterDefaultValue(const OpenMM_NonbondedForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setGlobalParameterDefaultValue(OpenMM_NonbondedForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_addParticleParameterOffset(OpenMM_NonbondedForce* target, const char* parameter, int particleIndex, double chargeScale, double sigmaScale, double epsilonScale);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getParticleParameterOffset(const OpenMM_NonbondedForce* target, int index, char** parameter, int* particleIndex, double* chargeScale, double* sigmaScale, double* epsilonScale);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setParticleParameterOffset(OpenMM_NonbondedForce* target, int index, const char* parameter, int particleIndex, double chargeScale, double sigmaScale, double epsilonScale);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_addExceptionParameterOffset(OpenMM_NonbondedForce* target, const char* parameter, int exceptionIndex, double chargeProdScale, double sigmaScale, double epsilonScale);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_getExceptionParameterOffset(const OpenMM_NonbondedForce* target, int index, char** parameter, int* exceptionIndex, double* chargeProdScale, double* sigmaScale, double* epsilonScale);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setExceptionParameterOffset(OpenMM_NonbondedForce* target, int index, const char* parameter, int exceptionIndex, double chargeProdScale, double sigmaScale, double epsilonScale);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getUseDispersionCorrection(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setUseDispersionCorrection(OpenMM_NonbondedForce* target, OpenMM_Boolean useCorrection);
+extern OPENMM_EXPORT int OpenMM_NonbondedForce_getReciprocalSpaceForceGroup(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setReciprocalSpaceForceGroup(OpenMM_NonbondedForce* target, int group);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getIncludeDirectSpace(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setIncludeDirectSpace(OpenMM_NonbondedForce* target, OpenMM_Boolean include);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_updateParametersInContext(OpenMM_NonbondedForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NonbondedForce_getExceptionsUsePeriodicBoundaryConditions(const OpenMM_NonbondedForce* target);
+extern OPENMM_EXPORT void OpenMM_NonbondedForce_setExceptionsUsePeriodicBoundaryConditions(OpenMM_NonbondedForce* target, OpenMM_Boolean periodic);
 
-/* LocalCoordinatesSite */
-extern OPENMM_EXPORT OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create(const OpenMM_IntArray* particles, const OpenMM_DoubleArray* originWeights, const OpenMM_DoubleArray* xWeights, const OpenMM_DoubleArray* yWeights, const OpenMM_Vec3* localPosition);
-extern OPENMM_EXPORT OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create_2(int particle1, int particle2, int particle3, const OpenMM_Vec3* originWeights, const OpenMM_Vec3* xWeights, const OpenMM_Vec3* yWeights, const OpenMM_Vec3* localPosition);
-extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_destroy(OpenMM_LocalCoordinatesSite* target);
-extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_getOriginWeights(const OpenMM_LocalCoordinatesSite* target, OpenMM_DoubleArray* weights);
-extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_getXWeights(const OpenMM_LocalCoordinatesSite* target, OpenMM_DoubleArray* weights);
-extern OPENMM_EXPORT void OpenMM_LocalCoordinatesSite_getYWeights(const OpenMM_LocalCoordinatesSite* target, OpenMM_DoubleArray* weights);
-extern OPENMM_EXPORT const OpenMM_Vec3* OpenMM_LocalCoordinatesSite_getLocalPosition(const OpenMM_LocalCoordinatesSite* target);
+/* MonteCarloBarostat */
+extern OPENMM_EXPORT OpenMM_MonteCarloBarostat* OpenMM_MonteCarloBarostat_create(double defaultPressure, double defaultTemperature, int frequency);
+extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_destroy(OpenMM_MonteCarloBarostat* target);
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloBarostat_Pressure();
+extern OPENMM_EXPORT const char* OpenMM_MonteCarloBarostat_Temperature();
+extern OPENMM_EXPORT double OpenMM_MonteCarloBarostat_getDefaultPressure(const OpenMM_MonteCarloBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setDefaultPressure(OpenMM_MonteCarloBarostat* target, double pressure);
+extern OPENMM_EXPORT int OpenMM_MonteCarloBarostat_getFrequency(const OpenMM_MonteCarloBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setFrequency(OpenMM_MonteCarloBarostat* target, int freq);
+extern OPENMM_EXPORT double OpenMM_MonteCarloBarostat_getDefaultTemperature(const OpenMM_MonteCarloBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setDefaultTemperature(OpenMM_MonteCarloBarostat* target, double temp);
+extern OPENMM_EXPORT int OpenMM_MonteCarloBarostat_getRandomNumberSeed(const OpenMM_MonteCarloBarostat* target);
+extern OPENMM_EXPORT void OpenMM_MonteCarloBarostat_setRandomNumberSeed(OpenMM_MonteCarloBarostat* target, int seed);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MonteCarloBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloBarostat* target);
+extern OPENMM_EXPORT double OpenMM_MonteCarloBarostat_computeCurrentPressure(const OpenMM_MonteCarloBarostat* target, OpenMM_Context* context);
 
-/* RMSDForce */
-extern OPENMM_EXPORT OpenMM_RMSDForce* OpenMM_RMSDForce_create(const OpenMM_Vec3Array* referencePositions, const OpenMM_IntArray* particles);
-extern OPENMM_EXPORT void OpenMM_RMSDForce_destroy(OpenMM_RMSDForce* target);
-extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_RMSDForce_getReferencePositions(const OpenMM_RMSDForce* target);
-extern OPENMM_EXPORT void OpenMM_RMSDForce_setReferencePositions(OpenMM_RMSDForce* target, const OpenMM_Vec3Array* positions);
-extern OPENMM_EXPORT const OpenMM_IntArray* OpenMM_RMSDForce_getParticles(const OpenMM_RMSDForce* target);
-extern OPENMM_EXPORT void OpenMM_RMSDForce_setParticles(OpenMM_RMSDForce* target, const OpenMM_IntArray* particles);
-extern OPENMM_EXPORT void OpenMM_RMSDForce_updateParametersInContext(OpenMM_RMSDForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_RMSDForce_usesPeriodicBoundaryConditions(const OpenMM_RMSDForce* target);
+/* CustomBondForce */
+extern OPENMM_EXPORT OpenMM_CustomBondForce* OpenMM_CustomBondForce_create(const char* energy);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_destroy(OpenMM_CustomBondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumBonds(const OpenMM_CustomBondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumPerBondParameters(const OpenMM_CustomBondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumGlobalParameters(const OpenMM_CustomBondForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_getNumEnergyParameterDerivatives(const OpenMM_CustomBondForce* target);
+extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getEnergyFunction(const OpenMM_CustomBondForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_setEnergyFunction(OpenMM_CustomBondForce* target, const char* energy);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_addPerBondParameter(OpenMM_CustomBondForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getPerBondParameterName(const OpenMM_CustomBondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_setPerBondParameterName(OpenMM_CustomBondForce* target, int index, const char* name);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_addGlobalParameter(OpenMM_CustomBondForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getGlobalParameterName(const OpenMM_CustomBondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_setGlobalParameterName(OpenMM_CustomBondForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_CustomBondForce_getGlobalParameterDefaultValue(const OpenMM_CustomBondForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_setGlobalParameterDefaultValue(OpenMM_CustomBondForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_addEnergyParameterDerivative(OpenMM_CustomBondForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomBondForce_getEnergyParameterDerivativeName(const OpenMM_CustomBondForce* target, int index);
+extern OPENMM_EXPORT int OpenMM_CustomBondForce_addBond(OpenMM_CustomBondForce* target, int particle1, int particle2, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_getBondParameters(const OpenMM_CustomBondForce* target, int index, int* particle1, int* particle2, OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_setBondParameters(OpenMM_CustomBondForce* target, int index, int particle1, int particle2, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_updateParametersInContext(OpenMM_CustomBondForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_CustomBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomBondForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomBondForce* target);
+
+/* OutOfPlaneSite */
+extern OPENMM_EXPORT OpenMM_OutOfPlaneSite* OpenMM_OutOfPlaneSite_create(int particle1, int particle2, int particle3, double weight12, double weight13, double weightCross);
+extern OPENMM_EXPORT void OpenMM_OutOfPlaneSite_destroy(OpenMM_OutOfPlaneSite* target);
+extern OPENMM_EXPORT double OpenMM_OutOfPlaneSite_getWeight12(const OpenMM_OutOfPlaneSite* target);
+extern OPENMM_EXPORT double OpenMM_OutOfPlaneSite_getWeight13(const OpenMM_OutOfPlaneSite* target);
+extern OPENMM_EXPORT double OpenMM_OutOfPlaneSite_getWeightCross(const OpenMM_OutOfPlaneSite* target);
+
+/* Continuous2DFunction */
+extern OPENMM_EXPORT OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_create(int xsize, int ysize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT void OpenMM_Continuous2DFunction_destroy(OpenMM_Continuous2DFunction* target);
+extern OPENMM_EXPORT void OpenMM_Continuous2DFunction_getFunctionParameters(const OpenMM_Continuous2DFunction* target, int* xsize, int* ysize, OpenMM_DoubleArray* values, double* xmin, double* xmax, double* ymin, double* ymax);
+extern OPENMM_EXPORT void OpenMM_Continuous2DFunction_setFunctionParameters(OpenMM_Continuous2DFunction* target, int xsize, int ysize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax);
+extern OPENMM_EXPORT OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_Copy(const OpenMM_Continuous2DFunction* target);
+
+/* ATMForce */
+extern OPENMM_EXPORT OpenMM_ATMForce* OpenMM_ATMForce_create(const char* energy);
+extern OPENMM_EXPORT OpenMM_ATMForce* OpenMM_ATMForce_create_2(double lambda1, double lambda2, double alpha, double uh, double w0, double umax, double ubcore, double acore, double direction);
+extern OPENMM_EXPORT void OpenMM_ATMForce_destroy(OpenMM_ATMForce* target);
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Lambda1();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Lambda2();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Alpha();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Uh();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_W0();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Umax();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Ubcore();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Acore();
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_Direction();
+extern OPENMM_EXPORT int OpenMM_ATMForce_getNumParticles(const OpenMM_ATMForce* target);
+extern OPENMM_EXPORT int OpenMM_ATMForce_getNumForces(const OpenMM_ATMForce* target);
+extern OPENMM_EXPORT int OpenMM_ATMForce_getNumGlobalParameters(const OpenMM_ATMForce* target);
+extern OPENMM_EXPORT int OpenMM_ATMForce_getNumEnergyParameterDerivatives(const OpenMM_ATMForce* target);
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_getEnergyFunction(const OpenMM_ATMForce* target);
+extern OPENMM_EXPORT void OpenMM_ATMForce_setEnergyFunction(OpenMM_ATMForce* target, const char* energy);
+extern OPENMM_EXPORT int OpenMM_ATMForce_addForce(OpenMM_ATMForce* target, OpenMM_Force* force);
+extern OPENMM_EXPORT OpenMM_Force* OpenMM_ATMForce_getForce(const OpenMM_ATMForce* target, int index);
+extern OPENMM_EXPORT int OpenMM_ATMForce_addParticle(OpenMM_ATMForce* target, const OpenMM_Vec3* displacement1, const OpenMM_Vec3* displacement0);
+extern OPENMM_EXPORT void OpenMM_ATMForce_getParticleParameters(const OpenMM_ATMForce* target, int index, OpenMM_Vec3* displacement1, OpenMM_Vec3* displacement0);
+extern OPENMM_EXPORT void OpenMM_ATMForce_setParticleParameters(OpenMM_ATMForce* target, int index, const OpenMM_Vec3* displacement1, const OpenMM_Vec3* displacement0);
+extern OPENMM_EXPORT int OpenMM_ATMForce_addGlobalParameter(OpenMM_ATMForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_getGlobalParameterName(const OpenMM_ATMForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_ATMForce_setGlobalParameterName(OpenMM_ATMForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_ATMForce_getGlobalParameterDefaultValue(const OpenMM_ATMForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_ATMForce_setGlobalParameterDefaultValue(OpenMM_ATMForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT void OpenMM_ATMForce_addEnergyParameterDerivative(OpenMM_ATMForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_ATMForce_getEnergyParameterDerivativeName(const OpenMM_ATMForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_ATMForce_updateParametersInContext(OpenMM_ATMForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_ATMForce_usesPeriodicBoundaryConditions(const OpenMM_ATMForce* target);
+extern OPENMM_EXPORT void OpenMM_ATMForce_getPerturbationEnergy(OpenMM_ATMForce* target, OpenMM_Context* context, double* u1, double* u0, double* energy);
+
+/* OpenMMException */
+extern OPENMM_EXPORT OpenMM_OpenMMException* OpenMM_OpenMMException_create(const char* message);
+extern OPENMM_EXPORT void OpenMM_OpenMMException_destroy(OpenMM_OpenMMException* target);
+extern OPENMM_EXPORT const char* OpenMM_OpenMMException_what(const OpenMM_OpenMMException* target);
+
+/* PeriodicTorsionForce */
+extern OPENMM_EXPORT OpenMM_PeriodicTorsionForce* OpenMM_PeriodicTorsionForce_create();
+extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_destroy(OpenMM_PeriodicTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_PeriodicTorsionForce_getNumTorsions(const OpenMM_PeriodicTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_PeriodicTorsionForce_addTorsion(OpenMM_PeriodicTorsionForce* target, int particle1, int particle2, int particle3, int particle4, int periodicity, double phase, double k);
+extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_getTorsionParameters(const OpenMM_PeriodicTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, int* periodicity, double* phase, double* k);
+extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_setTorsionParameters(OpenMM_PeriodicTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, int periodicity, double phase, double k);
+extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_updateParametersInContext(OpenMM_PeriodicTorsionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_PeriodicTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_PeriodicTorsionForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_PeriodicTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_PeriodicTorsionForce* target);
+
+/* Continuous3DFunction */
+extern OPENMM_EXPORT OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_create(int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT void OpenMM_Continuous3DFunction_destroy(OpenMM_Continuous3DFunction* target);
+extern OPENMM_EXPORT void OpenMM_Continuous3DFunction_getFunctionParameters(const OpenMM_Continuous3DFunction* target, int* xsize, int* ysize, int* zsize, OpenMM_DoubleArray* values, double* xmin, double* xmax, double* ymin, double* ymax, double* zmin, double* zmax);
+extern OPENMM_EXPORT void OpenMM_Continuous3DFunction_setFunctionParameters(OpenMM_Continuous3DFunction* target, int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax);
+extern OPENMM_EXPORT OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_Copy(const OpenMM_Continuous3DFunction* target);
+
+/* CustomVolumeForce */
+extern OPENMM_EXPORT OpenMM_CustomVolumeForce* OpenMM_CustomVolumeForce_create(const char* energy);
+extern OPENMM_EXPORT void OpenMM_CustomVolumeForce_destroy(OpenMM_CustomVolumeForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomVolumeForce_getNumGlobalParameters(const OpenMM_CustomVolumeForce* target);
+extern OPENMM_EXPORT const char* OpenMM_CustomVolumeForce_getEnergyFunction(const OpenMM_CustomVolumeForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomVolumeForce_setEnergyFunction(OpenMM_CustomVolumeForce* target, const char* energy);
+extern OPENMM_EXPORT int OpenMM_CustomVolumeForce_addGlobalParameter(OpenMM_CustomVolumeForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomVolumeForce_getGlobalParameterName(const OpenMM_CustomVolumeForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomVolumeForce_setGlobalParameterName(OpenMM_CustomVolumeForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_CustomVolumeForce_getGlobalParameterDefaultValue(const OpenMM_CustomVolumeForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomVolumeForce_setGlobalParameterDefaultValue(OpenMM_CustomVolumeForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomVolumeForce_usesPeriodicBoundaryConditions(const OpenMM_CustomVolumeForce* target);
+
+/* VariableLangevinIntegrator */
+extern OPENMM_EXPORT OpenMM_VariableLangevinIntegrator* OpenMM_VariableLangevinIntegrator_create(double temperature, double frictionCoeff, double errorTol);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_destroy(OpenMM_VariableLangevinIntegrator* target);
+extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getTemperature(const OpenMM_VariableLangevinIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setTemperature(OpenMM_VariableLangevinIntegrator* target, double temp);
+extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getFriction(const OpenMM_VariableLangevinIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setFriction(OpenMM_VariableLangevinIntegrator* target, double coeff);
+extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getErrorTolerance(const OpenMM_VariableLangevinIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setErrorTolerance(OpenMM_VariableLangevinIntegrator* target, double tol);
+extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getMaximumStepSize(const OpenMM_VariableLangevinIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setMaximumStepSize(OpenMM_VariableLangevinIntegrator* target, double size);
+extern OPENMM_EXPORT int OpenMM_VariableLangevinIntegrator_getRandomNumberSeed(const OpenMM_VariableLangevinIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setRandomNumberSeed(OpenMM_VariableLangevinIntegrator* target, int seed);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_step(OpenMM_VariableLangevinIntegrator* target, int steps);
+extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_stepTo(OpenMM_VariableLangevinIntegrator* target, double time);
+
+/* CustomTorsionForce */
+extern OPENMM_EXPORT OpenMM_CustomTorsionForce* OpenMM_CustomTorsionForce_create(const char* energy);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_destroy(OpenMM_CustomTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumTorsions(const OpenMM_CustomTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumPerTorsionParameters(const OpenMM_CustomTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumGlobalParameters(const OpenMM_CustomTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_getNumEnergyParameterDerivatives(const OpenMM_CustomTorsionForce* target);
+extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getEnergyFunction(const OpenMM_CustomTorsionForce* target);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setEnergyFunction(OpenMM_CustomTorsionForce* target, const char* energy);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_addPerTorsionParameter(OpenMM_CustomTorsionForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getPerTorsionParameterName(const OpenMM_CustomTorsionForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setPerTorsionParameterName(OpenMM_CustomTorsionForce* target, int index, const char* name);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_addGlobalParameter(OpenMM_CustomTorsionForce* target, const char* name, double defaultValue);
+extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getGlobalParameterName(const OpenMM_CustomTorsionForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setGlobalParameterName(OpenMM_CustomTorsionForce* target, int index, const char* name);
+extern OPENMM_EXPORT double OpenMM_CustomTorsionForce_getGlobalParameterDefaultValue(const OpenMM_CustomTorsionForce* target, int index);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setGlobalParameterDefaultValue(OpenMM_CustomTorsionForce* target, int index, double defaultValue);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(OpenMM_CustomTorsionForce* target, const char* name);
+extern OPENMM_EXPORT const char* OpenMM_CustomTorsionForce_getEnergyParameterDerivativeName(const OpenMM_CustomTorsionForce* target, int index);
+extern OPENMM_EXPORT int OpenMM_CustomTorsionForce_addTorsion(OpenMM_CustomTorsionForce* target, int particle1, int particle2, int particle3, int particle4, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_getTorsionParameters(const OpenMM_CustomTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setTorsionParameters(OpenMM_CustomTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, const OpenMM_DoubleArray* parameters);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_updateParametersInContext(OpenMM_CustomTorsionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_CustomTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomTorsionForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CustomTorsionForce* target);
+
+/* Platform */
+extern OPENMM_EXPORT void OpenMM_Platform_destroy(OpenMM_Platform* target);
+extern OPENMM_EXPORT void OpenMM_Platform_registerPlatform(OpenMM_Platform* platform);
+extern OPENMM_EXPORT int OpenMM_Platform_getNumPlatforms();
+extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_getPlatform(int index);
+extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_getPlatform_1(const char* name);
+extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_getPlatformByName(const char* name);
+extern OPENMM_EXPORT OpenMM_Platform* OpenMM_Platform_findPlatform(const OpenMM_StringArray* kernelNames);
+extern OPENMM_EXPORT void OpenMM_Platform_loadPluginLibrary(const char* file);
+extern OPENMM_EXPORT const char* OpenMM_Platform_getDefaultPluginsDirectory();
+extern OPENMM_EXPORT const char* OpenMM_Platform_getOpenMMVersion();
+extern OPENMM_EXPORT const char* OpenMM_Platform_getName(const OpenMM_Platform* target);
+extern OPENMM_EXPORT double OpenMM_Platform_getSpeed(const OpenMM_Platform* target);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_Platform_supportsDoublePrecision(const OpenMM_Platform* target);
+extern OPENMM_EXPORT const OpenMM_StringArray* OpenMM_Platform_getPropertyNames(const OpenMM_Platform* target);
+extern OPENMM_EXPORT const char* OpenMM_Platform_getPropertyValue(const OpenMM_Platform* target, const OpenMM_Context* context, const char* property);
+extern OPENMM_EXPORT void OpenMM_Platform_setPropertyValue(const OpenMM_Platform* target, OpenMM_Context* context, const char* property, const char* value);
+extern OPENMM_EXPORT const char* OpenMM_Platform_getPropertyDefaultValue(const OpenMM_Platform* target, const char* property);
+extern OPENMM_EXPORT void OpenMM_Platform_setPropertyDefaultValue(OpenMM_Platform* target, const char* property, const char* value);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_Platform_supportsKernels(const OpenMM_Platform* target, const OpenMM_StringArray* kernelNames);
 
 /* TwoParticleAverageSite */
 extern OPENMM_EXPORT OpenMM_TwoParticleAverageSite* OpenMM_TwoParticleAverageSite_create(int particle1, int particle2, double weight1, double weight2);
 extern OPENMM_EXPORT void OpenMM_TwoParticleAverageSite_destroy(OpenMM_TwoParticleAverageSite* target);
 extern OPENMM_EXPORT double OpenMM_TwoParticleAverageSite_getWeight(const OpenMM_TwoParticleAverageSite* target, int particle);
+
+/* LocalEnergyMinimizer */
+extern OPENMM_EXPORT void OpenMM_LocalEnergyMinimizer_destroy(OpenMM_LocalEnergyMinimizer* target);
+extern OPENMM_EXPORT void OpenMM_LocalEnergyMinimizer_minimize(OpenMM_Context* context, double tolerance, int maxIterations, OpenMM_MinimizationReporter* reporter);
 
 /* CustomCentroidBondForce */
 extern OPENMM_EXPORT OpenMM_CustomCentroidBondForce* OpenMM_CustomCentroidBondForce_create(int numGroups, const char* energy);
@@ -1041,151 +1124,74 @@ extern OPENMM_EXPORT void OpenMM_CustomCentroidBondForce_updateParametersInConte
 extern OPENMM_EXPORT void OpenMM_CustomCentroidBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomCentroidBondForce* target, OpenMM_Boolean periodic);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomCentroidBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCentroidBondForce* target);
 
-/* CustomHbondForce */
-typedef enum {
-  OpenMM_CustomHbondForce_NoCutoff = 0, OpenMM_CustomHbondForce_CutoffNonPeriodic = 1, OpenMM_CustomHbondForce_CutoffPeriodic = 2
-} OpenMM_CustomHbondForce_NonbondedMethod;
+/* CMMotionRemover */
+extern OPENMM_EXPORT OpenMM_CMMotionRemover* OpenMM_CMMotionRemover_create(int frequency);
+extern OPENMM_EXPORT void OpenMM_CMMotionRemover_destroy(OpenMM_CMMotionRemover* target);
+extern OPENMM_EXPORT int OpenMM_CMMotionRemover_getFrequency(const OpenMM_CMMotionRemover* target);
+extern OPENMM_EXPORT void OpenMM_CMMotionRemover_setFrequency(OpenMM_CMMotionRemover* target, int freq);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CMMotionRemover_usesPeriodicBoundaryConditions(const OpenMM_CMMotionRemover* target);
 
-extern OPENMM_EXPORT OpenMM_CustomHbondForce* OpenMM_CustomHbondForce_create(const char* energy);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_destroy(OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumDonors(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumAcceptors(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumExclusions(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumPerDonorParameters(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumPerAcceptorParameters(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumGlobalParameters(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumTabulatedFunctions(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_getNumFunctions(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getEnergyFunction(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setEnergyFunction(OpenMM_CustomHbondForce* target, const char* energy);
-extern OPENMM_EXPORT OpenMM_CustomHbondForce_NonbondedMethod OpenMM_CustomHbondForce_getNonbondedMethod(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setNonbondedMethod(OpenMM_CustomHbondForce* target, OpenMM_CustomHbondForce_NonbondedMethod method);
-extern OPENMM_EXPORT double OpenMM_CustomHbondForce_getCutoffDistance(const OpenMM_CustomHbondForce* target);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setCutoffDistance(OpenMM_CustomHbondForce* target, double distance);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addPerDonorParameter(OpenMM_CustomHbondForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getPerDonorParameterName(const OpenMM_CustomHbondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setPerDonorParameterName(OpenMM_CustomHbondForce* target, int index, const char* name);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addPerAcceptorParameter(OpenMM_CustomHbondForce* target, const char* name);
-extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getPerAcceptorParameterName(const OpenMM_CustomHbondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setPerAcceptorParameterName(OpenMM_CustomHbondForce* target, int index, const char* name);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addGlobalParameter(OpenMM_CustomHbondForce* target, const char* name, double defaultValue);
-extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getGlobalParameterName(const OpenMM_CustomHbondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setGlobalParameterName(OpenMM_CustomHbondForce* target, int index, const char* name);
-extern OPENMM_EXPORT double OpenMM_CustomHbondForce_getGlobalParameterDefaultValue(const OpenMM_CustomHbondForce* target, int index);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setGlobalParameterDefaultValue(OpenMM_CustomHbondForce* target, int index, double defaultValue);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addDonor(OpenMM_CustomHbondForce* target, int d1, int d2, int d3, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getDonorParameters(const OpenMM_CustomHbondForce* target, int index, int* d1, int* d2, int* d3, OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setDonorParameters(OpenMM_CustomHbondForce* target, int index, int d1, int d2, int d3, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addAcceptor(OpenMM_CustomHbondForce* target, int a1, int a2, int a3, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getAcceptorParameters(const OpenMM_CustomHbondForce* target, int index, int* a1, int* a2, int* a3, OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setAcceptorParameters(OpenMM_CustomHbondForce* target, int index, int a1, int a2, int a3, const OpenMM_DoubleArray* parameters);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addExclusion(OpenMM_CustomHbondForce* target, int donor, int acceptor);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getExclusionParticles(const OpenMM_CustomHbondForce* target, int index, int* donor, int* acceptor);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setExclusionParticles(OpenMM_CustomHbondForce* target, int index, int donor, int acceptor);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addTabulatedFunction(OpenMM_CustomHbondForce* target, const char* name, OpenMM_TabulatedFunction* function);
-extern OPENMM_EXPORT OpenMM_TabulatedFunction* OpenMM_CustomHbondForce_getTabulatedFunction(OpenMM_CustomHbondForce* target, int index);
-extern OPENMM_EXPORT const char* OpenMM_CustomHbondForce_getTabulatedFunctionName(const OpenMM_CustomHbondForce* target, int index);
-extern OPENMM_EXPORT int OpenMM_CustomHbondForce_addFunction(OpenMM_CustomHbondForce* target, const char* name, const OpenMM_DoubleArray* values, double min, double max);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_getFunctionParameters(const OpenMM_CustomHbondForce* target, int index, char** name, OpenMM_DoubleArray* values, double* min, double* max);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_setFunctionParameters(OpenMM_CustomHbondForce* target, int index, const char* name, const OpenMM_DoubleArray* values, double min, double max);
-extern OPENMM_EXPORT void OpenMM_CustomHbondForce_updateParametersInContext(OpenMM_CustomHbondForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomHbondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomHbondForce* target);
+/* CMAPTorsionForce */
+extern OPENMM_EXPORT OpenMM_CMAPTorsionForce* OpenMM_CMAPTorsionForce_create();
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_destroy(OpenMM_CMAPTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_getNumMaps(const OpenMM_CMAPTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_getNumTorsions(const OpenMM_CMAPTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_addMap(OpenMM_CMAPTorsionForce* target, int size, const OpenMM_DoubleArray* energy);
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_getMapParameters(const OpenMM_CMAPTorsionForce* target, int index, int* size, OpenMM_DoubleArray* energy);
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_setMapParameters(OpenMM_CMAPTorsionForce* target, int index, int size, const OpenMM_DoubleArray* energy);
+extern OPENMM_EXPORT int OpenMM_CMAPTorsionForce_addTorsion(OpenMM_CMAPTorsionForce* target, int map, int a1, int a2, int a3, int a4, int b1, int b2, int b3, int b4);
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_getTorsionParameters(const OpenMM_CMAPTorsionForce* target, int index, int* map, int* a1, int* a2, int* a3, int* a4, int* b1, int* b2, int* b3, int* b4);
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_setTorsionParameters(OpenMM_CMAPTorsionForce* target, int index, int map, int a1, int a2, int a3, int a4, int b1, int b2, int b3, int b4);
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_updateParametersInContext(OpenMM_CMAPTorsionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_CMAPTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CMAPTorsionForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CMAPTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CMAPTorsionForce* target);
 
-/* Discrete3DFunction */
-extern OPENMM_EXPORT OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_create(int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT void OpenMM_Discrete3DFunction_destroy(OpenMM_Discrete3DFunction* target);
-extern OPENMM_EXPORT void OpenMM_Discrete3DFunction_getFunctionParameters(const OpenMM_Discrete3DFunction* target, int* xsize, int* ysize, int* zsize, OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT void OpenMM_Discrete3DFunction_setFunctionParameters(OpenMM_Discrete3DFunction* target, int xsize, int ysize, int zsize, const OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_Copy(const OpenMM_Discrete3DFunction* target);
+/* DPDIntegrator */
+extern OPENMM_EXPORT OpenMM_DPDIntegrator* OpenMM_DPDIntegrator_create(double temperature, double defaultFriction, double defaultCutoff, double stepSize);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_destroy(OpenMM_DPDIntegrator* target);
+extern OPENMM_EXPORT double OpenMM_DPDIntegrator_getTemperature(const OpenMM_DPDIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_setTemperature(OpenMM_DPDIntegrator* target, double temp);
+extern OPENMM_EXPORT double OpenMM_DPDIntegrator_getDefaultFriction(const OpenMM_DPDIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_setDefaultFriction(OpenMM_DPDIntegrator* target, double friction);
+extern OPENMM_EXPORT double OpenMM_DPDIntegrator_getDefaultCutoff(const OpenMM_DPDIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_setDefaultCutoff(OpenMM_DPDIntegrator* target, double cutoff);
+extern OPENMM_EXPORT int OpenMM_DPDIntegrator_getParticleType(const OpenMM_DPDIntegrator* target, int index);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_setParticleType(OpenMM_DPDIntegrator* target, int index, int type);
+extern OPENMM_EXPORT int OpenMM_DPDIntegrator_getNumTypePairs(const OpenMM_DPDIntegrator* target);
+extern OPENMM_EXPORT int OpenMM_DPDIntegrator_addTypePair(OpenMM_DPDIntegrator* target, int type1, int type2, double friction, double cutoff);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_getTypePairParameters(const OpenMM_DPDIntegrator* target, int pairIndex, int* type1, int* type2, double* friction, double* cutoff);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_setTypePairParameters(OpenMM_DPDIntegrator* target, int pairIndex, int type1, int type2, double friction, double cutoff);
+extern OPENMM_EXPORT int OpenMM_DPDIntegrator_getRandomNumberSeed(const OpenMM_DPDIntegrator* target);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_setRandomNumberSeed(OpenMM_DPDIntegrator* target, int seed);
+extern OPENMM_EXPORT void OpenMM_DPDIntegrator_step(OpenMM_DPDIntegrator* target, int steps);
 
-/* NoseHooverChain */
-extern OPENMM_EXPORT OpenMM_NoseHooverChain* OpenMM_NoseHooverChain_create(double temperature, double relativeTemperature, double collisionFrequency, double relativeCollisionFrequency, int numDOFs, int chainLength, int numMTS, int numYoshidaSuzuki, int chainID, const OpenMM_IntArray* thermostatedAtoms, const OpenMM_BondArray* thermostatedPairs);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_destroy(OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getTemperature(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setTemperature(OpenMM_NoseHooverChain* target, double temperature);
-extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getRelativeTemperature(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setRelativeTemperature(OpenMM_NoseHooverChain* target, double temperature);
-extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getCollisionFrequency(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setCollisionFrequency(OpenMM_NoseHooverChain* target, double frequency);
-extern OPENMM_EXPORT double OpenMM_NoseHooverChain_getRelativeCollisionFrequency(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setRelativeCollisionFrequency(OpenMM_NoseHooverChain* target, double frequency);
-extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getNumDegreesOfFreedom(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setNumDegreesOfFreedom(OpenMM_NoseHooverChain* target, int numDOF);
-extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getChainLength(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getNumMultiTimeSteps(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getNumYoshidaSuzukiTimeSteps(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT int OpenMM_NoseHooverChain_getChainID(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT const OpenMM_IntArray* OpenMM_NoseHooverChain_getThermostatedAtoms(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setThermostatedAtoms(OpenMM_NoseHooverChain* target, const OpenMM_IntArray* atomIDs);
-extern OPENMM_EXPORT const OpenMM_BondArray* OpenMM_NoseHooverChain_getThermostatedPairs(const OpenMM_NoseHooverChain* target);
-extern OPENMM_EXPORT void OpenMM_NoseHooverChain_setThermostatedPairs(OpenMM_NoseHooverChain* target, const OpenMM_BondArray* pairIDs);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_NoseHooverChain_usesPeriodicBoundaryConditions(const OpenMM_NoseHooverChain* target);
+/* LangevinIntegrator */
+extern OPENMM_EXPORT OpenMM_LangevinIntegrator* OpenMM_LangevinIntegrator_create(double temperature, double frictionCoeff, double stepSize);
+extern OPENMM_EXPORT void OpenMM_LangevinIntegrator_destroy(OpenMM_LangevinIntegrator* target);
 
-/* System */
-extern OPENMM_EXPORT OpenMM_System* OpenMM_System_create();
-extern OPENMM_EXPORT void OpenMM_System_destroy(OpenMM_System* target);
-extern OPENMM_EXPORT int OpenMM_System_getNumParticles(const OpenMM_System* target);
-extern OPENMM_EXPORT int OpenMM_System_addParticle(OpenMM_System* target, double mass);
-extern OPENMM_EXPORT double OpenMM_System_getParticleMass(const OpenMM_System* target, int index);
-extern OPENMM_EXPORT void OpenMM_System_setParticleMass(OpenMM_System* target, int index, double mass);
-extern OPENMM_EXPORT void OpenMM_System_setVirtualSite(OpenMM_System* target, int index, OpenMM_VirtualSite* virtualSite);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_System_isVirtualSite(const OpenMM_System* target, int index);
-extern OPENMM_EXPORT const OpenMM_VirtualSite* OpenMM_System_getVirtualSite(const OpenMM_System* target, int index);
-extern OPENMM_EXPORT int OpenMM_System_getNumConstraints(const OpenMM_System* target);
-extern OPENMM_EXPORT int OpenMM_System_addConstraint(OpenMM_System* target, int particle1, int particle2, double distance);
-extern OPENMM_EXPORT void OpenMM_System_getConstraintParameters(const OpenMM_System* target, int index, int* particle1, int* particle2, double* distance);
-extern OPENMM_EXPORT void OpenMM_System_setConstraintParameters(OpenMM_System* target, int index, int particle1, int particle2, double distance);
-extern OPENMM_EXPORT void OpenMM_System_removeConstraint(OpenMM_System* target, int index);
-extern OPENMM_EXPORT int OpenMM_System_addForce(OpenMM_System* target, OpenMM_Force* force);
-extern OPENMM_EXPORT int OpenMM_System_getNumForces(const OpenMM_System* target);
-extern OPENMM_EXPORT OpenMM_Force* OpenMM_System_getForce(OpenMM_System* target, int index);
-extern OPENMM_EXPORT void OpenMM_System_removeForce(OpenMM_System* target, int index);
-extern OPENMM_EXPORT void OpenMM_System_getDefaultPeriodicBoxVectors(const OpenMM_System* target, OpenMM_Vec3* a, OpenMM_Vec3* b, OpenMM_Vec3* c);
-extern OPENMM_EXPORT void OpenMM_System_setDefaultPeriodicBoxVectors(OpenMM_System* target, const OpenMM_Vec3* a, const OpenMM_Vec3* b, const OpenMM_Vec3* c);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_System_usesPeriodicBoundaryConditions(const OpenMM_System* target);
+/* AndersenThermostat */
+extern OPENMM_EXPORT OpenMM_AndersenThermostat* OpenMM_AndersenThermostat_create(double defaultTemperature, double defaultCollisionFrequency);
+extern OPENMM_EXPORT void OpenMM_AndersenThermostat_destroy(OpenMM_AndersenThermostat* target);
+extern OPENMM_EXPORT const char* OpenMM_AndersenThermostat_Temperature();
+extern OPENMM_EXPORT const char* OpenMM_AndersenThermostat_CollisionFrequency();
+extern OPENMM_EXPORT double OpenMM_AndersenThermostat_getDefaultTemperature(const OpenMM_AndersenThermostat* target);
+extern OPENMM_EXPORT void OpenMM_AndersenThermostat_setDefaultTemperature(OpenMM_AndersenThermostat* target, double temperature);
+extern OPENMM_EXPORT double OpenMM_AndersenThermostat_getDefaultCollisionFrequency(const OpenMM_AndersenThermostat* target);
+extern OPENMM_EXPORT void OpenMM_AndersenThermostat_setDefaultCollisionFrequency(OpenMM_AndersenThermostat* target, double frequency);
+extern OPENMM_EXPORT int OpenMM_AndersenThermostat_getRandomNumberSeed(const OpenMM_AndersenThermostat* target);
+extern OPENMM_EXPORT void OpenMM_AndersenThermostat_setRandomNumberSeed(OpenMM_AndersenThermostat* target, int seed);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_AndersenThermostat_usesPeriodicBoundaryConditions(const OpenMM_AndersenThermostat* target);
 
-/* Discrete2DFunction */
-extern OPENMM_EXPORT OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_create(int xsize, int ysize, const OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT void OpenMM_Discrete2DFunction_destroy(OpenMM_Discrete2DFunction* target);
-extern OPENMM_EXPORT void OpenMM_Discrete2DFunction_getFunctionParameters(const OpenMM_Discrete2DFunction* target, int* xsize, int* ysize, OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT void OpenMM_Discrete2DFunction_setFunctionParameters(OpenMM_Discrete2DFunction* target, int xsize, int ysize, const OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_Copy(const OpenMM_Discrete2DFunction* target);
-
-/* VariableLangevinIntegrator */
-extern OPENMM_EXPORT OpenMM_VariableLangevinIntegrator* OpenMM_VariableLangevinIntegrator_create(double temperature, double frictionCoeff, double errorTol);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_destroy(OpenMM_VariableLangevinIntegrator* target);
-extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getTemperature(const OpenMM_VariableLangevinIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setTemperature(OpenMM_VariableLangevinIntegrator* target, double temp);
-extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getFriction(const OpenMM_VariableLangevinIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setFriction(OpenMM_VariableLangevinIntegrator* target, double coeff);
-extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getErrorTolerance(const OpenMM_VariableLangevinIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setErrorTolerance(OpenMM_VariableLangevinIntegrator* target, double tol);
-extern OPENMM_EXPORT double OpenMM_VariableLangevinIntegrator_getMaximumStepSize(const OpenMM_VariableLangevinIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setMaximumStepSize(OpenMM_VariableLangevinIntegrator* target, double size);
-extern OPENMM_EXPORT int OpenMM_VariableLangevinIntegrator_getRandomNumberSeed(const OpenMM_VariableLangevinIntegrator* target);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_setRandomNumberSeed(OpenMM_VariableLangevinIntegrator* target, int seed);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_step(OpenMM_VariableLangevinIntegrator* target, int steps);
-extern OPENMM_EXPORT void OpenMM_VariableLangevinIntegrator_stepTo(OpenMM_VariableLangevinIntegrator* target, double time);
-
-/* State */
-typedef enum {
-  OpenMM_State_Positions = 1, OpenMM_State_Velocities = 2, OpenMM_State_Forces = 4, OpenMM_State_Energy = 8, OpenMM_State_Parameters = 16, OpenMM_State_ParameterDerivatives = 32, OpenMM_State_IntegratorParameters = 64
-} OpenMM_State_DataType;
-
-extern OPENMM_EXPORT OpenMM_State* OpenMM_State_create();
-extern OPENMM_EXPORT void OpenMM_State_destroy(OpenMM_State* target);
-extern OPENMM_EXPORT double OpenMM_State_getTime(const OpenMM_State* target);
-extern OPENMM_EXPORT long long OpenMM_State_getStepCount(const OpenMM_State* target);
-extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_State_getPositions(const OpenMM_State* target);
-extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_State_getVelocities(const OpenMM_State* target);
-extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_State_getForces(const OpenMM_State* target);
-extern OPENMM_EXPORT double OpenMM_State_getKineticEnergy(const OpenMM_State* target);
-extern OPENMM_EXPORT double OpenMM_State_getPotentialEnergy(const OpenMM_State* target);
-extern OPENMM_EXPORT void OpenMM_State_getPeriodicBoxVectors(const OpenMM_State* target, OpenMM_Vec3* a, OpenMM_Vec3* b, OpenMM_Vec3* c);
-extern OPENMM_EXPORT double OpenMM_State_getPeriodicBoxVolume(const OpenMM_State* target);
-extern OPENMM_EXPORT const OpenMM_ParameterArray* OpenMM_State_getParameters(const OpenMM_State* target);
-extern OPENMM_EXPORT const OpenMM_ParameterArray* OpenMM_State_getEnergyParameterDerivatives(const OpenMM_State* target);
-extern OPENMM_EXPORT int OpenMM_State_getDataTypes(const OpenMM_State* target);
+/* RBTorsionForce */
+extern OPENMM_EXPORT OpenMM_RBTorsionForce* OpenMM_RBTorsionForce_create();
+extern OPENMM_EXPORT void OpenMM_RBTorsionForce_destroy(OpenMM_RBTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_RBTorsionForce_getNumTorsions(const OpenMM_RBTorsionForce* target);
+extern OPENMM_EXPORT int OpenMM_RBTorsionForce_addTorsion(OpenMM_RBTorsionForce* target, int particle1, int particle2, int particle3, int particle4, double c0, double c1, double c2, double c3, double c4, double c5);
+extern OPENMM_EXPORT void OpenMM_RBTorsionForce_getTorsionParameters(const OpenMM_RBTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* c0, double* c1, double* c2, double* c3, double* c4, double* c5);
+extern OPENMM_EXPORT void OpenMM_RBTorsionForce_setTorsionParameters(OpenMM_RBTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, double c0, double c1, double c2, double c3, double c4, double c5);
+extern OPENMM_EXPORT void OpenMM_RBTorsionForce_updateParametersInContext(OpenMM_RBTorsionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT void OpenMM_RBTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_RBTorsionForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_RBTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_RBTorsionForce* target);
 
 /* CustomGBForce */
 typedef enum {
@@ -1241,17 +1247,49 @@ extern OPENMM_EXPORT void OpenMM_CustomGBForce_setFunctionParameters(OpenMM_Cust
 extern OPENMM_EXPORT void OpenMM_CustomGBForce_updateParametersInContext(OpenMM_CustomGBForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT OpenMM_Boolean OpenMM_CustomGBForce_usesPeriodicBoundaryConditions(const OpenMM_CustomGBForce* target);
 
-/* MinimizationReporter */
-extern OPENMM_EXPORT OpenMM_MinimizationReporter* OpenMM_MinimizationReporter_create();
-extern OPENMM_EXPORT void OpenMM_MinimizationReporter_destroy(OpenMM_MinimizationReporter* target);
-extern OPENMM_EXPORT OpenMM_Boolean OpenMM_MinimizationReporter_report(OpenMM_MinimizationReporter* target, int iteration, const OpenMM_DoubleArray* x, const OpenMM_DoubleArray* grad, OpenMM_ParameterArray* args);
+/* GBSAOBCForce */
+typedef enum {
+  OpenMM_GBSAOBCForce_NoCutoff = 0, OpenMM_GBSAOBCForce_CutoffNonPeriodic = 1, OpenMM_GBSAOBCForce_CutoffPeriodic = 2
+} OpenMM_GBSAOBCForce_NonbondedMethod;
 
-/* Discrete1DFunction */
-extern OPENMM_EXPORT OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_create(const OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT void OpenMM_Discrete1DFunction_destroy(OpenMM_Discrete1DFunction* target);
-extern OPENMM_EXPORT void OpenMM_Discrete1DFunction_getFunctionParameters(const OpenMM_Discrete1DFunction* target, OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT void OpenMM_Discrete1DFunction_setFunctionParameters(OpenMM_Discrete1DFunction* target, const OpenMM_DoubleArray* values);
-extern OPENMM_EXPORT OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_Copy(const OpenMM_Discrete1DFunction* target);
+extern OPENMM_EXPORT OpenMM_GBSAOBCForce* OpenMM_GBSAOBCForce_create();
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_destroy(OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT int OpenMM_GBSAOBCForce_getNumParticles(const OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT int OpenMM_GBSAOBCForce_addParticle(OpenMM_GBSAOBCForce* target, double charge, double radius, double scalingFactor);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_getParticleParameters(const OpenMM_GBSAOBCForce* target, int index, double* charge, double* radius, double* scalingFactor);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setParticleParameters(OpenMM_GBSAOBCForce* target, int index, double charge, double radius, double scalingFactor);
+extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getSolventDielectric(const OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setSolventDielectric(OpenMM_GBSAOBCForce* target, double dielectric);
+extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getSoluteDielectric(const OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setSoluteDielectric(OpenMM_GBSAOBCForce* target, double dielectric);
+extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getSurfaceAreaEnergy(const OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setSurfaceAreaEnergy(OpenMM_GBSAOBCForce* target, double energy);
+extern OPENMM_EXPORT OpenMM_GBSAOBCForce_NonbondedMethod OpenMM_GBSAOBCForce_getNonbondedMethod(const OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setNonbondedMethod(OpenMM_GBSAOBCForce* target, OpenMM_GBSAOBCForce_NonbondedMethod method);
+extern OPENMM_EXPORT double OpenMM_GBSAOBCForce_getCutoffDistance(const OpenMM_GBSAOBCForce* target);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_setCutoffDistance(OpenMM_GBSAOBCForce* target, double distance);
+extern OPENMM_EXPORT void OpenMM_GBSAOBCForce_updateParametersInContext(OpenMM_GBSAOBCForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT OpenMM_Boolean OpenMM_GBSAOBCForce_usesPeriodicBoundaryConditions(const OpenMM_GBSAOBCForce* target);
+
+/* State */
+typedef enum {
+  OpenMM_State_Positions = 1, OpenMM_State_Velocities = 2, OpenMM_State_Forces = 4, OpenMM_State_Energy = 8, OpenMM_State_Parameters = 16, OpenMM_State_ParameterDerivatives = 32, OpenMM_State_IntegratorParameters = 64
+} OpenMM_State_DataType;
+
+extern OPENMM_EXPORT OpenMM_State* OpenMM_State_create();
+extern OPENMM_EXPORT void OpenMM_State_destroy(OpenMM_State* target);
+extern OPENMM_EXPORT double OpenMM_State_getTime(const OpenMM_State* target);
+extern OPENMM_EXPORT long long OpenMM_State_getStepCount(const OpenMM_State* target);
+extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_State_getPositions(const OpenMM_State* target);
+extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_State_getVelocities(const OpenMM_State* target);
+extern OPENMM_EXPORT const OpenMM_Vec3Array* OpenMM_State_getForces(const OpenMM_State* target);
+extern OPENMM_EXPORT double OpenMM_State_getKineticEnergy(const OpenMM_State* target);
+extern OPENMM_EXPORT double OpenMM_State_getPotentialEnergy(const OpenMM_State* target);
+extern OPENMM_EXPORT void OpenMM_State_getPeriodicBoxVectors(const OpenMM_State* target, OpenMM_Vec3* a, OpenMM_Vec3* b, OpenMM_Vec3* c);
+extern OPENMM_EXPORT double OpenMM_State_getPeriodicBoxVolume(const OpenMM_State* target);
+extern OPENMM_EXPORT const OpenMM_ParameterArray* OpenMM_State_getParameters(const OpenMM_State* target);
+extern OPENMM_EXPORT const OpenMM_ParameterArray* OpenMM_State_getEnergyParameterDerivatives(const OpenMM_State* target);
+extern OPENMM_EXPORT int OpenMM_State_getDataTypes(const OpenMM_State* target);
 
 
 #if defined(__cplusplus)
