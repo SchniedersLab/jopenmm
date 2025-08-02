@@ -21,3 +21,7 @@
 
 ../include/AmoebaOpenMMCWrapper.h
 
+-library OpenMMDrude
+
+../include/DrudeOpenMMCWrapper.h
+
