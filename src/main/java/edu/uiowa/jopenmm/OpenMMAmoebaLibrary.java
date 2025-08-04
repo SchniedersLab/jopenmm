@@ -82,6 +82,25 @@ public class OpenMMAmoebaLibrary implements Library {
 		public static final int OpenMM_HippoNonbondedForce_ZOnly = 4;
 		public static final int OpenMM_HippoNonbondedForce_NoAxisType = 5;
 	};
+	/** Global Constants */
+	public static final double OpenMM_NmPerAngstrom = 0.1;
+	public static final double OpenMM_AngstromsPerNm = 10.0;
+	public static final double OpenMM_PsPerFs = 0.001;
+	public static final double OpenMM_FsPerPs = 1000.0;
+	public static final double OpenMM_KJPerKcal = 4.184;
+	public static final double OpenMM_KcalPerKJ = 1.0 / 4.184;
+	public static final double OpenMM_RadiansPerDegree = 3.1415926535897932385 / 180.0;
+	public static final double OpenMM_DegreesPerRadian = 180.0 / 3.1415926535897932385;
+	public static final double OpenMM_SigmaPerVdwRadius = 1.7817974362806786095;
+	/**
+	 * OpenMM_3D_DoubleArray<br>
+	 * Original signature : <code>OpenMM_3D_DoubleArray* OpenMM_3D_DoubleArray_create(int, int, int)</code>
+	 */
+	public static native PointerByReference OpenMM_3D_DoubleArray_create(int size1, int size2, int size3);
+	/** Original signature : <code>void OpenMM_3D_DoubleArray_set(OpenMM_3D_DoubleArray*, int, int, OpenMM_DoubleArray*)</code> */
+	public static native void OpenMM_3D_DoubleArray_set(PointerByReference array, int index1, int index2, PointerByReference values);
+	/** Original signature : <code>void OpenMM_3D_DoubleArray_destroy(OpenMM_3D_DoubleArray*)</code> */
+	public static native void OpenMM_3D_DoubleArray_destroy(PointerByReference array);
 	/**
 	 * AmoebaTorsionTorsionForce<br>
 	 * Original signature : <code>OpenMM_AmoebaTorsionTorsionForce* OpenMM_AmoebaTorsionTorsionForce_create()</code>
@@ -473,6 +492,14 @@ public class OpenMMAmoebaLibrary implements Library {
 	public static native void OpenMM_HippoNonbondedForce_updateParametersInContext(PointerByReference target, PointerByReference context);
 	/** Original signature : <code>OpenMM_Boolean OpenMM_HippoNonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_HippoNonbondedForce*)</code> */
 	public static native int OpenMM_HippoNonbondedForce_usesPeriodicBoundaryConditions(PointerByReference target);
+	public static class OpenMM_Context extends PointerType {
+		public OpenMM_Context(Pointer address) {
+			super(address);
+		}
+		public OpenMM_Context() {
+			super();
+		}
+	};
 	public static class OpenMM_AmoebaMultipoleForce extends PointerType {
 		public OpenMM_AmoebaMultipoleForce(Pointer address) {
 			super(address);
@@ -486,6 +513,14 @@ public class OpenMMAmoebaLibrary implements Library {
 			super(address);
 		}
 		public OpenMM_Vec3Array() {
+			super();
+		}
+	};
+	public static class OpenMM_3D_DoubleArray extends PointerType {
+		public OpenMM_3D_DoubleArray(Pointer address) {
+			super(address);
+		}
+		public OpenMM_3D_DoubleArray() {
 			super();
 		}
 	};
@@ -518,6 +553,14 @@ public class OpenMMAmoebaLibrary implements Library {
 			super(address);
 		}
 		public OpenMM_HippoNonbondedForce() {
+			super();
+		}
+	};
+	public static class OpenMM_DoubleArray extends PointerType {
+		public OpenMM_DoubleArray(Pointer address) {
+			super(address);
+		}
+		public OpenMM_DoubleArray() {
 			super();
 		}
 	};
