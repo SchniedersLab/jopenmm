@@ -163,7 +163,8 @@ typedef enum {
 
 extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaVdwForce* OpenMM_AmoebaVdwForce_create();
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_destroy(OpenMM_AmoebaVdwForce* target);
-extern OPENMM_EXPORT_AMOEBA const char* OpenMM_AmoebaVdwForce_Lambda();
+extern OPENMM_EXPORT_AMOEBA const char* OpenMM_AmoebaVdwForce_Lambda(const OpenMM_AmoebaVdwForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_setLambdaName(OpenMM_AmoebaVdwForce* target, const char* name);
 extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaVdwForce_getNumParticles(const OpenMM_AmoebaVdwForce* target);
 extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaVdwForce_getNumParticleTypes(const OpenMM_AmoebaVdwForce* target);
 extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaVdwForce_getNumTypePairs(const OpenMM_AmoebaVdwForce* target);
@@ -182,9 +183,7 @@ extern OPENMM_EXPORT_AMOEBA const char* OpenMM_AmoebaVdwForce_getSigmaCombiningR
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_setEpsilonCombiningRule(OpenMM_AmoebaVdwForce* target, const char* epsilonCombiningRule);
 extern OPENMM_EXPORT_AMOEBA const char* OpenMM_AmoebaVdwForce_getEpsilonCombiningRule(const OpenMM_AmoebaVdwForce* target);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseDispersionCorrection(const OpenMM_AmoebaVdwForce* target);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseLambdaComplement(const OpenMM_AmoebaVdwForce* target);
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_setUseDispersionCorrection(OpenMM_AmoebaVdwForce* target, OpenMM_Boolean useCorrection);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_setUseLambdaComplement(OpenMM_AmoebaVdwForce* target, OpenMM_Boolean useComplement);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaVdwForce_getUseParticleTypes(const OpenMM_AmoebaVdwForce* target);
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_setParticleExclusions(OpenMM_AmoebaVdwForce* target, int particleIndex, const OpenMM_IntArray* exclusions);
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_getParticleExclusions(const OpenMM_AmoebaVdwForce* target, int particleIndex, OpenMM_IntArray* exclusions);
